@@ -83,11 +83,13 @@ const Hero: React.FC = () => {
             isVisible ? 'opacity-100 transform-none' : 'opacity-0 -translate-y-10'
           }`}
         >
-          <div className="w-16 h-0.5 bg-gradient-to-r from-transparent via-green-400 to-transparent mx-auto mb-4"></div>
-          <div className="text-green-300 text-sm font-medium tracking-widest uppercase">
-            Premium Farm Experience
-          </div>
-          <div className="w-16 h-0.5 bg-gradient-to-r from-transparent via-green-400 to-transparent mx-auto mt-4"></div>
+          <div className="mt-24">
+  <div className="w-16 h-0.5 bg-gradient-to-r from-transparent via-green-400 to-transparent mx-auto mb-4"></div>
+  <div className="text-green-300 text-sm font-medium tracking-widest uppercase">
+    Premium Farm Experience
+  </div>
+  <div className="w-16 h-0.5 bg-gradient-to-r from-transparent via-green-400 to-transparent mx-auto mt-4"></div>
+</div>
         </div>
 
         <h1
