@@ -79,8 +79,8 @@ export const timelineEvents: TimelineEvent[] = [
 ];
 
 export const farmImages = [
-  'https://images.pexels.com/photos/2255459/pexels-photo-2255459.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-  'https://media.licdn.com/dms/image/D4E12AQF4oUof_yN2Cg/article-cover_image-shrink_720_1280/0/1721191555808?e=2147483647&v=beta&t=c-mjWzIBqjTdX7naszdqSKwXhQirB1QHYPvkidPSH5I',
-  'https://i.ibb.co/0jtM6p2Z/tyler-dutton-min.jpg',
-  'https://i.ibb.co/3yDQWR4L/poultryarticle.jpg',
+  'https://i.ibb.co/hFgHdvCS/Whats-App-Image-2025-04-03-at-5-47-19-PM.jpg',
+  'https://i.ibb.co/99rc7Vzy/Whats-App-Image-2025-04-03-at-5-49-41-PM.jpg',
+  'https://i.ibb.co/LXT5cGbS/Whats-App-Image-2025-04-03-at-5-49-46-PM-2.jpg',
+  'https://i.ibb.co/Ng95zJWM/Whats-App-Image-2025-04-03-at-5-49-48-PM.jpg',
 ];

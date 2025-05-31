@@ -122,11 +122,11 @@ const OurStory: React.FC = () => {
             <div className="relative group">
               <div className="absolute inset-0 bg-gradient-to-br from-green-400 to-amber-400 rounded-2xl blur-xl opacity-25 group-hover:opacity-40 transition-opacity duration-500"></div>
               <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-white p-2">
-                <img 
-                  src="https://cdn.britannica.com/56/155656-050-EF76EB04/chickens-poultry-farm.jpg" 
-                  alt="DY Poultry Farms landscape" 
-                  className="w-full h-[600px] object-cover rounded-xl transition-transform duration-700 group-hover:scale-105"
-                />
+                 <img 
+      src="https://i.ibb.co/hFgHdvCS/Whats-App-Image-2025-04-03-at-5-47-19-PM.jpg" 
+      alt="DY Poultry Farms landscape" 
+      className="w-full h-[600px] object-cover rounded-xl transition-transform duration-700 group-hover:scale-105"
+    />
                 <div className="absolute inset-2 rounded-xl bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </div>
               
