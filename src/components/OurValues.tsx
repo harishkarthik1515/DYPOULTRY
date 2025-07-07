@@ -43,27 +43,26 @@ const OurValues: React.FC = () => {
     {
       icon: <Shield className="w-6 h-6" />,
       title: "Raised Cage-free",
-      description: "Spacious, well-ventilated, climate-controlled barns with freedom to move and interact naturally"
+      description: "Spacious, well-ventilated, climate-controlled barns with freedom to move and interact naturally",
+      image: "https://i.ibb.co/RTqnq4Pt/Group-387.png"
     },
     {
       icon: <Heart className="w-6 h-6" />,
       title: "Free of Added Steroids & Hormones",
-      description: "Following Indian government regulations since 2011 - it's the law, and we follow it without compromise"
+      description: "Following Indian government regulations since 2011 - it's the law, and we follow it without compromise",
+      image: "https://i.ibb.co/VpSMsFsM/Group-388.png"
     },
     {
       icon: <Award className="w-6 h-6" />,
       title: "Licensed Veterinarian Monitored",
-      description: "Every flock cared for by licensed veterinarians with structured healthcare programs"
+      description: "Every flock cared for by licensed veterinarians with structured healthcare programs",
+      image: "https://i.ibb.co/Qv44dNyz/Group-391.png"
     },
     {
       icon: <Users className="w-6 h-6" />,
       title: "Animal-Welfare Trained Farmers",
-      description: "All personnel trained in humane handling and chicken care for stress-free environments"
-    },
-    {
-      icon: <Sparkles className="w-6 h-6" />,
-      title: "Holistic Approach",
-      description: "Protecting and enriching land through natural methods, free from chemical or synthetic additives"
+      description: "All personnel trained in humane handling and chicken care for stress-free environments",
+      image: "https://i.ibb.co/b5h50WL1/Group-390.png"
     }
   ];
 
@@ -192,22 +191,63 @@ const OurValues: React.FC = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {ethicalPractices.map((practice, index) => (
               <div
                 key={index}
-                className="bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-primary-200 transition-all duration-700 hover:shadow-xl hover:scale-105"
+                className={`relative bg-white/80 backdrop-blur-sm rounded-xl shadow-lg border border-primary-200 transition-all duration-500 hover:shadow-2xl hover:scale-105 group cursor-pointer ${
+                  hoveredCard === index + 10 ? 'z-10' : ''
+                }`}
+                onMouseEnter={() => setHoveredCard(index + 10)}
+                onMouseLeave={() => setHoveredCard(null)}
               >
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-12 h-12 bg-primary-600 text-white rounded-full flex items-center justify-center">
-                    {practice.icon}
+                {/* Small card view */}
+                <div className={`p-4 transition-all duration-300 ${
+                  hoveredCard === index + 10 ? 'opacity-0' : 'opacity-100'
+                }`}>
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-8 h-8 bg-primary-600 text-white rounded-full flex items-center justify-center">
+                      {practice.icon}
+                    </div>
+                    <h3 className="font-bold text-sm text-primary-700">{practice.title}</h3>
                   </div>
-                  <h3 className="font-bold text-lg text-primary-700">{practice.title}</h3>
+                  <div className="mb-3">
+                    <img 
+                      src={practice.image} 
+                      alt={practice.title}
+                      className="w-full h-24 object-cover rounded-lg"
+                    />
+                  </div>
+                  <div className="flex items-center text-primary-600">
+                    <CheckCircle className="w-3 h-3 mr-1" />
+                    <span className="text-xs font-medium">Certified & Verified</span>
+                  </div>
                 </div>
-                <p className="text-gray-700 leading-relaxed text-sm mb-4">{practice.description}</p>
-                <div className="flex items-center text-primary-600">
-                  <CheckCircle className="w-4 h-4 mr-2" />
-                  <span className="text-xs font-medium">Certified & Verified</span>
+
+                {/* Expanded card view on hover */}
+                <div className={`absolute inset-0 bg-white/95 backdrop-blur-sm rounded-xl p-6 shadow-2xl border-2 border-primary-300 transition-all duration-300 transform ${
+                  hoveredCard === index + 10 
+                    ? 'opacity-100 scale-110' 
+                    : 'opacity-0 scale-95 pointer-events-none'
+                }`}>
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-12 h-12 bg-gradient-to-r from-primary-500 to-primary-600 text-white rounded-full flex items-center justify-center">
+                      {practice.icon}
+                    </div>
+                    <h3 className="font-bold text-lg text-primary-700">{practice.title}</h3>
+                  </div>
+                  <div className="mb-4">
+                    <img 
+                      src={practice.image} 
+                      alt={practice.title}
+                      className="w-full h-32 object-cover rounded-lg shadow-md"
+                    />
+                  </div>
+                  <p className="text-gray-700 leading-relaxed text-sm mb-4">{practice.description}</p>
+                  <div className="flex items-center text-primary-600">
+                    <CheckCircle className="w-4 h-4 mr-2" />
+                    <span className="text-sm font-medium">Certified & Verified</span>
+                  </div>
                 </div>
               </div>
             ))}
