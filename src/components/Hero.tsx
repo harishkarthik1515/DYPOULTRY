@@ -200,7 +200,7 @@ const Hero: React.FC = () => {
                     <div className="relative flex items-center space-x-2">
                       <Heart className={`h-4 w-4 transition-all duration-300 ${primaryHovered ? 'animate-bounce' : ''}`} />
                       <span className="font-bold">
-                        {primaryHovered ? 'Our Values' : 'Discover Quality'}
+                        {primaryHovered ? 'Our Values and Vision' : 'Discover Quality'}
                       </span>
                       <ArrowRight className={`h-4 w-4 transition-all duration-300 ${primaryHovered ? 'translate-x-1' : ''}`} />
                     </div>
