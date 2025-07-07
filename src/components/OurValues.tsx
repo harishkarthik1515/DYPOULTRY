@@ -5,6 +5,7 @@ import { Heart, Star, Award, Users, Sparkles, ArrowRight, Shield, CheckCircle } 
 const OurValues: React.FC = () => {
   const { ref: sectionRef, isInView: sectionVisible } = useInView();
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
+  const [selectedCard, setSelectedCard] = useState<number | null>(null);
 
   const values = [
     {
@@ -195,16 +196,10 @@ const OurValues: React.FC = () => {
             {ethicalPractices.map((practice, index) => (
               <div
                 key={index}
-                className={`relative bg-white/80 backdrop-blur-sm rounded-xl shadow-lg border border-primary-200 transition-all duration-500 hover:shadow-2xl hover:scale-105 group cursor-pointer ${
-                  hoveredCard === index + 10 ? 'z-10' : ''
-                }`}
-                onMouseEnter={() => setHoveredCard(index + 10)}
-                onMouseLeave={() => setHoveredCard(null)}
+                className="bg-white/80 backdrop-blur-sm rounded-xl shadow-lg border border-primary-200 transition-all duration-300 hover:shadow-xl hover:scale-105 cursor-pointer"
+                onClick={() => setSelectedCard(index)}
               >
-                {/* Small card view */}
-                <div className={`p-4 transition-all duration-300 ${
-                  hoveredCard === index + 10 ? 'opacity-0' : 'opacity-100'
-                }`}>
+                <div className="p-4">
                   <div className="flex items-center gap-3 mb-3">
                     <div className="w-8 h-8 bg-primary-600 text-white rounded-full flex items-center justify-center">
                       {practice.icon}
@@ -223,35 +218,56 @@ const OurValues: React.FC = () => {
                     <span className="text-xs font-medium">Certified & Verified</span>
                   </div>
                 </div>
-
-                {/* Expanded card view on hover */}
-                <div className={`absolute inset-0 bg-white/95 backdrop-blur-sm rounded-xl p-6 shadow-2xl border-2 border-primary-300 transition-all duration-300 transform ${
-                  hoveredCard === index + 10 
-                    ? 'opacity-100 scale-110' 
-                    : 'opacity-0 scale-95 pointer-events-none'
-                }`}>
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-r from-primary-500 to-primary-600 text-white rounded-full flex items-center justify-center">
-                      {practice.icon}
-                    </div>
-                    <h3 className="font-bold text-lg text-primary-700">{practice.title}</h3>
-                  </div>
-                  <div className="mb-4">
-                    <img 
-                      src={practice.image} 
-                      alt={practice.title}
-                      className="w-full h-32 object-cover rounded-lg shadow-md"
-                    />
-                  </div>
-                  <p className="text-gray-700 leading-relaxed text-sm mb-4">{practice.description}</p>
-                  <div className="flex items-center text-primary-600">
-                    <CheckCircle className="w-4 h-4 mr-2" />
-                    <span className="text-sm font-medium">Certified & Verified</span>
-                  </div>
-                </div>
               </div>
             ))}
           </div>
+
+          {/* Modal */}
+          {selectedCard !== null && (
+            <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4">
+              <div className="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl">
+                <div className="relative">
+                  {/* Close button */}
+                  <button
+                    onClick={() => setSelectedCard(null)}
+                    className="absolute top-4 right-4 w-8 h-8 bg-gray-100 hover:bg-gray-200 rounded-full flex items-center justify-center transition-colors duration-200 z-10"
+                  >
+                    <span className="text-gray-600 text-xl">×</span>
+                  </button>
+
+                  {/* Modal content */}
+                  <div className="p-6">
+                    <div className="flex items-center gap-4 mb-6">
+                      <div className="w-16 h-16 bg-gradient-to-r from-primary-500 to-primary-600 text-white rounded-full flex items-center justify-center">
+                        {ethicalPractices[selectedCard].icon}
+                      </div>
+                      <h2 className="font-serif text-2xl md:text-3xl font-bold text-primary-700">
+                        {ethicalPractices[selectedCard].title}
+                      </h2>
+                    </div>
+
+                    <div className="mb-6">
+                      <img 
+                        src={ethicalPractices[selectedCard].image} 
+                        alt={ethicalPractices[selectedCard].title}
+                        className="w-full h-64 md:h-80 object-cover rounded-xl shadow-lg"
+                      />
+                    </div>
+
+                    <div className="mb-6">
+                      <p className="text-gray-700 leading-relaxed text-lg mb-4">
+                        {ethicalPractices[selectedCard].description}
+                      </p>
+                      <div className="flex items-center text-primary-600 bg-primary-50 p-4 rounded-lg">
+                        <CheckCircle className="w-5 h-5 mr-3" />
+                        <span className="font-medium">Certified & Verified by Industry Standards</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
 
         {/* Call to Action Section */}
