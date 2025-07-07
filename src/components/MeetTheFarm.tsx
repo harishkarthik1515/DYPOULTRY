@@ -68,54 +68,55 @@ const MeetTheFarm: React.FC = () => {
         {/* Image slider */}
         <div className="mb-8 lg:mb-12">
           <div 
-          className={`relative max-w-5xl mx-auto rounded-xl overflow-hidden shadow-lg transition-all duration-1000 ${
-            sectionVisible ? 'opacity-100 transform-none' : 'opacity-0 scale-95'
-          }`}
-        >
-          <div className="relative aspect-video">
-            {farmImages.map((image, index) => (
-              <div
-                key={index}
-                className={`absolute inset-0 transition-opacity duration-1000 ${
-                  activeImage === index ? 'opacity-100 z-10' : 'opacity-0 z-0'
-                }`}
-              >
-                <img
-                  src={image}
-                  alt={`Farm scene ${index + 1}`}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            ))}
-            
-            {/* Navigation buttons */}
-            <button
-              onClick={prevImage}
-              className="absolute left-4 top-1/2 transform -translate-y-1/2 z-20 bg-white/80 hover:bg-white text-primary-700 p-2 rounded-full transition-all duration-300"
-              aria-label="Previous image"
-            >
-              <ChevronLeft size={24} />
-            </button>
-            <button
-              onClick={nextImage}
-              className="absolute right-4 top-1/2 transform -translate-y-1/2 z-20 bg-white/80 hover:bg-white text-primary-700 p-2 rounded-full transition-all duration-300"
-              aria-label="Next image"
-            >
-              <ChevronRight size={24} />
-            </button>
-            
-            {/* Image indicators */}
-            <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-20 flex space-x-2">
-              {farmImages.map((_, index) => (
-                <button
+            className={`relative max-w-5xl mx-auto rounded-xl overflow-hidden shadow-lg transition-all duration-1000 ${
+              sectionVisible ? 'opacity-100 transform-none' : 'opacity-0 scale-95'
+            }`}
+          >
+            <div className="relative aspect-video">
+              {farmImages.map((image, index) => (
+                <div
                   key={index}
-                  onClick={() => setActiveImage(index)}
-                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                    activeImage === index ? 'bg-primary-600 w-6' : 'bg-white/70 hover:bg-white'
+                  className={`absolute inset-0 transition-opacity duration-1000 ${
+                    activeImage === index ? 'opacity-100 z-10' : 'opacity-0 z-0'
                   }`}
-                  aria-label={`Go to image ${index + 1}`}
-                ></button>
+                >
+                  <img
+                    src={image}
+                    alt={`Farm scene ${index + 1}`}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
               ))}
+              
+              {/* Navigation buttons */}
+              <button
+                onClick={prevImage}
+                className="absolute left-4 top-1/2 transform -translate-y-1/2 z-20 bg-white/80 hover:bg-white text-primary-700 p-2 rounded-full transition-all duration-300"
+                aria-label="Previous image"
+              >
+                <ChevronLeft size={24} />
+              </button>
+              <button
+                onClick={nextImage}
+                className="absolute right-4 top-1/2 transform -translate-y-1/2 z-20 bg-white/80 hover:bg-white text-primary-700 p-2 rounded-full transition-all duration-300"
+                aria-label="Next image"
+              >
+                <ChevronRight size={24} />
+              </button>
+              
+              {/* Image indicators */}
+              <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-20 flex space-x-2">
+                {farmImages.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setActiveImage(index)}
+                    className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                      activeImage === index ? 'bg-primary-600 w-6' : 'bg-white/70 hover:bg-white'
+                    }`}
+                    aria-label={`Go to image ${index + 1}`}
+                  ></button>
+                ))}
+              </div>
             </div>
           </div>
         </div>
