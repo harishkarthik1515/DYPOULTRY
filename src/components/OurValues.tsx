@@ -250,7 +250,7 @@ const OurValues: React.FC = () => {
                       <img 
                         src={ethicalPractices[selectedCard].image} 
                         alt={ethicalPractices[selectedCard].title}
-                        className="w-full h-64 md:h-80 object-cover rounded-xl shadow-lg"
+                        className="w-full h-auto max-h-96 object-contain rounded-xl shadow-lg mx-auto"
                       />
                     </div>
 
