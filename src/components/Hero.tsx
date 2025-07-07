@@ -137,15 +137,8 @@ const Hero: React.FC = () => {
                 <img 
                   src="1084554013-preview-unscreen.gif" 
                   alt="DY Poultry Farm - Happy Chickens Animation" 
-                  className="w-full h-full object-contain rounded-2xl shadow-2xl filter brightness-110 contrast-110"
-                  style={{ 
-                    filter: 'brightness(1.1) contrast(1.1) drop-shadow(0 0 30px rgba(166, 124, 82, 0.3))',
-                    transform: 'scale(1.02)'
-                  }}
+                  className="w-full h-full object-contain"
                 />
-                
-                {/* Subtle Glow Effect Around Image */}
-                <div className="absolute inset-0 bg-gradient-radial from-transparent via-transparent to-primary-500/5 rounded-2xl"></div>
                 
                 {/* Floating Farm Points */}
                 <div className="absolute top-1/4 left-1/3 w-3 h-3 bg-primary-600 rounded-full animate-pulse shadow-lg shadow-primary-600/50"></div>
