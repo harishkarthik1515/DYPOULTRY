@@ -34,7 +34,6 @@ const VisitUs: React.FC = () => {
           <p className={`text-lg text-cream-200 transition-all duration-700 delay-100 ${
             sectionVisible ? 'opacity-100 transform-none' : 'opacity-0 translate-y-10'
           }`}>
-          </p>
             We welcome visitors to experience our farm firsthand. Book a tour to learn about our 
             sustainable practices and meet our happy chickens.
           </p>
