@@ -236,7 +236,7 @@ const MeetTheFarm: React.FC = () => {
 
         {/* Compact Call to Action */}
         
-        </div>
+        
       </div>
     </section>
   );
