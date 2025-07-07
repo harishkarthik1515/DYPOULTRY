@@ -51,7 +51,7 @@ const OurValues: React.FC = () => {
       icon: <Heart className="w-6 h-6" />,
       title: "Free of Added Steroids & Hormones",
       description: "Following Indian government regulations since 2011 - it's the law, and we follow it without compromise",
-      image: "https://i.ibb.co/VpSMsFsM/Group-388.png"
+      image: "https://i.ibb.co/Qv44dNyz/Group-391.png"
     },
     {
       icon: <Award className="w-6 h-6" />,
