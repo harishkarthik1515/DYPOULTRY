@@ -135,9 +135,9 @@ const Hero: React.FC = () => {
             <div className="relative flex items-center justify-center order-2 lg:order-1">
               <div className="relative w-full max-w-lg h-[400px] lg:h-[500px] flex items-center justify-center">
                 <img 
-                  src="https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
-                  alt="Happy Chickens at DY Poultry Farm" 
-                  className="w-full h-full object-cover rounded-2xl shadow-2xl filter brightness-110 contrast-110"
+                  src="/1084554013-preview-unscreen.gif" 
+                  alt="DY Poultry Farm - Happy Chickens Animation" 
+                  className="w-full h-full object-contain rounded-2xl shadow-2xl filter brightness-110 contrast-110"
                   style={{ 
                     filter: 'brightness(1.1) contrast(1.1) drop-shadow(0 0 30px rgba(166, 124, 82, 0.3))',
                     transform: 'scale(1.02)'
