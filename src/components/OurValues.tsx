@@ -63,7 +63,7 @@ const OurValues: React.FC = () => {
       icon: <Users className="w-6 h-6" />,
       title: "Animal-Welfare Trained Farmers",
       description: "All personnel trained in humane handling and chicken care for stress-free environments",
-      image: "https://i.ibb.co/b5h50WL1/Group-390.png"
+      image: "https://i.ibb.co/VpSMsFsM/Group-388.png"
     }
   ];
 
