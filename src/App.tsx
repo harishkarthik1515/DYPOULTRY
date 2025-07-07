@@ -29,7 +29,7 @@ function App() {
   }, []);
 
   return (
-    <div className="font-sans text-gray-900" style={{ backgroundColor: '#faf5e9' }}>
+    <div className="min-h-screen font-sans text-gray-900" style={{ backgroundColor: '#faf5e9' }}>
       <Header />
       <Hero />
       <OurValues />

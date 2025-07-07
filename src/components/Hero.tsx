@@ -34,34 +34,6 @@ const Hero: React.FC = () => {
     };
   }, []);
 
-  const ethicalPractices = [
-    {
-      icon: <Shield className="w-6 h-6" />,
-      title: "Raised Cage-free",
-      description: "Spacious, well-ventilated, climate-controlled barns with freedom to move and interact naturally"
-    },
-    {
-      icon: <Heart className="w-6 h-6" />,
-      title: "Free of Added Steroids & Hormones",
-      description: "Following Indian government regulations since 2011 - it's the law, and we follow it without compromise"
-    },
-    {
-      icon: <Award className="w-6 h-6" />,
-      title: "Licensed Veterinarian Monitored",
-      description: "Every flock cared for by licensed veterinarians with structured healthcare programs"
-    },
-    {
-      icon: <Users className="w-6 h-6" />,
-      title: "Animal-Welfare Trained Farmers",
-      description: "All personnel trained in humane handling and chicken care for stress-free environments"
-    },
-    {
-      icon: <Leaf className="w-6 h-6" />,
-      title: "Holistic Approach",
-      description: "Protecting and enriching land through natural methods, free from chemical or synthetic additives"
-    }
-  ];
-
   return (
     <>
       <style jsx>{`
@@ -69,11 +41,6 @@ const Hero: React.FC = () => {
           0% { transform: translateY(20px) rotate(0deg); opacity: 0; }
           50% { opacity: 1; }
           100% { transform: translateY(-20px) rotate(360deg); opacity: 0; }
-        }
-        
-        @keyframes gentleFloat {
-          0%, 100% { transform: translateY(0px); }
-          50% { transform: translateY(-10px); }
         }
         
         @keyframes pulse {
@@ -85,10 +52,6 @@ const Hero: React.FC = () => {
           animation: floatUp 8s infinite linear;
         }
         
-        .gentle-float {
-          animation: gentleFloat 3s ease-in-out infinite;
-        }
-        
         .pulse-glow {
           animation: pulse 2s ease-in-out infinite;
         }
@@ -96,7 +59,7 @@ const Hero: React.FC = () => {
       
       <section
         id="home"
-        className="relative h-screen flex items-center justify-center overflow-hidden pt-12 md:pt-14"
+        className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16"
         style={{ backgroundColor: '#faf5e9' }}
       >
         {/* Animated Background with Enhanced Parallax */}
@@ -151,22 +114,22 @@ const Hero: React.FC = () => {
         <div className="container mx-auto px-4 md:px-6 relative z-10">
           
           {/* Hero Header Section */}
-          <div className="text-center mb-4 md:mb-6">
+          <div className="text-center mb-12">
             {/* Trust Badge */}
             <div
-              className={`mb-3 md:mb-4 flex justify-center transition-all duration-1000 delay-100 ${
+              className={`mb-8 flex justify-center transition-all duration-1000 delay-100 ${
                 isVisible ? 'opacity-100 transform-none' : 'opacity-0 -translate-y-10'
               }`}
             >
-              <div className="inline-flex items-center gap-2 bg-white/90 backdrop-blur-sm px-3 md:px-4 py-1.5 md:py-2 rounded-full shadow-lg border border-primary-200">
+              <div className="inline-flex items-center gap-3 bg-white/90 backdrop-blur-sm px-6 py-3 rounded-full shadow-lg border border-primary-200">
                 <div className="w-3 h-3 bg-primary-600 rounded-full pulse-glow"></div>
-                <span className="text-primary-700 font-semibold text-xs tracking-wide">TRUSTED CHICKEN SOURCE</span>
+                <span className="text-primary-700 font-semibold text-sm tracking-wide">YOUR TRUSTED SOURCE FOR HYGIENIC, BIOSECURE CHICKEN</span>
               </div>
             </div>
 
             {/* Main Headline */}
             <h1
-              className={`font-serif text-xl md:text-3xl lg:text-4xl font-bold mb-3 md:mb-4 transition-all duration-1000 delay-200 ${
+              className={`font-serif text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-8 transition-all duration-1000 delay-200 ${
                 isVisible ? 'opacity-100 transform-none' : 'opacity-0 -translate-y-10'
               }`}
               style={{
@@ -183,38 +146,51 @@ const Hero: React.FC = () => {
 
             {/* Subtitle */}
             <p
-              className={`text-sm md:text-base text-gray-700 max-w-2xl mx-auto mb-3 md:mb-4 leading-relaxed transition-all duration-1000 delay-400 ${
+              className={`text-xl md:text-2xl text-gray-700 max-w-4xl mx-auto mb-8 leading-relaxed transition-all duration-1000 delay-400 ${
                 isVisible ? 'opacity-100 transform-none' : 'opacity-0 -translate-y-10'
               }`}
             >
-              Under the care of <span className="font-semibold text-primary-600">smart technology</span> and <span className="font-semibold text-primary-600">dedicated hands</span>.
+              Under the care of <span className="font-semibold text-primary-600">smart technology</span> and <span className="font-semibold text-primary-600">dedicated hands</span> — because healthy flocks begin with thoughtful, modern farming.
             </p>
 
+            {/* Mission Statement */}
+            <div
+              className={`bg-white/80 backdrop-blur-sm rounded-2xl p-8 mb-12 shadow-lg border border-primary-200 max-w-3xl mx-auto transition-all duration-1000 delay-600 ${
+                isVisible ? 'opacity-100 transform-none' : 'opacity-0 -translate-y-10'
+              }`}
+            >
+              <p className="text-lg md:text-xl text-primary-700 font-medium italic">
+                "Ethically farmed poultry — because good food starts with good farming."
+              </p>
+            </div>
           </div>
 
           {/* Call to Action Buttons */}
           <div
-            className={`flex flex-col sm:flex-row gap-3 justify-center mb-4 md:mb-6 transition-all duration-1000 delay-600 ${
+            className={`flex flex-col sm:flex-row gap-6 justify-center mb-16 transition-all duration-1000 delay-800 ${
               isVisible ? 'opacity-100 transform-none' : 'opacity-0 -translate-y-10'
             }`}
           >
             <a
               href="#our-values"
-              className="group relative px-4 md:px-6 py-2 rounded-full bg-gradient-to-r from-primary-600 to-primary-700 text-white font-semibold text-sm transition-all duration-500 hover:from-primary-700 hover:to-primary-800 hover:shadow-xl transform hover:scale-105 overflow-hidden"
+              className="group relative px-10 py-4 rounded-full bg-gradient-to-r from-primary-600 to-primary-700 text-white font-semibold text-lg transition-all duration-500 hover:from-primary-700 hover:to-primary-800 hover:shadow-2xl hover:shadow-primary-500/30 transform hover:scale-110 hover:-translate-y-2 overflow-hidden"
             >
-              <span className="relative z-10 transition-all duration-300">Our Values</span>
+              <span className="relative z-10 transition-all duration-300">Our Values & Vision</span>
+              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary-400 to-primary-500 opacity-0 group-hover:opacity-100 transition-all duration-500 blur-xl scale-150"></div>
+              <div className="absolute inset-0 rounded-full bg-white/20 scale-0 group-hover:scale-100 transition-all duration-700 origin-center"></div>
             </a>
             <a
               href="#visit-us"
-              className="group relative px-4 md:px-6 py-2 rounded-full bg-white/90 backdrop-blur-sm border-2 border-primary-600 text-primary-700 font-semibold text-sm transition-all duration-500 hover:bg-primary-600 hover:text-white hover:shadow-xl transform hover:scale-105 overflow-hidden"
+              className="group relative px-10 py-4 rounded-full bg-white/90 backdrop-blur-sm border-2 border-primary-600 text-primary-700 font-semibold text-lg transition-all duration-500 hover:bg-primary-600 hover:text-white hover:shadow-2xl hover:shadow-primary-500/20 transform hover:scale-110 hover:-translate-y-2 overflow-hidden"
             >
-              <span className="relative z-10 transition-all duration-300">Visit Farm</span>
+              <span className="relative z-10 transition-all duration-300">Visit Our Farm</span>
+              <div className="absolute inset-0 rounded-full bg-primary-600 scale-0 group-hover:scale-100 transition-all duration-700 origin-center"></div>
             </a>
           </div>
 
           {/* Bottom Stats */}
           <div
-            className={`grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-3 transition-all duration-1000 delay-800 ${
+            className={`grid grid-cols-2 md:grid-cols-4 gap-8 transition-all duration-1000 delay-900 ${
               isVisible ? 'opacity-100 transform-none' : 'opacity-0 -translate-y-10'
             }`}
           >
@@ -224,9 +200,9 @@ const Hero: React.FC = () => {
               { number: "24/7", label: "Veterinary Care" },
               { number: "0", label: "Artificial Hormones" }
             ].map((stat, index) => (
-              <div key={index} className="text-center bg-white/60 backdrop-blur-sm rounded-lg p-2 border border-primary-200">
-                <div className="text-base md:text-xl font-bold text-primary-600 mb-1">{stat.number}</div>
-                <div className="text-xs md:text-sm text-gray-700 font-medium">{stat.label}</div>
+              <div key={index} className="text-center bg-white/60 backdrop-blur-sm rounded-xl p-6 border border-primary-200">
+                <div className="text-3xl md:text-4xl font-bold text-primary-600 mb-2">{stat.number}</div>
+                <div className="text-sm md:text-base text-gray-700 font-medium">{stat.label}</div>
               </div>
             ))}
           </div>

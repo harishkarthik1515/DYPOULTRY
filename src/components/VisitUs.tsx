@@ -15,7 +15,7 @@ const VisitUs: React.FC = () => {
     <section
       id="visit-us"
       ref={sectionRef}
-      className="h-screen flex items-center py-4 md:py-6 pt-16 md:pt-20 bg-primary-600 text-white relative overflow-hidden"
+      className="py-20 bg-primary-600 text-white relative overflow-hidden"
     >
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-3">
@@ -25,50 +25,51 @@ const VisitUs: React.FC = () => {
       </div>
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
-        <div className="max-w-4xl mx-auto text-center mb-4 md:mb-6">
+        <div className="max-w-4xl mx-auto text-center mb-16">
           <div className={`mb-4 transition-all duration-700 ${
             sectionVisible ? 'opacity-100 transform-none' : 'opacity-0 -translate-y-10'
           }`}>
-            <div className="inline-flex items-center gap-3 mb-1">
+            <div className="inline-flex items-center gap-3 mb-3">
               <div className="w-8 h-0.5 bg-gradient-to-r from-transparent via-white to-transparent"></div>
               <span className="text-white font-semibold tracking-widest uppercase text-xs">Visit Us</span>
               <div className="w-8 h-0.5 bg-gradient-to-r from-transparent via-white to-transparent"></div>
             </div>
           </div>
           
-          <h2 className={`font-serif text-xl md:text-2xl lg:text-3xl font-bold mb-2 md:mb-3 transition-all duration-700 ${
+          <h2 className={`font-serif text-3xl md:text-4xl lg:text-5xl font-bold mb-6 transition-all duration-700 ${
             sectionVisible ? 'opacity-100 transform-none' : 'opacity-0 translate-y-10'
           }`}>
             Visit Our Farm
           </h2>
-          <p className={`text-sm md:text-base text-white/90 transition-all duration-700 delay-100 ${
+          <p className={`text-lg md:text-xl text-white/90 transition-all duration-700 delay-100 ${
             sectionVisible ? 'opacity-100 transform-none' : 'opacity-0 translate-y-10'
           }`}>
-            Book a tour to experience our farm and meet our happy chickens.
+            We welcome visitors to experience our farm firsthand. Book a tour to learn about our 
+            sustainable practices and meet our happy chickens.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-3 md:gap-4 items-start">
+        <div className="grid lg:grid-cols-2 gap-12 items-start">
           <div className={`transition-all duration-1000 ${
             sectionVisible ? 'opacity-100 animate-slide-in-left' : 'opacity-0 -translate-x-10'
           }`}>
-            <div className="bg-primary-700 rounded-lg p-2 md:p-3 shadow-lg">
-              <h3 className="font-serif text-base md:text-lg font-bold mb-2 md:mb-3">Book a Farm Tour</h3>
+            <div className="bg-primary-700 rounded-xl p-8 shadow-lg">
+              <h3 className="font-serif text-2xl font-bold mb-6">Book a Farm Tour</h3>
               
               {formStatus === 'success' ? (
-                <div className="bg-primary-500/20 border border-primary-500/30 rounded-lg p-2 mb-2 md:mb-3">
-                  <p className="text-white text-sm">Thank you! We've received your request and will contact you shortly to confirm your farm tour.</p>
+                <div className="bg-primary-500/20 border border-primary-500/30 rounded-lg p-4 mb-6">
+                  <p className="text-white">Thank you! We've received your request and will contact you shortly to confirm your farm tour.</p>
                 </div>
               ) : formStatus === 'error' ? (
-                <div className="bg-red-600/20 border border-red-600/30 rounded-lg p-2 mb-2 md:mb-3">
-                  <p className="text-white text-sm">There was an error submitting your request. Please try again or contact us directly.</p>
+                <div className="bg-red-600/20 border border-red-600/30 rounded-lg p-4 mb-6">
+                  <p className="text-white">There was an error submitting your request. Please try again or contact us directly.</p>
                 </div>
               ) : null}
               
               <form onSubmit={handleSubmit}>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-2 mb-2">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                   <div>
-                    <label htmlFor="name" className="block text-xs font-medium text-white/80 mb-1">
+                    <label htmlFor="name" className="block text-sm font-medium text-white/80 mb-2">
                       Your Name
                     </label>
                     <input
@@ -76,12 +77,12 @@ const VisitUs: React.FC = () => {
                       id="name"
                       name="name"
                       required
-                      className="w-full px-2 py-1.5 bg-primary-500 border border-primary-400 rounded-md focus:outline-none focus:ring-2 focus:ring-white/50 text-white placeholder-primary-300 text-xs"
+                      className="w-full px-4 py-3 bg-primary-500 border border-primary-400 rounded-md focus:outline-none focus:ring-2 focus:ring-white/50 text-white placeholder-primary-300"
                       placeholder="John Doe"
                     />
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-xs font-medium text-white/80 mb-1">
+                    <label htmlFor="email" className="block text-sm font-medium text-white/80 mb-2">
                       Email Address
                     </label>
                     <input
@@ -89,37 +90,37 @@ const VisitUs: React.FC = () => {
                       id="email"
                       name="email"
                       required
-                      className="w-full px-2 py-1.5 bg-primary-500 border border-primary-400 rounded-md focus:outline-none focus:ring-2 focus:ring-white/50 text-white placeholder-primary-300 text-xs"
+                      className="w-full px-4 py-3 bg-primary-500 border border-primary-400 rounded-md focus:outline-none focus:ring-2 focus:ring-white/50 text-white placeholder-primary-300"
                       placeholder="john@example.com"
                     />
                   </div>
                 </div>
                 
-                <div className="mb-2">
-                  <label htmlFor="date" className="block text-xs font-medium text-white/80 mb-1">
+                <div className="mb-4">
+                  <label htmlFor="date" className="block text-sm font-medium text-white/80 mb-2">
                     Preferred Visit Date
                   </label>
                   <div className="flex items-center">
-                    <Calendar size={12} className="text-white/80 mr-2" />
+                    <Calendar size={20} className="text-white/80 mr-3" />
                     <input
                       type="date"
                       id="date"
                       name="date"
                       required
-                      className="w-full px-2 py-1.5 bg-primary-500 border border-primary-400 rounded-md focus:outline-none focus:ring-2 focus:ring-white/50 text-white text-xs"
+                      className="w-full px-4 py-3 bg-primary-500 border border-primary-400 rounded-md focus:outline-none focus:ring-2 focus:ring-white/50 text-white"
                     />
                   </div>
                 </div>
                 
-                <div className="mb-2">
-                  <label htmlFor="groupSize" className="block text-xs font-medium text-white/80 mb-1">
+                <div className="mb-4">
+                  <label htmlFor="groupSize" className="block text-sm font-medium text-white/80 mb-2">
                     Number of Visitors
                   </label>
                   <select
                     id="groupSize"
                     name="groupSize"
                     required
-                    className="w-full px-2 py-1.5 bg-primary-500 border border-primary-400 rounded-md focus:outline-none focus:ring-2 focus:ring-white/50 text-white text-xs"
+                    className="w-full px-4 py-3 bg-primary-500 border border-primary-400 rounded-md focus:outline-none focus:ring-2 focus:ring-white/50 text-white"
                   >
                     <option value="">Select group size</option>
                     <option value="1-2">1-2 people</option>
@@ -129,22 +130,22 @@ const VisitUs: React.FC = () => {
                   </select>
                 </div>
                 
-                <div className="mb-3">
-                  <label htmlFor="message" className="block text-xs font-medium text-white/80 mb-1">
+                <div className="mb-6">
+                  <label htmlFor="message" className="block text-sm font-medium text-white/80 mb-2">
                     Special Requests
                   </label>
                   <textarea
                     id="message"
                     name="message"
-                    rows={2}
-                    className="w-full px-2 py-1.5 bg-primary-500 border border-primary-400 rounded-md focus:outline-none focus:ring-2 focus:ring-white/50 text-white placeholder-primary-300 text-xs"
+                    rows={3}
+                    className="w-full px-4 py-3 bg-primary-500 border border-primary-400 rounded-md focus:outline-none focus:ring-2 focus:ring-white/50 text-white placeholder-primary-300"
                     placeholder="Any special requirements or questions?"
                   ></textarea>
                 </div>
                 
                 <button
                   type="submit"
-                  className="w-full px-3 py-2 bg-white text-primary-600 font-medium rounded-md transition-all duration-300 hover:bg-primary-50 focus:outline-none focus:ring-2 focus:ring-white/50 text-xs"
+                  className="w-full px-6 py-4 bg-white text-primary-600 font-medium rounded-md transition-all duration-300 hover:bg-primary-50 transform hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-white/50"
                 >
                   Request Tour
                 </button>
@@ -155,25 +156,25 @@ const VisitUs: React.FC = () => {
           <div className={`transition-all duration-1000 ${
             sectionVisible ? 'opacity-100 animate-slide-in-right' : 'opacity-0 translate-x-10'
           }`}>
-            <div className="space-y-2 md:space-y-3">
+            <div className="space-y-8">
               <div>
-                <h3 className="font-serif text-base md:text-lg font-bold mb-2">Farm Location</h3>
-                <div className="bg-primary-700/50 rounded-lg overflow-hidden shadow-lg">
+                <h3 className="font-serif text-2xl font-bold mb-6">Farm Location</h3>
+                <div className="bg-primary-700/50 rounded-xl overflow-hidden shadow-lg">
                   {/* Sample Map */}
                   <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.7223015224766!2d-122.41941708441293!3d37.77492977975915!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085809c6c8f4459%3A0xb10ed6d9b5050fa5!2sGolden%20Gate%20Bridge!5e0!3m2!1sen!2sus!4v1648176433982!5m2!1sen!2sus"
                     width="100%"
-                    height="120"
+                    height="250"
                     style={{ border: 0 }}
                     allowFullScreen
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
                     className="w-full"
                   ></iframe>
-                  <div className="p-2">
-                    <div className="flex items-start">
-                      <MapPin size={12} className="text-white/80 mr-2 mt-1 flex-shrink-0" />
-                      <p className="text-white/90 text-sm">
+                  <div className="p-6">
+                    <div className="flex items-start mb-4">
+                      <MapPin size={20} className="text-white/80 mr-3 mt-1 flex-shrink-0" />
+                      <p className="text-white/90">
                         123 Rural Route, Farmington<br />
                         Countryside County, CA 95123
                       </p>
@@ -183,30 +184,32 @@ const VisitUs: React.FC = () => {
               </div>
               
               <div>
-                <h3 className="font-serif text-base md:text-lg font-bold mb-2">Contact & Hours</h3>
-                <div className="bg-primary-700/50 rounded-lg p-2 md:p-3 shadow-lg">
-                  <div className="space-y-2">
+                <h3 className="font-serif text-2xl font-bold mb-6">Contact & Hours</h3>
+                <div className="bg-primary-700/50 rounded-xl p-8 shadow-lg">
+                  <div className="space-y-4">
                     <div className="flex items-center">
-                      <Phone size={12} className="text-white/80 mr-2 flex-shrink-0" />
-                      <p className="text-white/90 text-sm">(555) 123-4567</p>
+                      <Phone size={20} className="text-white/80 mr-3 flex-shrink-0" />
+                      <p className="text-white/90">(555) 123-4567</p>
                     </div>
                     <div className="flex items-center">
-                      <Mail size={12} className="text-white/80 mr-2 flex-shrink-0" />
-                      <p className="text-white/90 text-sm">info@dypoultry.farm</p>
+                      <Mail size={20} className="text-white/80 mr-3 flex-shrink-0" />
+                      <p className="text-white/90">info@dypoultry.farm</p>
                     </div>
                     <div className="flex items-start">
-                      <Clock size={12} className="text-white/80 mr-2 mt-1 flex-shrink-0" />
+                      <Clock size={20} className="text-white/80 mr-3 mt-1 flex-shrink-0" />
                       <div>
-                        <p className="text-white/90 mb-1 text-xs"><strong>Store Hours:</strong></p>
-                        <p className="text-white/90 text-xs">Monday - Friday: 9am - 5pm</p>
-                        <p className="text-white/90 text-xs">Saturday: 9am - 3pm</p>
+                        <p className="text-white/90 mb-2"><strong>Farm Store Hours:</strong></p>
+                        <p className="text-white/90 text-sm">Monday - Friday: 9am - 5pm</p>
+                        <p className="text-white/90 text-sm">Saturday: 9am - 3pm</p>
+                        <p className="text-white/90 text-sm">Sunday: Closed</p>
                       </div>
                     </div>
                     <div className="flex items-start">
-                      <Calendar size={12} className="text-white/80 mr-2 mt-1 flex-shrink-0" />
+                      <Calendar size={20} className="text-white/80 mr-3 mt-1 flex-shrink-0" />
                       <div>
-                        <p className="text-white/90 mb-1 text-xs"><strong>Tours:</strong></p>
-                        <p className="text-white/90 text-xs">Available Wednesday - Saturday</p>
+                        <p className="text-white/90 mb-2"><strong>Farm Tours:</strong></p>
+                        <p className="text-white/90 text-sm">Available Wednesday - Saturday</p>
+                        <p className="text-white/90 text-sm">By appointment only</p>
                       </div>
                     </div>
                   </div>

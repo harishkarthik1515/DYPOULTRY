@@ -71,110 +71,173 @@ const OurValues: React.FC = () => {
     <section
       id="our-values"
       ref={sectionRef}
-      className="relative overflow-hidden h-screen flex flex-col"
+      className="relative overflow-hidden py-20"
       style={{ backgroundColor: '#faf5e9' }}
     >
       {/* Values Section */}
-      <div className="flex-1 flex items-center py-4 pt-16 md:pt-20">
-        <div className="container mx-auto px-4 md:px-6 relative">
-          {/* Header Section */}
-          <div className="text-center mb-4 md:mb-6">
-            <div className={`mb-4 transition-all duration-700 ${
-              sectionVisible ? 'opacity-100 transform-none' : 'opacity-0 -translate-y-10'
-            }`}>
-              <div className="inline-flex items-center gap-3 mb-1">
-                <div className="w-8 h-0.5 bg-gradient-to-r from-transparent via-primary-600 to-transparent"></div>
-                <span className="text-primary-600 font-semibold tracking-widest uppercase text-xs">Our Values & Vision</span>
-                <div className="w-8 h-0.5 bg-gradient-to-r from-transparent via-primary-600 to-transparent"></div>
-              </div>
+      <div className="container mx-auto px-4 md:px-6 relative">
+        {/* Header Section */}
+        <div className="text-center mb-16">
+          <div className={`mb-4 transition-all duration-700 ${
+            sectionVisible ? 'opacity-100 transform-none' : 'opacity-0 -translate-y-10'
+          }`}>
+            <div className="inline-flex items-center gap-4 mb-3">
+              <div className="w-8 h-0.5 bg-gradient-to-r from-transparent via-primary-600 to-transparent"></div>
+              <span className="text-primary-600 font-semibold tracking-widest uppercase text-xs">Our Values & Vision</span>
+              <div className="w-8 h-0.5 bg-gradient-to-r from-transparent via-primary-600 to-transparent"></div>
             </div>
+          </div>
 
-            <h2 
-              className={`font-serif text-xl md:text-2xl lg:text-3xl font-bold mb-2 md:mb-3 transition-all duration-700 delay-100 ${
+          <h2 
+            className={`font-serif text-3xl md:text-4xl lg:text-5xl font-bold mb-6 transition-all duration-700 delay-100 ${
+              sectionVisible ? 'opacity-100 transform-none' : 'opacity-0 translate-y-10'
+            }`}
+            style={{
+              background: 'linear-gradient(135deg, #1f2937 0%, #374151 50%, #a67c52 100%)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text',
+            }}
+          >
+            Raising Happy, Healthy, Wholesome Chickens for Your Family
+          </h2>
+          
+          <p className={`text-lg md:text-xl text-gray-700 leading-relaxed max-w-3xl mx-auto transition-all duration-700 delay-200 ${
+            sectionVisible ? 'opacity-100 transform-none' : 'opacity-0 translate-y-10'
+          }`}>
+            Our values guide every decision we make in treating animals with respect and care.
+          </p>
+        </div>
+
+        {/* Values Cards Section */}
+        <div className="grid lg:grid-cols-2 gap-8 mb-16">
+          {values.map((value, index) => (
+            <div
+              key={value.id}
+              className={`group transition-all duration-1000 delay-${300 + index * 200} ${
                 sectionVisible ? 'opacity-100 transform-none' : 'opacity-0 translate-y-10'
               }`}
-              style={{
-                background: 'linear-gradient(135deg, #1f2937 0%, #374151 50%, #a67c52 100%)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text',
-              }}
+              onMouseEnter={() => setHoveredCard(value.id)}
+              onMouseLeave={() => setHoveredCard(null)}
             >
-              Happy, Healthy, Wholesome Chickens
-            </h2>
-            
-            <p className={`text-sm md:text-base text-gray-700 leading-relaxed max-w-xl mx-auto transition-all duration-700 delay-200 ${
-              sectionVisible ? 'opacity-100 transform-none' : 'opacity-0 translate-y-10'
-            }`}>
-              Our values guide every decision we make in treating animals with respect and care.
+              <div className={`relative bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-primary-200 transition-all duration-500 ${
+                hoveredCard === value.id ? 'shadow-2xl shadow-primary-500/10 scale-105 border-primary-300' : 'hover:shadow-xl'
+              }`}>
+                <div className="flex items-center gap-4 mb-4">
+                  <div className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 ${
+                    hoveredCard === value.id 
+                      ? 'bg-gradient-to-r from-primary-500 to-primary-600 text-white scale-110' 
+                      : 'bg-primary-100 text-primary-600'
+                  }`}>
+                    {value.icon}
+                  </div>
+                  <h3 className="font-serif text-xl md:text-2xl font-bold text-gray-800 group-hover:text-primary-600 transition-colors duration-300">
+                    {value.title}
+                  </h3>
+                </div>
+                <p className="text-gray-700 leading-relaxed">
+                  {value.description}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Vision Breakdown Section */}
+        <div className={`transition-all duration-1000 delay-700 mb-16 ${
+          sectionVisible ? 'opacity-100 transform-none' : 'opacity-0 translate-y-10'
+        }`}>
+          <div className="text-center mb-12">
+            <h3 className="font-serif text-2xl md:text-3xl font-bold text-gray-800 mb-4">
+              Our Three Pillars
+            </h3>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Everything we do is built on these fundamental principles.
             </p>
           </div>
 
-          {/* Values Cards Section */}
-          <div className="grid lg:grid-cols-2 gap-3 md:gap-4 mb-4 md:mb-6">
-            {values.map((value, index) => (
+          <div className="grid md:grid-cols-3 gap-8">
+            {visionPoints.map((point, index) => (
               <div
-                key={value.id}
-                className={`group transition-all duration-1000 delay-${300 + index * 200} ${
+                key={index}
+                className={`text-center group transition-all duration-700 delay-${800 + index * 100} ${
                   sectionVisible ? 'opacity-100 transform-none' : 'opacity-0 translate-y-10'
                 }`}
-                onMouseEnter={() => setHoveredCard(value.id)}
-                onMouseLeave={() => setHoveredCard(null)}
               >
-                <div className={`relative bg-white/80 backdrop-blur-sm rounded-lg p-3 md:p-4 shadow-lg border border-primary-200 transition-all duration-500 ${
-                  hoveredCard === value.id ? 'shadow-2xl shadow-primary-500/10 scale-105 border-primary-300' : 'hover:shadow-xl'
-                }`}>
-                  <div className="flex items-center gap-2 mb-2">
-                    <div className={`w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 ${
-                      hoveredCard === value.id 
-                        ? 'bg-gradient-to-r from-primary-500 to-primary-600 text-white scale-110' 
-                        : 'bg-primary-100 text-primary-600'
-                    }`}>
-                      {value.icon}
-                    </div>
-                    <h3 className="font-serif text-base md:text-lg font-bold text-gray-800 group-hover:text-primary-600 transition-colors duration-300">
-                      {value.title}
-                    </h3>
+                <div className="bg-white/60 backdrop-blur-sm rounded-xl p-8 shadow-lg border border-primary-200 transition-all duration-300 hover:shadow-xl hover:scale-105">
+                  <div className="w-12 h-12 bg-gradient-to-r from-primary-500 to-primary-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                    {point.icon}
                   </div>
-                  <p className="text-xs md:text-sm text-gray-700 leading-relaxed">
-                    {value.description}
+                  <h4 className="font-bold text-lg text-gray-800 mb-3 group-hover:text-primary-600 transition-colors duration-300">
+                    {point.title}
+                  </h4>
+                  <p className="text-gray-600 leading-relaxed">
+                    {point.description}
                   </p>
                 </div>
               </div>
             ))}
           </div>
+        </div>
 
-          {/* Vision Breakdown Section */}
-          <div className={`transition-all duration-1000 delay-700 ${
-            sectionVisible ? 'opacity-100 transform-none' : 'opacity-0 translate-y-10'
-          }`}>
-            <div className="text-center mb-3 md:mb-4">
-              <h3 className="font-serif text-lg md:text-xl font-bold text-gray-800 mb-1">
-                Our Three Pillars
-              </h3>
-            </div>
+        {/* Ethical Standards Section */}
+        <div className="mb-16">
+          <div className="text-center mb-12">
+            <h2 className="font-serif text-3xl md:text-4xl font-bold text-primary-700 mb-6">
+              Our Ethical Standards
+            </h2>
+            <p className="text-lg text-gray-700 max-w-3xl mx-auto">
+              We maintain the highest standards of animal welfare and sustainable farming practices, 
+              ensuring every bird receives the care and respect they deserve.
+            </p>
+          </div>
 
-            <div className="grid grid-cols-3 gap-2 md:gap-3">
-              {visionPoints.map((point, index) => (
-                <div
-                  key={index}
-                  className={`text-center group transition-all duration-700 delay-${800 + index * 100} ${
-                    sectionVisible ? 'opacity-100 transform-none' : 'opacity-0 translate-y-10'
-                  }`}
-                >
-                  <div className="bg-white/60 backdrop-blur-sm rounded-lg p-2 md:p-3 shadow-lg border border-primary-200 transition-all duration-300 hover:shadow-xl">
-                    <div className="w-6 h-6 md:w-8 md:h-8 bg-gradient-to-r from-primary-500 to-primary-600 text-white rounded-full flex items-center justify-center mx-auto mb-1 md:mb-2">
-                      {point.icon}
-                    </div>
-                    <h4 className="font-bold text-xs md:text-sm text-gray-800 mb-1 group-hover:text-primary-600 transition-colors duration-300">
-                      {point.title}
-                    </h4>
-                    <p className="text-gray-600 text-xs leading-relaxed hidden md:block">
-                      {point.description}
-                    </p>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {ethicalPractices.map((practice, index) => (
+              <div
+                key={index}
+                className="bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-primary-200 transition-all duration-700 hover:shadow-xl hover:scale-105"
+              >
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-12 h-12 bg-primary-600 text-white rounded-full flex items-center justify-center">
+                    {practice.icon}
                   </div>
+                  <h3 className="font-bold text-lg text-primary-700">{practice.title}</h3>
                 </div>
-              ))}
+                <p className="text-gray-700 leading-relaxed text-sm mb-4">{practice.description}</p>
+                <div className="flex items-center text-primary-600">
+                  <CheckCircle className="w-4 h-4 mr-2" />
+                  <span className="text-xs font-medium">Certified & Verified</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Call to Action Section */}
+        <div className="text-center">
+          <div className="bg-gradient-to-r from-primary-50 to-primary-100 rounded-3xl p-12 border border-primary-200">
+            <h3 className="text-2xl md:text-3xl font-serif font-bold text-gray-800 mb-4">
+              Experience the Difference
+            </h3>
+            <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+              Taste the quality that comes from chickens raised with love, care, and the highest ethical standards.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href="#our-story"
+                className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-primary-600 to-primary-700 text-white font-semibold rounded-full hover:from-primary-700 hover:to-primary-800 transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-primary-500/25"
+              >
+                <span>Learn Our Story</span>
+                <ArrowRight className="w-4 h-4" />
+              </a>
+              <a
+                href="#visit-us"
+                className="inline-flex items-center gap-3 px-8 py-4 bg-white border-2 border-primary-600 text-primary-700 font-semibold rounded-full hover:bg-primary-600 hover:text-white transition-all duration-300 transform hover:scale-105"
+              >
+                <span>Visit Our Farm</span>
+                <ArrowRight className="w-4 h-4" />
+              </a>
             </div>
           </div>
         </div>

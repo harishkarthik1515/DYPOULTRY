@@ -30,7 +30,7 @@ const MeetTheFarm: React.FC = () => {
     <section
       id="meet-the-farm"
       ref={sectionRef}
-      className="h-screen flex items-center py-4 md:py-6 pt-16 md:pt-20 relative overflow-hidden"
+      className="py-20 relative overflow-hidden"
       style={{ backgroundColor: '#faf5e9' }}
     >
       {/* Background pattern */}
@@ -41,37 +41,38 @@ const MeetTheFarm: React.FC = () => {
       </div>
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
-        <div className="max-w-4xl mx-auto text-center mb-4 md:mb-6">
+        <div className="max-w-4xl mx-auto text-center mb-16">
           <div className={`mb-4 transition-all duration-700 ${
             sectionVisible ? 'opacity-100 transform-none' : 'opacity-0 -translate-y-10'
           }`}>
-            <div className="inline-flex items-center gap-3 mb-1">
+            <div className="inline-flex items-center gap-3 mb-3">
               <div className="w-8 h-0.5 bg-gradient-to-r from-transparent via-primary-600 to-transparent"></div>
               <span className="text-primary-600 font-semibold tracking-widest uppercase text-xs">Farm Tour</span>
               <div className="w-8 h-0.5 bg-gradient-to-r from-transparent via-primary-600 to-transparent"></div>
             </div>
           </div>
           
-          <h2 className={`font-serif text-xl md:text-2xl lg:text-3xl font-bold text-primary-700 mb-2 md:mb-3 transition-all duration-700 ${
+          <h2 className={`font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-primary-700 mb-6 transition-all duration-700 ${
             sectionVisible ? 'opacity-100 transform-none' : 'opacity-0 translate-y-10'
           }`}>
             Meet the Farm
           </h2>
-          <p className={`text-sm md:text-base text-primary-700 transition-all duration-700 delay-100 ${
+          <p className={`text-lg md:text-xl text-primary-700 transition-all duration-700 delay-100 ${
             sectionVisible ? 'opacity-100 transform-none' : 'opacity-0 translate-y-10'
           }`}>
-            Take a visual tour of our farm, where happy chickens roam freely in natural environments.
+            Take a visual tour of our farm, where happy chickens roam freely in natural environments, 
+            with access to fresh air, clean water, and organic feed.
           </p>
         </div>
 
         {/* Image slider */}
-        <div className="mb-3 md:mb-4">
+        <div className="mb-16">
           <div 
-            className={`relative max-w-4xl mx-auto rounded-lg overflow-hidden shadow-lg transition-all duration-1000 ${
+            className={`relative max-w-5xl mx-auto rounded-xl overflow-hidden shadow-lg transition-all duration-1000 ${
               sectionVisible ? 'opacity-100 transform-none' : 'opacity-0 scale-95'
             }`}
           >
-            <div className="relative aspect-video max-h-[150px] md:max-h-[200px]">
+            <div className="relative aspect-video">
               {farmImages.map((image, index) => (
                 <div
                   key={index}
@@ -90,27 +91,27 @@ const MeetTheFarm: React.FC = () => {
               {/* Navigation buttons */}
               <button
                 onClick={prevImage}
-                className="absolute left-2 top-1/2 transform -translate-y-1/2 z-20 bg-white/80 hover:bg-white text-primary-700 p-1.5 rounded-full transition-all duration-300"
+                className="absolute left-4 top-1/2 transform -translate-y-1/2 z-20 bg-white/80 hover:bg-white text-primary-700 p-3 rounded-full transition-all duration-300"
                 aria-label="Previous image"
               >
-                <ChevronLeft size={16} />
+                <ChevronLeft size={24} />
               </button>
               <button
                 onClick={nextImage}
-                className="absolute right-2 top-1/2 transform -translate-y-1/2 z-20 bg-white/80 hover:bg-white text-primary-700 p-1.5 rounded-full transition-all duration-300"
+                className="absolute right-4 top-1/2 transform -translate-y-1/2 z-20 bg-white/80 hover:bg-white text-primary-700 p-3 rounded-full transition-all duration-300"
                 aria-label="Next image"
               >
-                <ChevronRight size={16} />
+                <ChevronRight size={24} />
               </button>
               
               {/* Image indicators */}
-              <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 z-20 flex space-x-1">
+              <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-20 flex space-x-2">
                 {farmImages.map((_, index) => (
                   <button
                     key={index}
                     onClick={() => setActiveImage(index)}
-                    className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                      activeImage === index ? 'bg-primary-600 w-4' : 'bg-white/70 hover:bg-white'
+                    className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                      activeImage === index ? 'bg-primary-600 w-6' : 'bg-white/70 hover:bg-white'
                     }`}
                     aria-label={`Go to image ${index + 1}`}
                   ></button>
@@ -121,30 +122,30 @@ const MeetTheFarm: React.FC = () => {
         </div>
         
         {/* Facts about the farm */}
-        <div className="grid grid-cols-3 gap-2 md:gap-3 mb-3 md:mb-4">
+        <div className="grid md:grid-cols-3 gap-8 mb-12">
           {[
             {
               title: "Free-Range Living",
-              description: "Spacious pastures with natural shelter."
+              description: "Our chickens spend their days outside in spacious pastures with natural shelter and protection."
             },
             {
               title: "Ethical Treatment",
-              description: "Highest standards of animal welfare."
+              description: "We follow the highest standards of animal welfare, ensuring our birds live stress-free, natural lives."
             },
             {
               title: "Sustainable Practices",
-              description: "Solar energy and rainwater collection."
+              description: "Our farm uses solar energy, rainwater collection, and organic composting to minimize environmental impact."
             }
           ].map((fact, index) => (
             <div
               key={index}
-              className={`bg-white rounded-lg p-2 md:p-3 shadow-soft transition-all duration-700 hover:shadow-md ${
+              className={`bg-white rounded-xl p-8 shadow-lg transition-all duration-700 hover:shadow-xl ${
                 sectionVisible ? 'opacity-100 transform-none' : 'opacity-0 translate-y-10'
               }`}
               style={{ transitionDelay: `${600 + index * 100}ms` }}
             >
-              <h3 className="text-xs md:text-sm font-bold text-primary-700 mb-1">{fact.title}</h3>
-              <p className="text-xs text-primary-700 leading-relaxed hidden md:block">{fact.description}</p>
+              <h3 className="text-xl font-bold text-primary-700 mb-4">{fact.title}</h3>
+              <p className="text-primary-700 leading-relaxed">{fact.description}</p>
             </div>
           ))}
         </div>
@@ -154,7 +155,7 @@ const MeetTheFarm: React.FC = () => {
         }`}>
           <a
             href="#visit-us"
-            className="inline-block px-3 md:px-4 py-2 bg-primary-600 text-white font-medium rounded-full transition-all duration-300 hover:bg-primary-700 shadow-md text-xs md:text-sm"
+            className="inline-block px-8 py-4 bg-primary-600 text-white font-medium rounded-full transition-all duration-300 hover:bg-primary-700 transform hover:scale-105 shadow-md hover:shadow-lg"
           >
             Visit Our Farm
           </a>
