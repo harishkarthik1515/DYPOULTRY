@@ -185,12 +185,19 @@ const OurStory: React.FC = () => {
                 >
                   <div className="flip-card-inner">
                     {/* Front of card */}
-                    <div className="flip-card-front bg-gradient-to-br from-primary-500 to-primary-600 text-white shadow-lg">
+                    <div className="flip-card-front bg-gradient-to-br from-primary-500 via-primary-600 to-primary-700 text-white shadow-xl relative overflow-hidden">
+                      {/* Background pattern */}
+                      <div className="absolute inset-0 opacity-10">
+                        <div className="absolute top-0 right-0 w-20 h-20 bg-white rounded-full -translate-y-10 translate-x-10"></div>
+                        <div className="absolute bottom-0 left-0 w-16 h-16 bg-white rounded-full translate-y-8 -translate-x-8"></div>
+                      </div>
+                      
                       <div className="text-center">
-                        <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                          <span className="text-2xl">✅</span>
+                        <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto mb-4 border border-white/30 shadow-lg">
+                          <span className="text-3xl">✅</span>
                         </div>
-                        <h4 className="font-bold text-lg">{card.title}</h4>
+                        <h4 className="font-bold text-xl mb-2">{card.title}</h4>
+                        <div className="w-12 h-0.5 bg-white/50 mx-auto"></div>
                       </div>
                     </div>
                     
