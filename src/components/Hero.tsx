@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowRight, Feather, Heart, Shield, Award, Users, Calendar, MapPin } from 'lucide-react';
+import { ArrowRight, Feather, Heart, Shield, Award, Users, Calendar, MapPin, Leaf, Egg, Sun, Droplets } from 'lucide-react';
 
 const Hero: React.FC = () => {
   const [primaryHovered, setPrimaryHovered] = useState(false);
   const [secondaryHovered, setSecondaryHovered] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [hoveredElement, setHoveredElement] = useState<string | null>(null);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -43,6 +44,55 @@ const Hero: React.FC = () => {
     }
   };
 
+  // Interactive poultry elements data
+  const poultryElements = [
+    {
+      id: 'feed',
+      icon: <Leaf className="w-4 h-4" />,
+      title: 'Organic Feed',
+      description: 'Premium quality organic feed for healthy growth',
+      position: { top: '15%', left: '20%' },
+      color: 'from-green-500 to-emerald-600',
+      delay: '0s'
+    },
+    {
+      id: 'eggs',
+      icon: <Egg className="w-4 h-4" />,
+      title: 'Fresh Eggs',
+      description: 'Daily collection of farm-fresh eggs',
+      position: { top: '25%', right: '15%' },
+      color: 'from-yellow-500 to-orange-600',
+      delay: '0.5s'
+    },
+    {
+      id: 'water',
+      icon: <Droplets className="w-4 h-4" />,
+      title: 'Clean Water',
+      description: 'Continuous access to fresh, clean water',
+      position: { bottom: '30%', left: '15%' },
+      color: 'from-blue-500 to-cyan-600',
+      delay: '1s'
+    },
+    {
+      id: 'sunshine',
+      icon: <Sun className="w-4 h-4" />,
+      title: 'Natural Light',
+      description: 'Optimal lighting for bird wellness',
+      position: { bottom: '20%', right: '25%' },
+      color: 'from-yellow-400 to-amber-500',
+      delay: '1.5s'
+    },
+    {
+      id: 'care',
+      icon: <Heart className="w-4 h-4" />,
+      title: 'Loving Care',
+      description: '24/7 monitoring and veterinary support',
+      position: { top: '45%', left: '10%' },
+      color: 'from-red-500 to-pink-600',
+      delay: '2s'
+    }
+  ];
+
   return (
     <>
       <style jsx>{`
@@ -62,9 +112,19 @@ const Hero: React.FC = () => {
           100% { transform: translateX(200%) skewX(-12deg); }
         }
         
+        @keyframes bounce-gentle {
+          0%, 100% { transform: translateY(0px); }
+          50% { transform: translateY(-10px); }
+        }
+        
+        @keyframes rotate-slow {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
+        }
+        
         @keyframes scale-pulse {
           0%, 100% { transform: scale(1); }
-          50% { transform: scale(1.05); }
+          50% { transform: scale(1.1); }
         }
         
         .floating-element {
@@ -79,8 +139,16 @@ const Hero: React.FC = () => {
           animation: shimmer 1.5s ease-in-out;
         }
         
+        .bounce-gentle {
+          animation: bounce-gentle 3s ease-in-out infinite;
+        }
+        
+        .rotate-slow {
+          animation: rotate-slow 20s linear infinite;
+        }
+        
         .scale-pulse {
-          animation: scale-pulse 4s ease-in-out infinite;
+          animation: scale-pulse 2s ease-in-out infinite;
         }
       `}</style>
       
@@ -122,7 +190,7 @@ const Hero: React.FC = () => {
 
         {/* Floating Particles */}
         <div className="absolute inset-0 pointer-events-none">
-          {[...Array(12)].map((_, i) => (
+          {[...Array(15)].map((_, i) => (
             <div
               key={i}
               className="absolute floating-element"
@@ -144,24 +212,71 @@ const Hero: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 min-h-screen">
           <div className="grid lg:grid-cols-2 gap-12 items-center min-h-screen pt-20 sm:pt-24 pb-8 lg:py-0">
             
-            {/* Left Farm Visual Section - Clean GIF Only */}
+            {/* Left Farm Visual Section with Interactive Elements */}
             <div className="relative flex items-center justify-center order-2 lg:order-1">
               <div className="relative w-full max-w-lg h-[400px] lg:h-[500px] flex items-center justify-center">
                 
-                {/* Farm Logo/Branding - Clean and Simple */}
+                {/* Main GIF - No Frame */}
                 <div className="relative w-full h-full flex items-center justify-center">
                   <img 
-                    src="https://i.ibb.co/RTqnq4Pt/Group-387.png" 
-                    alt="DY Poultry Farm - Premium Quality Logo" 
+                    src="/1084554013-preview-unscreen.gif" 
+                    alt="DY Poultry Farm - Happy Chickens Animation" 
                     className="w-full h-full object-contain scale-pulse"
                     style={{ 
                       filter: 'brightness(1.1) contrast(1.1) drop-shadow(0 0 30px rgba(166, 124, 82, 0.2))',
                     }}
                   />
+                  
+                  {/* Interactive Poultry Elements */}
+                  {poultryElements.map((element, index) => (
+                    <div
+                      key={element.id}
+                      className={`absolute cursor-pointer transition-all duration-500 ${
+                        isVisible ? 'opacity-100 transform-none' : 'opacity-0 scale-0'
+                      }`}
+                      style={{
+                        ...element.position,
+                        animationDelay: element.delay,
+                        transform: hoveredElement === element.id ? 'scale(1.2)' : 'scale(1)',
+                      }}
+                      onMouseEnter={() => setHoveredElement(element.id)}
+                      onMouseLeave={() => setHoveredElement(null)}
+                    >
+                      {/* Pulsing Ring */}
+                      <div className={`absolute inset-0 rounded-full bg-gradient-to-r ${element.color} opacity-20 animate-ping`}></div>
+                      
+                      {/* Main Element */}
+                      <div className={`relative w-12 h-12 bg-gradient-to-r ${element.color} rounded-full flex items-center justify-center text-white shadow-lg hover:shadow-xl transition-all duration-300 bounce-gentle border-2 border-white/50`}>
+                        {element.icon}
+                      </div>
+                      
+                      {/* Tooltip */}
+                      {hoveredElement === element.id && (
+                        <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-48 bg-white/95 backdrop-blur-sm rounded-lg p-3 shadow-xl border border-primary-200 z-20">
+                          <h4 className="font-bold text-primary-700 text-sm mb-1">{element.title}</h4>
+                          <p className="text-primary-600 text-xs">{element.description}</p>
+                          <div className="absolute -top-1 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-white rotate-45 border-l border-t border-primary-200"></div>
+                        </div>
+                      )}
+                    </div>
+                  ))}
+                  
+                  {/* Rotating Farm Elements */}
+                  <div className="absolute inset-0 pointer-events-none">
+                    <div className="absolute top-1/4 left-1/4 rotate-slow">
+                      <Feather className="w-6 h-6 text-primary-600/40" />
+                    </div>
+                    <div className="absolute bottom-1/4 right-1/4 rotate-slow" style={{ animationDirection: 'reverse' }}>
+                      <Leaf className="w-5 h-5 text-green-600/40" />
+                    </div>
+                    <div className="absolute top-1/2 right-1/6 rotate-slow">
+                      <Egg className="w-4 h-4 text-yellow-600/40" />
+                    </div>
+                  </div>
                 </div>
                 
-                {/* Subtle Ambient Glow Effect */}
-                <div className="absolute inset-0 bg-gradient-radial from-primary-500/5 via-transparent to-transparent rounded-full scale-150"></div>
+                {/* Ambient Glow Effect */}
+                <div className="absolute inset-0 bg-gradient-radial from-primary-500/10 via-transparent to-transparent rounded-full scale-150"></div>
               </div>
             </div>
 
@@ -198,7 +313,7 @@ const Hero: React.FC = () => {
               }`}>
                 <div className="flex items-center space-x-4">
                   <div className="h-px bg-gradient-to-r from-primary-500 to-transparent flex-1"></div>
-                  <Feather className="h-4 w-4 text-primary-600" />
+                  <Feather className="h-4 w-4 text-primary-600 bounce-gentle" />
                   <div className="h-px bg-gradient-to-l from-primary-500 to-transparent flex-1"></div>
                 </div>
                 
@@ -218,7 +333,7 @@ const Hero: React.FC = () => {
                     <div className="relative flex items-center space-x-2">
                       <Heart className={`h-4 w-4 transition-all duration-300 ${primaryHovered ? 'animate-bounce' : ''}`} />
                       <span className="font-bold">
-                        {primaryHovered ? 'Our Values and Vision' : 'Discover Quality'}
+                        {primaryHovered ? 'Our Values' : 'Discover Quality'}
                       </span>
                       <ArrowRight className={`h-4 w-4 transition-all duration-300 ${primaryHovered ? 'translate-x-1' : ''}`} />
                     </div>
@@ -241,20 +356,30 @@ const Hero: React.FC = () => {
                   </button>
                 </div>
 
-                {/* Simple Trust Indicators */}
+                {/* Interactive Trust Indicators */}
                 <div className="flex flex-wrap items-center gap-4 text-xs text-gray-600">
                   {[
-                    { icon: Shield, text: 'Biosecure', color: 'green' },
-                    { icon: Users, text: '1.25L+ Birds', color: 'blue' },
-                    { icon: Award, text: 'Premium Quality', color: 'primary' }
-                  ].map(({ icon: Icon, text, color }, index) => (
+                    { icon: Shield, text: 'Biosecure', color: 'green', description: 'Advanced biosecurity protocols' },
+                    { icon: Users, text: '1.25L+ Birds', color: 'blue', description: 'Large scale operations' },
+                    { icon: Award, text: 'Premium Quality', color: 'primary', description: 'Certified quality standards' }
+                  ].map(({ icon: Icon, text, color, description }, index) => (
                     <div 
                       key={index} 
-                      className="group flex items-center space-x-2 cursor-pointer hover:text-primary-700 transition-colors duration-200"
+                      className="group relative flex items-center space-x-2 cursor-pointer hover:text-primary-700 transition-colors duration-200"
+                      onMouseEnter={() => setHoveredElement(`trust-${index}`)}
+                      onMouseLeave={() => setHoveredElement(null)}
                     >
                       <div className={`w-1.5 h-1.5 bg-${color === 'primary' ? 'primary-600' : color + '-500'} rounded-full animate-pulse group-hover:scale-150 transition-transform duration-200`}></div>
                       <span className="group-hover:font-semibold transition-all duration-200">{text}</span>
                       <Icon className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
+                      
+                      {/* Tooltip */}
+                      {hoveredElement === `trust-${index}` && (
+                        <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 w-32 bg-white/95 backdrop-blur-sm rounded-lg p-2 shadow-xl border border-primary-200 z-20">
+                          <p className="text-primary-600 text-xs text-center">{description}</p>
+                          <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-2 h-2 bg-white rotate-45 border-r border-b border-primary-200"></div>
+                        </div>
+                      )}
                     </div>
                   ))}
                 </div>
@@ -272,7 +397,7 @@ const Hero: React.FC = () => {
                 </div>
               </div>
 
-              {/* Simple Stats Grid */}
+              {/* Interactive Stats Grid */}
               <div className={`grid grid-cols-3 gap-3 transition-all duration-1000 delay-600 ${
                 isVisible ? 'opacity-100 transform-none' : 'opacity-0 translate-y-10'
               }`}>
@@ -284,9 +409,11 @@ const Hero: React.FC = () => {
                   <div 
                     key={index} 
                     className="text-center group cursor-pointer bg-white/40 backdrop-blur-sm rounded-lg p-3 border border-primary-200 hover:bg-white/60 transition-all duration-300"
+                    onMouseEnter={() => setHoveredElement(`stat-${index}`)}
+                    onMouseLeave={() => setHoveredElement(null)}
                   >
                     <div className="flex items-center justify-center mb-1">
-                      <div className="text-primary-600 mr-1 group-hover:scale-110 transition-transform duration-300">
+                      <div className={`text-primary-600 mr-1 ${hoveredElement === `stat-${index}` ? 'scale-110' : ''} transition-transform duration-300`}>
                         {stat.icon}
                       </div>
                     </div>

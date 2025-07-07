@@ -78,25 +78,6 @@ const Sustainability: React.FC = () => {
                     <div className="w-20 h-20 bg-gradient-to-br from-primary-500 to-primary-600 text-white rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
                       {area.icon}
                     </div>
-                    {/* Add contextual farm images */}
-                    {area.id === 1 && (
-                      <div className="mt-4 opacity-60">
-                        <img 
-                          src="https://i.ibb.co/VpSMsFsM/Group-388.png" 
-                          alt="Animal Welfare" 
-                          className="w-12 h-12 object-contain mx-auto"
-                        />
-                      </div>
-                    )}
-                    {area.id === 2 && (
-                      <div className="mt-4 opacity-60">
-                        <img 
-                          src="https://i.ibb.co/b5h50WL1/Group-390.png" 
-                          alt="Solar Power" 
-                          className="w-12 h-12 object-contain mx-auto"
-                        />
-                      </div>
-                    )}
                     <h3 className="font-serif text-2xl md:text-3xl font-bold text-primary-700">
                       {area.title}
                     </h3>
