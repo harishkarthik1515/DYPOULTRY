@@ -96,7 +96,8 @@ const Hero: React.FC = () => {
       
       <section
         id="home"
-        className="relative min-h-screen flex items-center justify-center overflow-hidden bg-primary-100"
+        className="relative min-h-screen flex items-center justify-center overflow-hidden"
+        style={{ backgroundColor: '#faf5e9' }}
       >
         {/* Animated Background with Enhanced Parallax */}
         <div 
@@ -201,34 +202,6 @@ const Hero: React.FC = () => {
             </div>
           </div>
 
-          {/* Values Section */}
-          <div className="mb-16">
-            <div
-              className={`text-center mb-12 transition-all duration-1000 delay-700 ${
-                isVisible ? 'opacity-100 transform-none' : 'opacity-0 -translate-y-10'
-              }`}
-            >
-              <h2 className="font-serif text-3xl md:text-4xl font-bold text-primary-700 mb-4">
-                Our Values & Vision
-              </h2>
-              <div className="max-w-4xl mx-auto space-y-6">
-                <p className="text-xl text-primary-600 font-semibold">
-                  "Raising Happy, Healthy, Wholesome Chickens for Your Family"
-                </p>
-                <div className="grid md:grid-cols-2 gap-6 text-lg text-gray-700">
-                  <div className="bg-white/60 backdrop-blur-sm rounded-xl p-6 border border-primary-200">
-                    <p className="font-semibold text-primary-600 mb-2">"Wholesome Chicken, Raised Right"</p>
-                    <p>Every aspect of our farming reflects our commitment to quality and care.</p>
-                  </div>
-                  <div className="bg-white/60 backdrop-blur-sm rounded-xl p-6 border border-primary-200">
-                    <p className="font-semibold text-primary-600 mb-2">"Love in Every Feather. Freshness in Every Bite"</p>
-                    <p>Our passion for ethical farming translates to exceptional taste and nutrition.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
           {/* Ethics Section */}
           <div className="mb-16">
             <div
@@ -276,10 +249,10 @@ const Hero: React.FC = () => {
             }`}
           >
             <a
-              href="#our-story"
+              href="#our-values"
               className="group relative px-10 py-4 rounded-full bg-gradient-to-r from-primary-600 to-primary-700 text-white font-semibold text-lg transition-all duration-500 hover:from-primary-700 hover:to-primary-800 hover:shadow-2xl hover:shadow-primary-500/30 transform hover:scale-110 hover:-translate-y-2 overflow-hidden"
             >
-              <span className="relative z-10 transition-all duration-300">Discover Our Story</span>
+              <span className="relative z-10 transition-all duration-300">Our Values & Vision</span>
               <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary-400 to-primary-500 opacity-0 group-hover:opacity-100 transition-all duration-500 blur-xl scale-150"></div>
               <div className="absolute inset-0 rounded-full bg-white/20 scale-0 group-hover:scale-100 transition-all duration-700 origin-center"></div>
             </a>

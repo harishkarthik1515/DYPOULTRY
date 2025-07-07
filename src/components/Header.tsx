@@ -19,7 +19,7 @@ const Header: React.FC = () => {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-6">
-          {['Home', 'Our Story', 'Sustainability', 'Meet the Farm', 'Visit Us'].map((item) => (
+          {['Home', 'Our Values', 'Our Story', 'Sustainability', 'Meet the Farm', 'Visit Us'].map((item) => (
             <a
               key={item}
               href={`#${item.toLowerCase().replace(/\s+/g, '-')}`}
@@ -48,9 +48,9 @@ const Header: React.FC = () => {
 
       {/* Mobile Navigation */}
       {isMenuOpen && (
-        <div className="md:hidden bg-primary-100 border-t border-gray-100 shadow-sm">
+        <div className="md:hidden border-t border-gray-100 shadow-sm" style={{ backgroundColor: '#faf5e9' }}>
           <nav className="container mx-auto px-6 py-3 space-y-1">
-            {['Home', 'Our Story', 'Sustainability', 'Meet the Farm', 'Visit Us'].map((item) => (
+            {['Home', 'Our Values', 'Our Story', 'Sustainability', 'Meet the Farm', 'Visit Us'].map((item) => (
               <a
                 key={item}
                 href={`#${item.toLowerCase().replace(/\s+/g, '-')}`}

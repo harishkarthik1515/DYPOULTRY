@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
+import OurValues from './components/OurValues';
 import OurStory from './components/OurStory';
 import Sustainability from './components/Sustainability';
 import MeetTheFarm from './components/MeetTheFarm';
@@ -28,9 +29,10 @@ function App() {
   }, []);
 
   return (
-    <div className="min-h-screen font-sans text-gray-900 bg-primary-100">
+    <div className="min-h-screen font-sans text-gray-900" style={{ backgroundColor: '#faf5e9' }}>
       <Header />
       <Hero />
+      <OurValues />
       <OurStory />
       <Sustainability />
       <MeetTheFarm />
