@@ -235,22 +235,7 @@ const MeetTheFarm: React.FC = () => {
         </div>
 
         {/* Compact Call to Action */}
-        <div className={`text-center transition-all duration-700 delay-900 ${
-          sectionVisible ? 'opacity-100 transform-none' : 'opacity-0 translate-y-10'
-        }`}>
-          <div className="bg-gradient-to-r from-primary-600 to-primary-700 rounded-xl p-6 text-white shadow-xl max-w-2xl mx-auto">
-            <h3 className="text-xl font-serif font-bold mb-3">Experience Our Farm</h3>
-            <p className="text-primary-100 mb-4 text-sm">
-              Ready to see where your food comes from? Book a tour and witness our commitment to ethical farming.
-            </p>
-            <a
-              href="#visit-us"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-white text-primary-700 font-semibold rounded-full hover:bg-primary-50 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl text-sm"
-            >
-              <span>Schedule Your Visit</span>
-              <ChevronRight className="w-4 h-4" />
-            </a>
-          </div>
+        
         </div>
       </div>
     </section>
