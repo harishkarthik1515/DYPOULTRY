@@ -265,7 +265,7 @@ const Hero: React.FC = () => {
                 {[
                   { number: '100%', label: 'Cage-Free', color: 'from-primary-500 to-primary-600' },
                   { number: '24/7', label: 'Vet Care', color: 'from-primary-600 to-primary-700' },
-                  { number: '0', label: 'Hormones', color: 'from-primary-700 to-primary-800' }
+                  { number: '0%', label: 'Hormones', color: 'from-primary-700 to-primary-800' }
                 ].map((stat, index) => (
                   <div key={index} className="text-center group cursor-pointer">
                     <div className={`text-lg md:text-xl font-bold bg-gradient-to-r ${stat.color} bg-clip-text text-transparent mb-1 group-hover:scale-110 transition-transform duration-300`}>
