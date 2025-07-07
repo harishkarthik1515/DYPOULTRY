@@ -263,7 +263,6 @@ const Hero: React.FC = () => {
                 isVisible ? 'opacity-100 transform-none' : 'opacity-0 translate-y-10'
               }`}>
                 {[
-                  { number: '40+', label: 'Years Exp.', color: 'from-primary-400 to-primary-500' },
                   { number: '100%', label: 'Cage-Free', color: 'from-primary-500 to-primary-600' },
                   { number: '24/7', label: 'Vet Care', color: 'from-primary-600 to-primary-700' },
                   { number: '0', label: 'Hormones', color: 'from-primary-700 to-primary-800' }
