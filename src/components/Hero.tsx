@@ -344,7 +344,6 @@ const Hero: React.FC = () => {
               isVisible ? 'opacity-100 transform-none' : 'opacity-0 -translate-y-10'
             }`}
           >
-            Discover a <span className="text-green-300 font-semibold relative">
             Discover a <span className="text-primary-300 font-semibold relative">
               farm-to-table experience
               <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-primary-600 to-transparent animate-pulse"></span>
