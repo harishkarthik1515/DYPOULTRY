@@ -30,7 +30,7 @@ const MeetTheFarm: React.FC = () => {
     <section
       id="meet-the-farm"
       ref={sectionRef}
-      className="py-20 bg-white relative overflow-hidden"
+      className="py-20 bg-primary-100 relative overflow-hidden"
     >
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-10">

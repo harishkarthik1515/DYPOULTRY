@@ -25,7 +25,7 @@ const Testimonials: React.FC = () => {
       className="py-20 bg-primary-100 relative overflow-hidden"
     >
       {/* Decorative elements */}
-      <div className="absolute top-0 left-0 w-32 h-32 bg-white rounded-full opacity-50 -translate-x-1/2 -translate-y-1/2"></div>
+      <div className="absolute top-0 left-0 w-32 h-32 bg-primary-100 rounded-full opacity-50 -translate-x-1/2 -translate-y-1/2"></div>
       <div className="absolute top-1/4 right-0 w-64 h-64 bg-primary-200 rounded-full opacity-30 translate-x-1/3"></div>
       <div className="absolute bottom-0 left-1/4 w-48 h-48 bg-primary-200 rounded-full opacity-40 translate-y-1/3"></div>
 
@@ -72,7 +72,7 @@ const Testimonials: React.FC = () => {
                   </div>
                 </div>
                 
-                <div className="md:w-2/3 bg-white p-6 md:p-8 rounded-lg shadow-soft relative">
+                <div className="md:w-2/3 bg-primary-100 p-6 md:p-8 rounded-lg shadow-soft relative">
                   <div className="absolute top-4 left-4 opacity-10">
                     <Quote size={48} className="text-primary-700" />
                   </div>

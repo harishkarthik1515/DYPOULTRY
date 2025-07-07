@@ -9,7 +9,7 @@ const Header: React.FC = () => {
   };
 
   return (
-    <header className="bg-white/95 backdrop-blur-sm shadow-sm fixed top-0 left-0 w-full z-50">
+    <header className="bg-primary-100/95 backdrop-blur-sm shadow-sm fixed top-0 left-0 w-full z-50">
       <div className="container mx-auto px-6 h-16 flex items-center justify-between">
         {/* Logo */}
         <a  className="flex items-center space-x-3">
@@ -48,7 +48,7 @@ const Header: React.FC = () => {
 
       {/* Mobile Navigation */}
       {isMenuOpen && (
-        <div className="md:hidden bg-white border-t border-gray-100 shadow-sm">
+        <div className="md:hidden bg-primary-100 border-t border-gray-100 shadow-sm">
           <nav className="container mx-auto px-6 py-3 space-y-1">
             {['Home', 'Our Story', 'Sustainability', 'Meet the Farm', 'Visit Us'].map((item) => (
               <a

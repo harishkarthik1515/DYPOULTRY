@@ -68,13 +68,13 @@ const OurStory: React.FC = () => {
       ref={sectionRef}
       className="relative py-24 overflow-hidden"
       style={{
-        background: 'linear-gradient(135deg, #f8fafc 0%, #f1f5f9 50%, #e2e8f0 100%)'
+        background: '#faf5e9'
       }}
     >
       {/* Decorative Background Elements */}
       <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-green-500 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-amber-400 rounded-full blur-3xl"></div>
+        <div className="absolute top-20 left-10 w-72 h-72 bg-primary-500 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-primary-400 rounded-full blur-3xl"></div>
       </div>
 
       <div className="container mx-auto px-4 md:px-6 relative">
@@ -95,7 +95,7 @@ const OurStory: React.FC = () => {
               sectionVisible ? 'opacity-100 transform-none' : 'opacity-0 translate-y-10'
             }`}
             style={{
-              background: 'linear-gradient(135deg, #1f2937 0%, #374151 50%, #059669 100%)',
+              background: 'linear-gradient(135deg, #1f2937 0%, #374151 50%, #a67c52 100%)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
               backgroundClip: 'text',
@@ -121,7 +121,7 @@ const OurStory: React.FC = () => {
           }`}>
             <div className="relative group">
               <div className="absolute inset-0 bg-gradient-to-br from-primary-400 to-primary-600 rounded-2xl blur-xl opacity-25 group-hover:opacity-40 transition-opacity duration-500"></div>
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-white p-2">
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-primary-100 p-2">
                  <img 
       src="https://i.ibb.co/hFgHdvCS/Whats-App-Image-2025-04-03-at-5-47-19-PM.jpg" 
       alt="DY Poultry Farms landscape" 
@@ -131,7 +131,7 @@ const OurStory: React.FC = () => {
               </div>
               
               {/* Floating Stats */}
-              <div className="absolute -bottom-6 -right-6 bg-white rounded-2xl shadow-2xl p-6 border border-gray-100">
+              <div className="absolute -bottom-6 -right-6 bg-primary-100 rounded-2xl shadow-2xl p-6 border border-gray-100">
                 <div className="text-center">
                   <div className="text-3xl font-bold text-primary-600 mb-1">40+</div>
                   <div className="text-gray-600 text-sm font-medium">Years of Excellence</div>
