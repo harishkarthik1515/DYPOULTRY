@@ -146,58 +146,22 @@ const Hero: React.FC = () => {
             
             {/* Left Farm Visual Section - Clean GIF Only */}
             <div className="relative flex items-center justify-center order-2 lg:order-1">
-              <div className="relative w-full max-w-lg h-[400px] lg:h-[500px] flex items-end justify-center">
+              <div className="relative w-full max-w-lg h-[400px] lg:h-[500px] flex items-center justify-center">
                 
-                {/* Sand Ground Layer */}
-                <div className="absolute bottom-0 left-0 right-0 h-32 overflow-hidden rounded-b-3xl">
-                  {/* Real sand ground texture from uploaded image */}
-                  <img 
-                    src="/Ground010.png" 
-                    alt="Sand ground texture"
-                    className="w-full h-full object-cover"
-                    style={{
-                      filter: 'brightness(1.1) contrast(1.05) saturate(1.1)',
-                      transform: 'scaleX(1.2) scaleY(1.5)'
-                    }}
-                  />
-                  {/* Subtle overlay to blend with farm theme */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-amber-900/10 via-transparent to-transparent"></div>
-                </div>
-
-                {/* Main GIF - Positioned on Sand */}
-                <div className="relative w-full h-full flex items-end justify-center pb-8">
+                {/* Main GIF - Clean and Simple */}
+                <div className="relative w-full h-full flex items-center justify-center">
                   <img 
                     src="/1084554013-preview-unscreen.gif" 
                     alt="DY Poultry Farm - Happy Chickens Animation" 
-                    className="w-4/5 h-4/5 object-contain scale-pulse relative z-10"
+                    className="w-full h-full object-contain scale-pulse"
                     style={{ 
                       filter: 'brightness(1.1) contrast(1.1) drop-shadow(0 0 30px rgba(166, 124, 82, 0.2))',
-                      transform: 'translateY(10px)' // Slightly overlap with sand
                     }}
                   />
-                  
-                  {/* Chicken shadows on sand */}
-                  <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 w-32 h-8 bg-black/10 rounded-full blur-sm scale-pulse opacity-60"></div>
                 </div>
                 
-                {/* Enhanced Ambient Glow Effect */}
-                <div className="absolute inset-0 bg-gradient-radial from-primary-500/8 via-amber-200/5 to-transparent rounded-3xl scale-125"></div>
-                
-                {/* Floating dust particles for farm atmosphere */}
-                <div className="absolute inset-0 pointer-events-none">
-                  {[...Array(6)].map((_, i) => (
-                    <div
-                      key={i}
-                      className="absolute w-1 h-1 bg-amber-300/40 rounded-full floating-element"
-                      style={{
-                        left: `${20 + Math.random() * 60}%`,
-                        bottom: `${20 + Math.random() * 40}%`,
-                        animationDelay: `${i * 1.2}s`,
-                        animationDuration: `${6 + i * 0.5}s`,
-                      }}
-                    />
-                  ))}
-                </div>
+                {/* Subtle Ambient Glow Effect */}
+                <div className="absolute inset-0 bg-gradient-radial from-primary-500/5 via-transparent to-transparent rounded-full scale-150"></div>
               </div>
             </div>
 
