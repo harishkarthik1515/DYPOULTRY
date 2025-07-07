@@ -135,7 +135,7 @@ const Hero: React.FC = () => {
             <div className="relative flex items-center justify-center order-2 lg:order-1">
               <div className="relative w-full max-w-lg h-[400px] lg:h-[500px] flex items-center justify-center">
                 <img 
-                  src="/1084554013-preview-unscreen.gif" 
+                  src="1084554013-preview-unscreen.gif" 
                   alt="DY Poultry Farm - Happy Chickens Animation" 
                   className="w-full h-full object-contain rounded-2xl shadow-2xl filter brightness-110 contrast-110"
                   style={{ 
