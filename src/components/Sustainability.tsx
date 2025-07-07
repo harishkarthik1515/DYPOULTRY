@@ -1,7 +1,7 @@
 import React from 'react';
 import { useInView } from '../utils/scrollAnimation';
 import { ethicalPractices } from '../data/farmData';
-import { Bird, Wheat, Home, Leaf } from 'lucide-react';
+import { Bird, Wheat, Home, Leaf, ArrowRight } from 'lucide-react';
 
 const Sustainability: React.FC = () => {
   const { ref: sectionRef, isInView: sectionVisible } = useInView();
@@ -77,7 +77,6 @@ const Sustainability: React.FC = () => {
           ))}
         </div>
 
-        {/* Call to Action Section */}
         <div 
           className={`bg-gradient-to-r from-primary-50 to-primary-100 rounded-xl p-4 md:p-6 border border-primary-200 text-center transition-all duration-700 delay-600 ${
             sectionVisible ? 'opacity-100 transform-none' : 'opacity-0 translate-y-10'
@@ -103,22 +102,6 @@ const Sustainability: React.FC = () => {
             >
               <span>Visit Our Farm</span>
               <ArrowRight className="w-4 h-4" />
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-};
-
-export default Sustainability;
-              </p>
-            </div>
-            <a
-              href="#visit-us"
-              className="inline-block px-4 lg:px-6 py-2 lg:py-3 bg-white text-primary-700 font-medium rounded-full transition-all duration-300 hover:bg-primary-50 transform hover:scale-105 text-sm lg:text-base"
-            >
-              Learn More
             </a>
           </div>
         </div>
