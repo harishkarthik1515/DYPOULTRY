@@ -202,49 +202,9 @@ const Hero: React.FC = () => {
             </div>
           </div>
 
-          {/* Ethics Section */}
-          <div className="mb-16">
-            <div
-              className={`text-center mb-12 transition-all duration-1000 delay-800 ${
-                isVisible ? 'opacity-100 transform-none' : 'opacity-0 -translate-y-10'
-              }`}
-            >
-              <h2 className="font-serif text-3xl md:text-4xl font-bold text-primary-700 mb-6">
-                Our Ethical Standards
-              </h2>
-            </div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {ethicalPractices.map((practice, index) => (
-                <div
-                  key={index}
-                  className={`bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-primary-200 transition-all duration-700 hover:shadow-xl hover:scale-105 gentle-float ${
-                    isVisible ? 'opacity-100 transform-none' : 'opacity-0 translate-y-10'
-                  }`}
-                  style={{ 
-                    transitionDelay: `${900 + index * 100}ms`,
-                    animationDelay: `${index * 0.5}s`
-                  }}
-                >
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-12 h-12 bg-primary-600 text-white rounded-full flex items-center justify-center">
-                      {practice.icon}
-                    </div>
-                    <h3 className="font-bold text-lg text-primary-700">{practice.title}</h3>
-                  </div>
-                  <p className="text-gray-700 leading-relaxed">{practice.description}</p>
-                  <div className="mt-4 flex items-center text-primary-600">
-                    <CheckCircle className="w-5 h-5 mr-2" />
-                    <span className="text-sm font-medium">Certified & Verified</span>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
           {/* Call to Action Buttons */}
           <div
-            className={`flex flex-col sm:flex-row gap-6 justify-center transition-all duration-1000 delay-1200 ${
+            className={`flex flex-col sm:flex-row gap-6 justify-center transition-all duration-1000 delay-800 ${
               isVisible ? 'opacity-100 transform-none' : 'opacity-0 -translate-y-10'
             }`}
           >
@@ -267,7 +227,7 @@ const Hero: React.FC = () => {
 
           {/* Bottom Stats */}
           <div
-            className={`mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 transition-all duration-1000 delay-1400 ${
+            className={`mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 transition-all duration-1000 delay-900 ${
               isVisible ? 'opacity-100 transform-none' : 'opacity-0 -translate-y-10'
             }`}
           >
