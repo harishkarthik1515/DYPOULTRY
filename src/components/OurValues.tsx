@@ -45,7 +45,7 @@ const OurValues: React.FC = () => {
       icon: <Shield className="w-6 h-6" />,
       title: "Raised Cage-free",
       description: "Spacious, well-ventilated, climate-controlled barns with freedom to move and interact naturally",
-      image: "https://i.ibb.co/RTqnq4Pt/Group-387.png"
+      image: "https://i.ibb.co/b5h50WL1/Group-390.png"
     },
     {
       icon: <Heart className="w-6 h-6" />,
