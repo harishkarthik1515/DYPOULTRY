@@ -4,22 +4,22 @@ export default {
   theme: {
     extend: {
       colors: {
-        'forest': {
-          50: '#f0f5f0',
-          100: '#dce8dc',
-          200: '#bfd4bf',
-          300: '#9ab99a',
-          400: '#759975',
-          500: '#567b56',
-          600: '#3c613c', // primary forest green
-          700: '#2e4c2e',
-          800: '#243c24',
-          900: '#1e321e',
+        'primary': {
+          50: '#fdf8f3',
+          100: '#faf5e9', // main background
+          200: '#f5e6d3',
+          300: '#edd1b3',
+          400: '#e3b892',
+          500: '#d49e70',
+          600: '#a67c52', // main accent
+          700: '#8b6644',
+          800: '#72533a',
+          900: '#5e4530',
         },
         'cream': {
           50: '#fefdf9',
           100: '#fcf9f0',
-          200: '#f7f0dd', // primary cream
+          200: '#f7f0dd',
           300: '#f0e3c0',
           400: '#e9d59f',
           500: '#e0c276',
@@ -35,7 +35,7 @@ export default {
           300: '#d8bc9f',
           400: '#c69e76',
           500: '#b68455',
-          600: '#a67244', // primary soft brown
+          600: '#a67244',
           700: '#895a36',
           800: '#704a30',
           900: '#5c3e2a',
@@ -46,7 +46,7 @@ export default {
           200: '#fee987',
           300: '#fdd547',
           400: '#fcc018',
-          500: '#f3a009', // primary golden yellow
+          500: '#f3a009',
           600: '#db7706',
           700: '#b65109',
           800: '#93400f',

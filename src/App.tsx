@@ -28,7 +28,7 @@ function App() {
   }, []);
 
   return (
-    <div className="min-h-screen font-sans text-gray-900">
+    <div className="min-h-screen font-sans text-gray-900 bg-primary-100">
       <Header />
       <Hero />
       <OurStory />

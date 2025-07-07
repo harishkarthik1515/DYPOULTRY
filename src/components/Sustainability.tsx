@@ -9,15 +9,15 @@ const Sustainability: React.FC = () => {
   const getIcon = (iconName: string) => {
     switch (iconName) {
       case 'bird':
-        return <Bird size={32} className="text-forest-600" />;
+        return <Bird size={32} className="text-primary-600" />;
       case 'wheat':
-        return <Wheat size={32} className="text-gold-500" />;
+        return <Wheat size={32} className="text-primary-500" />;
       case 'home':
-        return <Home size={32} className="text-earth-600" />;
+        return <Home size={32} className="text-primary-600" />;
       case 'leaf':
-        return <Leaf size={32} className="text-forest-500" />;
+        return <Leaf size={32} className="text-primary-500" />;
       default:
-        return <Leaf size={32} className="text-forest-500" />;
+        return <Leaf size={32} className="text-primary-500" />;
     }
   };
 
@@ -25,20 +25,20 @@ const Sustainability: React.FC = () => {
     <section
       id="sustainability"
       ref={sectionRef}
-      className="py-20 relative bg-white"
+      className="py-20 relative bg-primary-100"
     >
       {/* Decorative elements */}
-      <div className="absolute top-0 left-0 w-full h-32 bg-cream-200 clip-diagonal"></div>
-      <div className="absolute bottom-0 right-0 w-full h-32 bg-cream-200 clip-diagonal-reverse"></div>
+      <div className="absolute top-0 left-0 w-full h-32 bg-white clip-diagonal"></div>
+      <div className="absolute bottom-0 right-0 w-full h-32 bg-white clip-diagonal-reverse"></div>
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="max-w-4xl mx-auto text-center mb-16">
-          <h2 className={`font-serif text-3xl md:text-4xl font-bold text-forest-700 mb-4 transition-all duration-700 ${
+          <h2 className={`font-serif text-3xl md:text-4xl font-bold text-primary-700 mb-4 transition-all duration-700 ${
             sectionVisible ? 'opacity-100 transform-none' : 'opacity-0 translate-y-10'
           }`}>
             Sustainability & Ethics
           </h2>
-          <p className={`text-lg text-earth-700 transition-all duration-700 delay-100 ${
+          <p className={`text-lg text-primary-700 transition-all duration-700 delay-100 ${
             sectionVisible ? 'opacity-100 transform-none' : 'opacity-0 translate-y-10'
           }`}>
             Our commitment to sustainable and ethical practices is at the heart of everything we do.
@@ -55,31 +55,31 @@ const Sustainability: React.FC = () => {
               }`}
               style={{ transitionDelay: `${300 + index * 100}ms` }}
             >
-              <div className="mb-4 w-16 h-16 rounded-full bg-cream-200 flex items-center justify-center">
+              <div className="mb-4 w-16 h-16 rounded-full bg-primary-200 flex items-center justify-center">
                 {getIcon(practice.icon)}
               </div>
-              <h3 className="text-xl font-bold text-forest-700 mb-2">{practice.title}</h3>
-              <p className="text-earth-700">{practice.description}</p>
+              <h3 className="text-xl font-bold text-primary-700 mb-2">{practice.title}</h3>
+              <p className="text-primary-700">{practice.description}</p>
             </div>
           ))}
         </div>
 
         <div 
-          className={`mt-16 bg-forest-600 rounded-lg p-8 shadow-lg text-white transition-all duration-700 delay-600 ${
+          className={`mt-16 bg-primary-600 rounded-lg p-8 shadow-lg text-white transition-all duration-700 delay-600 ${
             sectionVisible ? 'opacity-100 transform-none' : 'opacity-0 translate-y-10'
           }`}
         >
           <div className="md:flex items-center justify-between">
             <div className="md:w-2/3 mb-6 md:mb-0">
               <h3 className="font-serif text-2xl font-bold mb-2">Our Sustainability Pledge</h3>
-              <p className="text-cream-100">
+              <p className="text-white/90">
                 We're committed to carbon-neutral farming by 2030, with ongoing initiatives in 
                 renewable energy, water conservation, and regenerative agriculture.
               </p>
             </div>
             <a
               href="#visit-us"
-              className="inline-block px-6 py-3 bg-cream-200 text-forest-700 font-medium rounded-full transition-all duration-300 hover:bg-cream-300 transform hover:scale-105"
+              className="inline-block px-6 py-3 bg-white text-primary-700 font-medium rounded-full transition-all duration-300 hover:bg-primary-50 transform hover:scale-105"
             >
               Learn More
             </a>

@@ -218,9 +218,9 @@ const Hero: React.FC = () => {
                 rgba(15, 23, 42, 0.85) 100%
               ),
               linear-gradient(135deg, 
-                rgba(34, 197, 94, 0.15) 0%, 
-                rgba(21, 128, 61, 0.25) 30%, 
-                rgba(59, 130, 246, 0.1) 70%,
+                rgba(166, 124, 82, 0.15) 0%, 
+                rgba(166, 124, 82, 0.25) 30%, 
+                rgba(166, 124, 82, 0.1) 70%,
                 rgba(15, 23, 42, 0.8) 100%
               )
             `
@@ -237,7 +237,7 @@ const Hero: React.FC = () => {
                 left: `${Math.random() * 100}%`,
                 width: `${Math.random() * 60 + 20}px`,
                 height: `${Math.random() * 60 + 20}px`,
-                background: `radial-gradient(circle, rgba(34, 197, 94, 0.4) 0%, rgba(59, 130, 246, 0.2) 50%, transparent 70%)`,
+                background: `radial-gradient(circle, rgba(166, 124, 82, 0.4) 0%, rgba(166, 124, 82, 0.2) 50%, transparent 70%)`,
                 borderRadius: '50%',
                 filter: 'blur(10px)',
                 animationDelay: `${i * 2}s`,
@@ -296,22 +296,22 @@ const Hero: React.FC = () => {
             }`}
           >
             <div className="relative">
-              <div className="w-24 h-0.5 bg-gradient-to-r from-green-400/80 via-green-400 to-transparent mb-4">
-                <div className="absolute inset-0 bg-gradient-to-r from-green-400 via-green-400 to-transparent animate-pulse"></div>
+              <div className="w-24 h-0.5 bg-gradient-to-r from-primary-600/80 via-primary-600 to-transparent mb-4">
+                <div className="absolute inset-0 bg-gradient-to-r from-primary-600 via-primary-600 to-transparent animate-pulse"></div>
               </div>
-              <div className="absolute -top-1 left-0 w-3 h-3 bg-green-400 rounded-full">
-                <div className="absolute inset-0 bg-green-400 rounded-full animate-ping"></div>
+              <div className="absolute -top-1 left-0 w-3 h-3 bg-primary-600 rounded-full">
+                <div className="absolute inset-0 bg-primary-600 rounded-full animate-ping"></div>
               </div>
             </div>
-            <div className="text-green-300 text-sm font-medium tracking-widest uppercase mx-4">
+            <div className="text-primary-300 text-sm font-medium tracking-widest uppercase mx-4">
               <span className="inline-block animate-pulse">Premium Farm Experience</span>
             </div>
             <div className="relative">
-              <div className="w-24 h-0.5 bg-gradient-to-l from-green-400/80 via-green-400 to-transparent mb-4">
-                <div className="absolute inset-0 bg-gradient-to-l from-green-400 via-green-400 to-transparent animate-pulse"></div>
+              <div className="w-24 h-0.5 bg-gradient-to-l from-primary-600/80 via-primary-600 to-transparent mb-4">
+                <div className="absolute inset-0 bg-gradient-to-l from-primary-600 via-primary-600 to-transparent animate-pulse"></div>
               </div>
-              <div className="absolute -bottom-1 right-0 w-3 h-3 bg-green-400 rounded-full">
-                <div className="absolute inset-0 bg-green-400 rounded-full animate-ping"></div>
+              <div className="absolute -bottom-1 right-0 w-3 h-3 bg-primary-600 rounded-full">
+                <div className="absolute inset-0 bg-primary-600 rounded-full animate-ping"></div>
               </div>
             </div>
           </div>
@@ -332,10 +332,10 @@ const Hero: React.FC = () => {
           >
             <span className="inline-block">
               {dynamicWords[currentWordIndex].substring(0, currentCharIndex)}
-              <span className="animate-pulse text-green-400">|</span>
+              <span className="animate-pulse text-primary-600">|</span>
             </span>
             <br />
-            <span className="text-green-300">Honestly Farmed.</span>
+            <span className="text-primary-300">Honestly Farmed.</span>
           </h1>
 
           {/* Enhanced Description */}
@@ -345,8 +345,9 @@ const Hero: React.FC = () => {
             }`}
           >
             Discover a <span className="text-green-300 font-semibold relative">
+            Discover a <span className="text-primary-300 font-semibold relative">
               farm-to-table experience
-              <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-green-400 to-transparent animate-pulse"></span>
+              <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-primary-600 to-transparent animate-pulse"></span>
             </span> built on care, ethics, and uncompromising quality.
           </p>
 
@@ -358,18 +359,18 @@ const Hero: React.FC = () => {
           >
             <a
               href="#our-story"
-              className="group relative px-12 py-5 rounded-full bg-gradient-to-r from-green-600 to-green-700 text-white font-semibold text-lg transition-all duration-500 hover:from-green-700 hover:to-green-800 hover:shadow-2xl hover:shadow-green-500/30 transform hover:scale-110 hover:-translate-y-2 overflow-hidden"
+              className="group relative px-12 py-5 rounded-full bg-gradient-to-r from-primary-600 to-primary-700 text-white font-semibold text-lg transition-all duration-500 hover:from-primary-700 hover:to-primary-800 hover:shadow-2xl hover:shadow-primary-500/30 transform hover:scale-110 hover:-translate-y-2 overflow-hidden"
             >
-              <span className="relative z-10 transition-all duration-300 group-hover:text-green-100">Our Story</span>
-              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-green-400 to-green-500 opacity-0 group-hover:opacity-100 transition-all duration-500 blur-xl scale-150"></div>
+              <span className="relative z-10 transition-all duration-300 group-hover:text-primary-100">Our Story</span>
+              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary-400 to-primary-500 opacity-0 group-hover:opacity-100 transition-all duration-500 blur-xl scale-150"></div>
               <div className="absolute inset-0 rounded-full bg-white/30 scale-0 group-hover:scale-100 transition-all duration-700 origin-center"></div>
-              <div className="absolute inset-0 rounded-full border-2 border-green-300/50 scale-75 opacity-0 group-hover:scale-110 group-hover:opacity-100 transition-all duration-500"></div>
+              <div className="absolute inset-0 rounded-full border-2 border-primary-300/50 scale-75 opacity-0 group-hover:scale-110 group-hover:opacity-100 transition-all duration-500"></div>
             </a>
             <a
               href="#visit-us"
               className="group relative px-12 py-5 rounded-full bg-white/10 backdrop-blur-sm border border-white/30 text-white font-semibold text-lg transition-all duration-500 hover:bg-white/20 hover:border-white/50 hover:shadow-2xl hover:shadow-white/20 transform hover:scale-110 hover:-translate-y-2 overflow-hidden"
             >
-              <span className="relative z-10 transition-all duration-300 group-hover:text-blue-100">Visit the Farm</span>
+              <span className="relative z-10 transition-all duration-300 group-hover:text-primary-100">Visit the Farm</span>
               <div className="absolute inset-0 rounded-full bg-white/20 scale-0 group-hover:scale-100 transition-all duration-700 origin-center"></div>
               <div className="absolute inset-0 rounded-full border-2 border-white/40 scale-75 opacity-0 group-hover:scale-110 group-hover:opacity-100 transition-all duration-500"></div>
             </a>
