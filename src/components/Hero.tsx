@@ -208,3 +208,8 @@ const Hero: React.FC = () => {
           </div>
         </div>
       </section>
+    </>
+  );
+};
+
+export default Hero;
