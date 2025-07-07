@@ -151,7 +151,7 @@ const Hero: React.FC = () => {
                 {/* Sand Ground Layer */}
                 <div className="absolute bottom-0 left-0 right-0 h-32 overflow-hidden rounded-b-3xl">
                   <img 
-                    src="/Ground010.png" 
+                    src="/sand-ground.png" 
                     alt="Sand Ground" 
                     className="w-full h-full object-cover object-top"
                     style={{ 
