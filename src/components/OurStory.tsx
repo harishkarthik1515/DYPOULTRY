@@ -75,13 +75,13 @@ const OurStory: React.FC = () => {
         <div className="absolute bottom-10 right-5 w-64 h-64 bg-primary-400 rounded-full blur-3xl"></div>
       </div>
 
-      <div className="container mx-auto px-4 md:px-6 relative max-h-full overflow-y-auto">
+      <div className="container mx-auto px-4 md:px-6 relative">
         {/* Header Section */}
-        <div className="max-w-4xl mx-auto text-center mb-6 md:mb-8">
+        <div className="max-w-4xl mx-auto text-center mb-4 md:mb-6">
           <div className={`mb-4 transition-all duration-700 ${
             sectionVisible ? 'opacity-100 transform-none' : 'opacity-0 -translate-y-10'
           }`}>
-            <div className="inline-flex items-center gap-3 mb-2">
+            <div className="inline-flex items-center gap-3 mb-1">
               <div className="w-8 h-0.5 bg-gradient-to-r from-transparent via-primary-600 to-transparent"></div>
               <span className="text-primary-600 font-semibold tracking-widest uppercase text-xs">Our Journey</span>
               <div className="w-8 h-0.5 bg-gradient-to-r from-transparent via-primary-600 to-transparent"></div>
@@ -89,7 +89,7 @@ const OurStory: React.FC = () => {
           </div>
 
           <h2 
-            className={`font-serif text-2xl md:text-3xl lg:text-4xl font-bold mb-3 md:mb-4 transition-all duration-700 delay-100 ${
+            className={`font-serif text-xl md:text-2xl lg:text-3xl font-bold mb-2 md:mb-3 transition-all duration-700 delay-100 ${
               sectionVisible ? 'opacity-100 transform-none' : 'opacity-0 translate-y-10'
             }`}
             style={{
@@ -102,37 +102,34 @@ const OurStory: React.FC = () => {
             Our Story
           </h2>
           
-          <p className={`text-sm md:text-base lg:text-lg text-gray-700 leading-relaxed transition-all duration-700 delay-200 ${
+          <p className={`text-sm md:text-base text-gray-700 leading-relaxed transition-all duration-700 delay-200 ${
             sectionVisible ? 'opacity-100 transform-none' : 'opacity-0 translate-y-10'
           }`}>
             For over <span className="font-bold text-primary-600">40 years</span>, DY Poultry Farms has been committed to raising poultry with respect for 
-            nature, animals, and our community. What started as a small family operation has grown into 
-            a <span className="font-bold text-primary-600">model of sustainable farming</span> while maintaining our core values.
+            nature, animals, and our community.
           </p>
         </div>
 
         {/* Main Content Grid */}
-        <div className="grid lg:grid-cols-2 gap-6 md:gap-8 items-center mb-6 md:mb-8">
+        <div className="grid lg:grid-cols-2 gap-4 md:gap-6 items-center">
           {/* Image Section */}
           <div className={`transition-all duration-1000 delay-300 ${
             sectionVisible ? 'opacity-100 transform-none' : 'opacity-0 -translate-x-10'
           }`}>
             <div className="relative group">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary-400 to-primary-600 rounded-2xl blur-xl opacity-25 group-hover:opacity-40 transition-opacity duration-500"></div>
-              <div className="relative rounded-xl overflow-hidden shadow-xl bg-primary-100 p-2">
+              <div className="relative rounded-lg overflow-hidden shadow-lg bg-primary-100 p-1">
                 <img 
                   src="https://i.ibb.co/hFgHdvCS/Whats-App-Image-2025-04-03-at-5-47-19-PM.jpg" 
                   alt="DY Poultry Farms landscape" 
-                  className="w-full h-[200px] md:h-[250px] lg:h-[300px] object-cover rounded-lg transition-transform duration-700 group-hover:scale-105"
+                  className="w-full h-[150px] md:h-[200px] object-cover rounded-lg"
                 />
-                <div className="absolute inset-2 rounded-xl bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </div>
               
               {/* Floating Stats */}
-              <div className="absolute -bottom-2 -right-2 md:-bottom-4 md:-right-4 bg-primary-100 rounded-xl shadow-xl p-2 md:p-3 border border-gray-100">
+              <div className="absolute -bottom-2 -right-2 bg-primary-100 rounded-lg shadow-lg p-2 border border-gray-100">
                 <div className="text-center">
-                  <div className="text-lg md:text-xl font-bold text-primary-600 mb-1">40+</div>
-                  <div className="text-gray-600 text-xs md:text-sm font-medium">Years</div>
+                  <div className="text-base md:text-lg font-bold text-primary-600">40+</div>
+                  <div className="text-gray-600 text-xs font-medium">Years</div>
                 </div>
               </div>
             </div>
@@ -142,12 +139,12 @@ const OurStory: React.FC = () => {
           <div className={`transition-all duration-1000 delay-500 ${
             sectionVisible ? 'opacity-100 transform-none' : 'opacity-0 translate-x-10'
           }`}>
-            <div className="relative max-h-[300px] md:max-h-[350px] overflow-y-auto">
+            <div className="relative">
               {/* Timeline Line */}
-              <div className="absolute left-4 md:left-5 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary-400 via-primary-500 to-primary-600"></div>
+              <div className="absolute left-3 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary-400 via-primary-500 to-primary-600"></div>
               
-              <div className="space-y-4 md:space-y-5">
-                {timelineEvents.slice(0, 4).map((event, index) => (
+              <div className="space-y-3">
+                {timelineEvents.slice(0, 3).map((event, index) => (
                   <div 
                     key={event.id}
                     className={`relative transition-all duration-700 ${
@@ -158,32 +155,30 @@ const OurStory: React.FC = () => {
                     onMouseLeave={() => setHoveredEvent(null)}
                   >
                     {/* Timeline Dot */}
-                    <div className={`absolute left-2 md:left-3 w-4 h-4 md:w-5 md:h-5 rounded-full border-2 md:border-3 border-white shadow-lg transition-all duration-300 ${
+                    <div className={`absolute left-2 w-4 h-4 rounded-full border-2 border-white shadow-lg transition-all duration-300 ${
                       hoveredEvent === event.id 
                         ? 'bg-primary-400 scale-125 shadow-primary-400/50' 
                         : 'bg-primary-500'
                     }`}></div>
                     
                     {/* Content Card */}
-                    <div className={`ml-8 md:ml-10 group cursor-pointer transition-all duration-300 ${
-                      hoveredEvent === event.id ? 'transform scale-105' : ''
-                    }`}>
-                      <div className={`bg-white rounded-lg p-3 md:p-4 shadow-lg border border-gray-100 transition-all duration-300 ${
+                    <div className="ml-7 group cursor-pointer">
+                      <div className={`bg-white rounded-lg p-2 md:p-3 shadow-lg border border-gray-100 transition-all duration-300 ${
                         hoveredEvent === event.id 
                           ? 'shadow-2xl shadow-primary-500/10 border-primary-200' 
                           : 'hover:shadow-xl'
                       }`}>
-                        <div className={`inline-block px-2 py-1 rounded-full text-xs font-bold mb-1 md:mb-2 transition-all duration-300 ${
+                        <div className={`inline-block px-2 py-1 rounded-full text-xs font-bold mb-1 transition-all duration-300 ${
                           hoveredEvent === event.id
                             ? 'bg-gradient-to-r from-primary-500 to-primary-400 text-white'
                             : 'bg-gradient-to-r from-primary-100 to-primary-100 text-primary-700'
                         }`}>
                           {event.year}
                         </div>
-                        <h3 className="font-bold text-gray-800 text-sm md:text-base mb-1 md:mb-2 group-hover:text-primary-600 transition-colors duration-300">
+                        <h3 className="font-bold text-gray-800 text-sm mb-1 group-hover:text-primary-600 transition-colors duration-300">
                           {event.title}
                         </h3>
-                        <p className="text-gray-600 leading-relaxed text-xs md:text-sm">
+                        <p className="text-gray-600 leading-relaxed text-xs">
                           {event.description}
                         </p>
                       </div>

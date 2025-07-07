@@ -18,7 +18,7 @@ const Header: React.FC = () => {
         </a>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-4 lg:space-x-6">
+        <nav className="hidden lg:flex items-center space-x-4">
           {['Home', 'Values', 'Story', 'Sustainability', 'Farm', 'Visit'].map((item, index) => {
             const fullNames = ['Home', 'Our Values', 'Our Story', 'Sustainability', 'Meet the Farm', 'Visit Us'];
             const href = fullNames[index].toLowerCase().replace(/\s+/g, '-');
@@ -26,14 +26,14 @@ const Header: React.FC = () => {
             <a
               key={item}
               href={`#${href}`}
-              className="text-xs lg:text-sm font-medium text-primary-700 hover:text-primary-600 transition-colors duration-200"
+              className="text-xs font-medium text-primary-700 hover:text-primary-600 transition-colors duration-200"
             >
               {item}
             </a>
           )})}
           <a
             href="#contact"
-            className="ml-2 px-3 py-1.5 lg:px-4 lg:py-2 rounded-full text-xs lg:text-sm font-medium bg-primary-600 text-white hover:bg-primary-700 transition-all duration-200"
+            className="ml-2 px-3 py-1.5 rounded-full text-xs font-medium bg-primary-600 text-white hover:bg-primary-700 transition-all duration-200"
           >
             Contact
           </a>
@@ -42,7 +42,7 @@ const Header: React.FC = () => {
         {/* Mobile Menu Button */}
         <button
           onClick={toggleMenu}
-          className="md:hidden text-primary-600 hover:text-primary-700 focus:outline-none"
+          className="lg:hidden text-primary-600 hover:text-primary-700 focus:outline-none"
           aria-label="Toggle menu"
         >
           {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -51,7 +51,7 @@ const Header: React.FC = () => {
 
       {/* Mobile Navigation */}
       {isMenuOpen && (
-        <div className="md:hidden border-t border-gray-100 shadow-sm" style={{ backgroundColor: '#faf5e9' }}>
+        <div className="lg:hidden border-t border-gray-100 shadow-sm" style={{ backgroundColor: '#faf5e9' }}>
           <nav className="container mx-auto px-4 py-2 space-y-1">
             {['Home', 'Our Values', 'Our Story', 'Sustainability', 'Meet the Farm', 'Visit Us'].map((item) => (
               <a
