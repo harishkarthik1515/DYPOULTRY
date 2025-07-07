@@ -150,46 +150,18 @@ const Hero: React.FC = () => {
                 
                 {/* Sand Ground Layer */}
                 <div className="absolute bottom-0 left-0 right-0 h-32 overflow-hidden rounded-b-3xl">
-                  {/* CSS-based sand ground texture */}
-                  <div 
-                    className="w-full h-full"
+                  {/* Real sand ground texture from uploaded image */}
+                  <img 
+                    src="/Ground010.png" 
+                    alt="Sand ground texture"
+                    className="w-full h-full object-cover"
                     style={{
-                      background: `
-                        radial-gradient(circle at 20% 80%, rgba(194, 154, 108, 0.8) 0%, transparent 50%),
-                        radial-gradient(circle at 80% 20%, rgba(160, 130, 98, 0.6) 0%, transparent 50%),
-                        radial-gradient(circle at 40% 40%, rgba(218, 165, 32, 0.4) 0%, transparent 50%),
-                        linear-gradient(135deg, #c2956c 0%, #a0826e 25%, #8b7355 50%, #d4a574 75%, #c2956c 100%)
-                      `,
-                      backgroundSize: '60px 60px, 80px 80px, 40px 40px, 100% 100%',
-                      filter: 'brightness(1.1) contrast(1.05)',
-                      transform: 'scaleX(1.2)'
+                      filter: 'brightness(1.1) contrast(1.05) saturate(1.1)',
+                      transform: 'scaleX(1.2) scaleY(1.5)'
                     }}
                   />
-                  {/* Sand texture overlay with noise pattern */}
-                  <div 
-                    className="absolute inset-0"
-                    style={{
-                      background: `
-                        repeating-linear-gradient(
-                          45deg,
-                          transparent,
-                          transparent 1px,
-                          rgba(139, 115, 85, 0.1) 1px,
-                          rgba(139, 115, 85, 0.1) 2px
-                        ),
-                        repeating-linear-gradient(
-                          -45deg,
-                          transparent,
-                          transparent 1px,
-                          rgba(194, 149, 108, 0.1) 1px,
-                          rgba(194, 149, 108, 0.1) 2px
-                        )
-                      `,
-                      backgroundSize: '8px 8px, 12px 12px'
-                    }}
-                  />
-                  {/* Additional sand grain effect */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-amber-100/20 via-transparent to-transparent"></div>
+                  {/* Subtle overlay to blend with farm theme */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-amber-900/10 via-transparent to-transparent"></div>
                 </div>
 
                 {/* Main GIF - Positioned on Sand */}
