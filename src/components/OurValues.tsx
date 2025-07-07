@@ -57,7 +57,7 @@ const OurValues: React.FC = () => {
       icon: <Award className="w-6 h-6" />,
       title: "Licensed Veterinarian Monitored",
       description: "Every flock cared for by licensed veterinarians with structured healthcare programs",
-      image: "https://i.ibb.co/Qv44dNyz/Group-391.png"
+      image: "https://i.ibb.co/RTqnq4Pt/Group-387.png"
     },
     {
       icon: <Users className="w-6 h-6" />,
