@@ -150,16 +150,7 @@ const MeetTheFarm: React.FC = () => {
           ))}
         </div>
         
-        <div className={`text-center transition-all duration-700 delay-900 ${
-          sectionVisible ? 'opacity-100 transform-none' : 'opacity-0 translate-y-10'
-        }`}>
-          <a
-            href="#visit-us"
-            className="inline-block px-8 py-4 bg-primary-600 text-white font-medium rounded-full transition-all duration-300 hover:bg-primary-700 transform hover:scale-105 shadow-md hover:shadow-lg"
-          >
-            Visit Our Farm
-          </a>
-        </div>
+        
       </div>
     </section>
   );
