@@ -215,32 +215,7 @@ const OurValues: React.FC = () => {
         </div>
 
         {/* Call to Action Section */}
-        <div className="text-center">
-          <div className="bg-gradient-to-r from-primary-50 to-primary-100 rounded-3xl p-12 border border-primary-200">
-            <h3 className="text-2xl md:text-3xl font-serif font-bold text-gray-800 mb-4">
-              Experience the Difference
-            </h3>
-            <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-              Taste the quality that comes from chickens raised with love, care, and the highest ethical standards.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="#our-story"
-                className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-primary-600 to-primary-700 text-white font-semibold rounded-full hover:from-primary-700 hover:to-primary-800 transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-primary-500/25"
-              >
-                <span>Learn Our Story</span>
-                <ArrowRight className="w-4 h-4" />
-              </a>
-              <a
-                href="#visit-us"
-                className="inline-flex items-center gap-3 px-8 py-4 bg-white border-2 border-primary-600 text-primary-700 font-semibold rounded-full hover:bg-primary-600 hover:text-white transition-all duration-300 transform hover:scale-105"
-              >
-                <span>Visit Our Farm</span>
-                <ArrowRight className="w-4 h-4" />
-              </a>
-            </div>
-          </div>
-        </div>
+        
       </div>
     </section>
   );
