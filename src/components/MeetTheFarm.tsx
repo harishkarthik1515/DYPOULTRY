@@ -156,7 +156,7 @@ const MeetTheFarm: React.FC = () => {
             href="#visit-us"
             className="inline-block px-6 lg:px-8 py-2 lg:py-3 bg-primary-600 text-white font-medium rounded-full transition-all duration-300 hover:bg-primary-700 transform hover:scale-105 shadow-md hover:shadow-lg text-sm lg:text-base"
           >
-            <div className="relative aspect-video max-h-[300px] lg:max-h-[400px]">
+            Visit Our Farm
           </a>
         </div>
       </div>
