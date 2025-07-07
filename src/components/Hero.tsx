@@ -148,11 +148,11 @@ const Hero: React.FC = () => {
             <div className="relative flex items-center justify-center order-2 lg:order-1">
               <div className="relative w-full max-w-lg h-[400px] lg:h-[500px] flex items-center justify-center">
                 
-                {/* Main GIF - Clean and Simple */}
+                {/* Farm Logo/Branding - Clean and Simple */}
                 <div className="relative w-full h-full flex items-center justify-center">
                   <img 
-                    src="/1084554013-preview-unscreen.gif" 
-                    alt="DY Poultry Farm - Happy Chickens Animation" 
+                    src="https://i.ibb.co/RTqnq4Pt/Group-387.png" 
+                    alt="DY Poultry Farm - Premium Quality Logo" 
                     className="w-full h-full object-contain scale-pulse"
                     style={{ 
                       filter: 'brightness(1.1) contrast(1.1) drop-shadow(0 0 30px rgba(166, 124, 82, 0.2))',

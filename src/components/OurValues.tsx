@@ -123,6 +123,25 @@ const OurValues: React.FC = () => {
               <div className={`relative bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-primary-200 transition-all duration-500 ${
                 hoveredCard === value.id ? 'shadow-2xl shadow-primary-500/10 scale-105 border-primary-300' : 'hover:shadow-xl'
               }`}>
+                {/* Add farm imagery for visual appeal */}
+                {value.id === 1 && (
+                  <div className="absolute top-4 right-4 opacity-10 group-hover:opacity-20 transition-opacity duration-300">
+                    <img 
+                      src="https://i.ibb.co/VpSMsFsM/Group-388.png" 
+                      alt="Farm Quality" 
+                      className="w-16 h-16 object-contain"
+                    />
+                  </div>
+                )}
+                {value.id === 2 && (
+                  <div className="absolute top-4 right-4 opacity-10 group-hover:opacity-20 transition-opacity duration-300">
+                    <img 
+                      src="https://i.ibb.co/b5h50WL1/Group-390.png" 
+                      alt="Farm Freshness" 
+                      className="w-16 h-16 object-contain"
+                    />
+                  </div>
+                )}
                 <div className="flex items-center gap-4 mb-4">
                   <div className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 ${
                     hoveredCard === value.id 

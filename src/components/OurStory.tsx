@@ -135,6 +135,14 @@ const OurStory: React.FC = () => {
             <div className={`bg-white/80 backdrop-blur-sm rounded-2xl p-8 md:p-12 shadow-lg border border-primary-200 transition-all duration-1000 delay-300 ${
               sectionVisible ? 'opacity-100 transform-none' : 'opacity-0 translate-y-10'
             }`}>
+              {/* Add farm branding image */}
+              <div className="flex justify-center mb-8">
+                <img 
+                  src="https://i.ibb.co/Qv44dNyz/Group-391.png" 
+                  alt="DY Poultry Farms Story" 
+                  className="w-32 h-32 object-contain opacity-80"
+                />
+              </div>
               <div className="prose prose-lg max-w-none text-gray-700">
                 <p className="text-lg leading-relaxed mb-6">
                   <span className="font-bold text-primary-600">Established in 2024</span>, we operate modern farms with a capacity of 1.25 lakh birds and are currently 
