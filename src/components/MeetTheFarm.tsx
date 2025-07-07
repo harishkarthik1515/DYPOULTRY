@@ -30,7 +30,7 @@ const MeetTheFarm: React.FC = () => {
     <section
       id="meet-the-farm"
       ref={sectionRef}
-      className="min-h-screen flex items-center py-8 relative overflow-hidden"
+      className="h-screen flex items-center py-4 md:py-6 pt-16 md:pt-20 relative overflow-hidden"
       style={{ backgroundColor: '#faf5e9' }}
     >
       {/* Background pattern */}
@@ -40,24 +40,24 @@ const MeetTheFarm: React.FC = () => {
         }}></div>
       </div>
 
-      <div className="container mx-auto px-4 md:px-6 relative z-10">
-        <div className="max-w-4xl mx-auto text-center mb-8 lg:mb-12">
+      <div className="container mx-auto px-4 md:px-6 relative z-10 max-h-full overflow-y-auto">
+        <div className="max-w-4xl mx-auto text-center mb-4 md:mb-6">
           <div className={`mb-4 transition-all duration-700 ${
             sectionVisible ? 'opacity-100 transform-none' : 'opacity-0 -translate-y-10'
           }`}>
-            <div className="inline-flex items-center gap-3 mb-3">
+            <div className="inline-flex items-center gap-3 mb-2">
               <div className="w-8 h-0.5 bg-gradient-to-r from-transparent via-primary-600 to-transparent"></div>
               <span className="text-primary-600 font-semibold tracking-widest uppercase text-xs">Farm Tour</span>
               <div className="w-8 h-0.5 bg-gradient-to-r from-transparent via-primary-600 to-transparent"></div>
             </div>
           </div>
           
-          <h2 className={`font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-primary-700 mb-4 transition-all duration-700 ${
+          <h2 className={`font-serif text-2xl md:text-3xl lg:text-4xl font-bold text-primary-700 mb-3 md:mb-4 transition-all duration-700 ${
             sectionVisible ? 'opacity-100 transform-none' : 'opacity-0 translate-y-10'
           }`}>
             Meet the Farm
           </h2>
-          <p className={`text-base md:text-lg text-primary-700 transition-all duration-700 delay-100 ${
+          <p className={`text-sm md:text-base text-primary-700 transition-all duration-700 delay-100 ${
             sectionVisible ? 'opacity-100 transform-none' : 'opacity-0 translate-y-10'
           }`}>
             Take a visual tour of our farm, where happy chickens roam freely in natural environments, 
@@ -66,13 +66,13 @@ const MeetTheFarm: React.FC = () => {
         </div>
 
         {/* Image slider */}
-        <div className="mb-8 lg:mb-12">
+        <div className="mb-4 md:mb-6">
           <div 
-            className={`relative max-w-5xl mx-auto rounded-xl overflow-hidden shadow-lg transition-all duration-1000 ${
+            className={`relative max-w-4xl mx-auto rounded-lg overflow-hidden shadow-lg transition-all duration-1000 ${
               sectionVisible ? 'opacity-100 transform-none' : 'opacity-0 scale-95'
             }`}
           >
-            <div className="relative aspect-video">
+            <div className="relative aspect-video max-h-[200px] md:max-h-[250px]">
               {farmImages.map((image, index) => (
                 <div
                   key={index}
@@ -91,27 +91,27 @@ const MeetTheFarm: React.FC = () => {
               {/* Navigation buttons */}
               <button
                 onClick={prevImage}
-                className="absolute left-4 top-1/2 transform -translate-y-1/2 z-20 bg-white/80 hover:bg-white text-primary-700 p-2 rounded-full transition-all duration-300"
+                className="absolute left-2 md:left-4 top-1/2 transform -translate-y-1/2 z-20 bg-white/80 hover:bg-white text-primary-700 p-1.5 md:p-2 rounded-full transition-all duration-300"
                 aria-label="Previous image"
               >
-                <ChevronLeft size={24} />
+                <ChevronLeft size={16} className="md:w-6 md:h-6" />
               </button>
               <button
                 onClick={nextImage}
-                className="absolute right-4 top-1/2 transform -translate-y-1/2 z-20 bg-white/80 hover:bg-white text-primary-700 p-2 rounded-full transition-all duration-300"
+                className="absolute right-2 md:right-4 top-1/2 transform -translate-y-1/2 z-20 bg-white/80 hover:bg-white text-primary-700 p-1.5 md:p-2 rounded-full transition-all duration-300"
                 aria-label="Next image"
               >
-                <ChevronRight size={24} />
+                <ChevronRight size={16} className="md:w-6 md:h-6" />
               </button>
               
               {/* Image indicators */}
-              <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-20 flex space-x-2">
+              <div className="absolute bottom-2 md:bottom-4 left-1/2 transform -translate-x-1/2 z-20 flex space-x-1 md:space-x-2">
                 {farmImages.map((_, index) => (
                   <button
                     key={index}
                     onClick={() => setActiveImage(index)}
-                    className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                      activeImage === index ? 'bg-primary-600 w-6' : 'bg-white/70 hover:bg-white'
+                    className={`w-2 h-2 md:w-3 md:h-3 rounded-full transition-all duration-300 ${
+                      activeImage === index ? 'bg-primary-600 w-4 md:w-6' : 'bg-white/70 hover:bg-white'
                     }`}
                     aria-label={`Go to image ${index + 1}`}
                   ></button>
@@ -122,7 +122,7 @@ const MeetTheFarm: React.FC = () => {
         </div>
         
         {/* Facts about the farm */}
-        <div className="grid md:grid-cols-3 gap-4 lg:gap-6 mb-6 lg:mb-8">
+        <div className="grid md:grid-cols-3 gap-3 md:gap-4 mb-4 md:mb-6">
           {[
             {
               title: "Free-Range Living",
@@ -139,13 +139,13 @@ const MeetTheFarm: React.FC = () => {
           ].map((fact, index) => (
             <div
               key={index}
-              className={`bg-white rounded-lg p-4 lg:p-6 shadow-soft transition-all duration-700 hover:shadow-md ${
+              className={`bg-white rounded-lg p-3 md:p-4 shadow-soft transition-all duration-700 hover:shadow-md ${
                 sectionVisible ? 'opacity-100 transform-none' : 'opacity-0 translate-y-10'
               }`}
               style={{ transitionDelay: `${600 + index * 100}ms` }}
             >
-              <h3 className="text-lg lg:text-xl font-bold text-primary-700 mb-2">{fact.title}</h3>
-              <p className="text-sm lg:text-base text-primary-700 leading-relaxed">{fact.description}</p>
+              <h3 className="text-sm md:text-base font-bold text-primary-700 mb-1 md:mb-2">{fact.title}</h3>
+              <p className="text-xs md:text-sm text-primary-700 leading-relaxed">{fact.description}</p>
             </div>
           ))}
         </div>
@@ -155,7 +155,7 @@ const MeetTheFarm: React.FC = () => {
         }`}>
           <a
             href="#visit-us"
-            className="inline-block px-6 lg:px-8 py-2 lg:py-3 bg-primary-600 text-white font-medium rounded-full transition-all duration-300 hover:bg-primary-700 transform hover:scale-105 shadow-md hover:shadow-lg text-sm lg:text-base"
+            className="inline-block px-4 md:px-6 py-2 md:py-3 bg-primary-600 text-white font-medium rounded-full transition-all duration-300 hover:bg-primary-700 transform hover:scale-105 shadow-md hover:shadow-lg text-sm md:text-base"
           >
             Visit Our Farm
           </a>

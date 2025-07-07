@@ -22,7 +22,7 @@ const Testimonials: React.FC = () => {
     <section
       id="testimonials"
       ref={sectionRef}
-      className="min-h-screen flex items-center py-8 relative overflow-hidden"
+      className="h-screen flex items-center py-4 md:py-6 pt-16 md:pt-20 relative overflow-hidden"
       style={{ backgroundColor: '#faf5e9' }}
     >
       {/* Decorative elements */}
@@ -30,34 +30,33 @@ const Testimonials: React.FC = () => {
       <div className="absolute top-1/4 right-0 w-48 h-48 bg-primary-200 rounded-full opacity-20 translate-x-1/3"></div>
       <div className="absolute bottom-0 left-1/4 w-32 h-32 bg-primary-200 rounded-full opacity-25 translate-y-1/3"></div>
 
-      <div className="container mx-auto px-4 md:px-6 relative z-10">
-        <div className="max-w-4xl mx-auto text-center mb-8 lg:mb-12">
+      <div className="container mx-auto px-4 md:px-6 relative z-10 max-h-full overflow-y-auto">
+        <div className="max-w-4xl mx-auto text-center mb-6 md:mb-8">
           <div className={`mb-4 transition-all duration-700 ${
             sectionVisible ? 'opacity-100 transform-none' : 'opacity-0 -translate-y-10'
           }`}>
-            <div className="inline-flex items-center gap-3 mb-3">
+            <div className="inline-flex items-center gap-3 mb-2">
               <div className="w-8 h-0.5 bg-gradient-to-r from-transparent via-primary-600 to-transparent"></div>
               <span className="text-primary-600 font-semibold tracking-widest uppercase text-xs">Testimonials</span>
               <div className="w-8 h-0.5 bg-gradient-to-r from-transparent via-primary-600 to-transparent"></div>
             </div>
           </div>
           
-          <h2 className={`font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-primary-700 mb-4 transition-all duration-700 ${
+          <h2 className={`font-serif text-2xl md:text-3xl lg:text-4xl font-bold text-primary-700 mb-3 md:mb-4 transition-all duration-700 ${
             sectionVisible ? 'opacity-100 transform-none' : 'opacity-0 translate-y-10'
           }`}>
             What Our Customers Say
           </h2>
-          <p className={`text-base md:text-lg text-primary-700 transition-all duration-700 delay-100 ${
+          <p className={`text-sm md:text-base text-primary-700 transition-all duration-700 delay-100 ${
             sectionVisible ? 'opacity-100 transform-none' : 'opacity-0 translate-y-10'
           }`}>
-            We're proud to serve our community with the highest quality poultry products.
-            Here's what some of our customers have to say about DY Poultry Farms.
+            Here's what our customers say about DY Poultry Farms.
           </p>
         </div>
 
-        <div className="relative max-w-5xl mx-auto">
-          <div className="flex overflow-hidden relative h-[350px] lg:h-[300px]">
-            {testimonials.map((testimonial, index) => (
+        <div className="relative max-w-4xl mx-auto">
+          <div className="flex overflow-hidden relative h-[250px] md:h-[280px]">
+            {testimonials.slice(0, 3).map((testimonial, index) => (
               <div
                 key={testimonial.id}
                 className={`absolute inset-0 transition-all duration-1000 flex flex-col md:flex-row items-center gap-8 ${
@@ -68,43 +67,43 @@ const Testimonials: React.FC = () => {
                       : 'opacity-0 translate-x-full z-0'
                 }`}
               >
-                <div className="md:w-1/3 mb-4 md:mb-0">
+                <div className="md:w-1/3 mb-3 md:mb-0">
                   <div className="relative">
-                    <div className="w-20 h-20 lg:w-24 lg:h-24 rounded-full overflow-hidden mx-auto border-4 border-primary-200 shadow-md">
+                    <div className="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden mx-auto border-3 md:border-4 border-primary-200 shadow-md">
                       <img
                         src={testimonial.image}
                         alt={testimonial.name}
                         className="w-full h-full object-cover"
                       />
                     </div>
-                    <div className="absolute -top-1 -right-1 bg-primary-600 text-white p-1.5 rounded-full">
-                      <Quote size={12} />
+                    <div className="absolute -top-1 -right-1 bg-primary-600 text-white p-1 md:p-1.5 rounded-full">
+                      <Quote size={10} className="md:w-3 md:h-3" />
                     </div>
                   </div>
                 </div>
                 
-                <div className="md:w-2/3 bg-white/80 backdrop-blur-sm p-4 lg:p-6 rounded-lg shadow-soft relative border border-primary-200">
-                  <div className="absolute top-3 left-3 opacity-10">
-                    <Quote size={32} className="text-primary-700" />
+                <div className="md:w-2/3 bg-white/80 backdrop-blur-sm p-3 md:p-4 rounded-lg shadow-soft relative border border-primary-200">
+                  <div className="absolute top-2 left-2 md:top-3 md:left-3 opacity-10">
+                    <Quote size={20} className="md:w-8 md:h-8 text-primary-700" />
                   </div>
-                  <p className="text-base lg:text-lg italic text-primary-700 mb-4 relative z-10 leading-relaxed">
+                  <p className="text-sm md:text-base italic text-primary-700 mb-3 md:mb-4 relative z-10 leading-relaxed">
                     "{testimonial.quote}"
                   </p>
-                  <div className="font-bold text-primary-700 text-sm lg:text-base">{testimonial.name}</div>
-                  <div className="text-primary-600 text-sm">{testimonial.location}</div>
+                  <div className="font-bold text-primary-700 text-xs md:text-sm">{testimonial.name}</div>
+                  <div className="text-primary-600 text-xs md:text-sm">{testimonial.location}</div>
                 </div>
               </div>
             ))}
           </div>
           
           {/* Testimonial navigation */}
-          <div className="flex justify-center mt-6 space-x-2">
-            {testimonials.map((_, index) => (
+          <div className="flex justify-center mt-4 md:mt-6 space-x-1 md:space-x-2">
+            {testimonials.slice(0, 3).map((_, index) => (
               <button
                 key={index}
                 onClick={() => setActiveTestimonial(index)}
-                className={`w-2.5 h-2.5 lg:w-3 lg:h-3 rounded-full transition-all duration-300 ${
-                  activeTestimonial === index ? 'bg-primary-600 w-5 lg:w-6' : 'bg-primary-200 hover:bg-primary-300'
+                className={`w-2 h-2 md:w-3 md:h-3 rounded-full transition-all duration-300 ${
+                  activeTestimonial === index ? 'bg-primary-600 w-4 md:w-6' : 'bg-primary-200 hover:bg-primary-300'
                 }`}
                 aria-label={`Go to testimonial ${index + 1}`}
               ></button>

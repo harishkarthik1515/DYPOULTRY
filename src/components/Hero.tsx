@@ -96,7 +96,7 @@ const Hero: React.FC = () => {
       
       <section
         id="home"
-        className="relative min-h-screen flex items-center justify-center overflow-hidden"
+        className="relative h-screen flex items-center justify-center overflow-hidden pt-12 md:pt-14"
         style={{ backgroundColor: '#faf5e9' }}
       >
         {/* Animated Background with Enhanced Parallax */}
@@ -148,25 +148,25 @@ const Hero: React.FC = () => {
         </div>
 
         {/* Main Content Container */}
-        <div className="container mx-auto px-4 md:px-6 relative z-10">
+        <div className="container mx-auto px-4 md:px-6 relative z-10 max-h-full overflow-y-auto">
           
           {/* Hero Header Section */}
-          <div className="text-center mb-16">
+          <div className="text-center mb-6 md:mb-8">
             {/* Trust Badge */}
             <div
-              className={`mb-8 flex justify-center transition-all duration-1000 delay-100 ${
+              className={`mb-4 md:mb-6 flex justify-center transition-all duration-1000 delay-100 ${
                 isVisible ? 'opacity-100 transform-none' : 'opacity-0 -translate-y-10'
               }`}
             >
-              <div className="inline-flex items-center gap-3 bg-white/90 backdrop-blur-sm px-6 py-3 rounded-full shadow-lg border border-primary-200">
+              <div className="inline-flex items-center gap-2 md:gap-3 bg-white/90 backdrop-blur-sm px-3 md:px-6 py-2 md:py-3 rounded-full shadow-lg border border-primary-200">
                 <div className="w-3 h-3 bg-primary-600 rounded-full pulse-glow"></div>
-                <span className="text-primary-700 font-semibold text-sm tracking-wide">YOUR TRUSTED SOURCE FOR HYGIENIC, BIOSECURE CHICKEN</span>
+                <span className="text-primary-700 font-semibold text-xs md:text-sm tracking-wide">TRUSTED SOURCE FOR HYGIENIC CHICKEN</span>
               </div>
             </div>
 
             {/* Main Headline */}
             <h1
-              className={`font-serif text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-8 transition-all duration-1000 delay-200 ${
+              className={`font-serif text-2xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 transition-all duration-1000 delay-200 ${
                 isVisible ? 'opacity-100 transform-none' : 'opacity-0 -translate-y-10'
               }`}
               style={{
@@ -183,7 +183,7 @@ const Hero: React.FC = () => {
 
             {/* Subtitle */}
             <p
-              className={`text-xl md:text-2xl text-gray-700 max-w-4xl mx-auto mb-8 leading-relaxed transition-all duration-1000 delay-400 ${
+              className={`text-sm md:text-lg lg:text-xl text-gray-700 max-w-3xl mx-auto mb-4 md:mb-6 leading-relaxed transition-all duration-1000 delay-400 ${
                 isVisible ? 'opacity-100 transform-none' : 'opacity-0 -translate-y-10'
               }`}
             >
@@ -192,11 +192,11 @@ const Hero: React.FC = () => {
 
             {/* Mission Statement */}
             <div
-              className={`bg-white/80 backdrop-blur-sm rounded-2xl p-8 mb-12 shadow-lg border border-primary-200 max-w-3xl mx-auto transition-all duration-1000 delay-600 ${
+              className={`bg-white/80 backdrop-blur-sm rounded-xl p-4 md:p-6 mb-6 md:mb-8 shadow-lg border border-primary-200 max-w-2xl mx-auto transition-all duration-1000 delay-600 ${
                 isVisible ? 'opacity-100 transform-none' : 'opacity-0 -translate-y-10'
               }`}
             >
-              <p className="text-lg md:text-xl text-primary-700 font-medium italic">
+              <p className="text-sm md:text-lg text-primary-700 font-medium italic">
                 "Ethically farmed poultry — because good food starts with good farming."
               </p>
             </div>
@@ -204,30 +204,30 @@ const Hero: React.FC = () => {
 
           {/* Call to Action Buttons */}
           <div
-            className={`flex flex-col sm:flex-row gap-6 justify-center transition-all duration-1000 delay-800 ${
+            className={`flex flex-col sm:flex-row gap-3 md:gap-4 justify-center mb-6 md:mb-8 transition-all duration-1000 delay-800 ${
               isVisible ? 'opacity-100 transform-none' : 'opacity-0 -translate-y-10'
             }`}
           >
             <a
               href="#our-values"
-              className="group relative px-10 py-4 rounded-full bg-gradient-to-r from-primary-600 to-primary-700 text-white font-semibold text-lg transition-all duration-500 hover:from-primary-700 hover:to-primary-800 hover:shadow-2xl hover:shadow-primary-500/30 transform hover:scale-110 hover:-translate-y-2 overflow-hidden"
+              className="group relative px-6 md:px-8 py-2 md:py-3 rounded-full bg-gradient-to-r from-primary-600 to-primary-700 text-white font-semibold text-sm md:text-base transition-all duration-500 hover:from-primary-700 hover:to-primary-800 hover:shadow-xl transform hover:scale-105 overflow-hidden"
             >
-              <span className="relative z-10 transition-all duration-300">Our Values & Vision</span>
+              <span className="relative z-10 transition-all duration-300">Our Values</span>
               <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary-400 to-primary-500 opacity-0 group-hover:opacity-100 transition-all duration-500 blur-xl scale-150"></div>
               <div className="absolute inset-0 rounded-full bg-white/20 scale-0 group-hover:scale-100 transition-all duration-700 origin-center"></div>
             </a>
             <a
               href="#visit-us"
-              className="group relative px-10 py-4 rounded-full bg-white/90 backdrop-blur-sm border-2 border-primary-600 text-primary-700 font-semibold text-lg transition-all duration-500 hover:bg-primary-600 hover:text-white hover:shadow-2xl hover:shadow-primary-500/20 transform hover:scale-110 hover:-translate-y-2 overflow-hidden"
+              className="group relative px-6 md:px-8 py-2 md:py-3 rounded-full bg-white/90 backdrop-blur-sm border-2 border-primary-600 text-primary-700 font-semibold text-sm md:text-base transition-all duration-500 hover:bg-primary-600 hover:text-white hover:shadow-xl transform hover:scale-105 overflow-hidden"
             >
-              <span className="relative z-10 transition-all duration-300">Visit Our Farm</span>
+              <span className="relative z-10 transition-all duration-300">Visit Farm</span>
               <div className="absolute inset-0 rounded-full bg-primary-600 scale-0 group-hover:scale-100 transition-all duration-700 origin-center"></div>
             </a>
           </div>
 
           {/* Bottom Stats */}
           <div
-            className={`mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 transition-all duration-1000 delay-900 ${
+            className={`grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 transition-all duration-1000 delay-900 ${
               isVisible ? 'opacity-100 transform-none' : 'opacity-0 -translate-y-10'
             }`}
           >
@@ -237,9 +237,9 @@ const Hero: React.FC = () => {
               { number: "24/7", label: "Veterinary Care" },
               { number: "0", label: "Artificial Hormones" }
             ].map((stat, index) => (
-              <div key={index} className="text-center bg-white/60 backdrop-blur-sm rounded-xl p-4 border border-primary-200">
-                <div className="text-2xl md:text-3xl font-bold text-primary-600 mb-1">{stat.number}</div>
-                <div className="text-sm md:text-base text-gray-700 font-medium">{stat.label}</div>
+              <div key={index} className="text-center bg-white/60 backdrop-blur-sm rounded-lg p-2 md:p-3 border border-primary-200">
+                <div className="text-lg md:text-2xl font-bold text-primary-600 mb-1">{stat.number}</div>
+                <div className="text-xs md:text-sm text-gray-700 font-medium">{stat.label}</div>
               </div>
             ))}
           </div>
