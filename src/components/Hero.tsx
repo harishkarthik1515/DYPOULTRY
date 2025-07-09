@@ -211,8 +211,7 @@ const Hero: React.FC = () => {
                     className="group relative overflow-hidden bg-white/80 backdrop-blur-sm text-primary-700 py-2.5 px-5 rounded-xl transition-all duration-300 font-semibold border border-primary-200 hover:bg-white hover:border-primary-300 transform hover:-translate-y-1 hover:scale-105 flex items-center justify-center text-sm"
                     onMouseEnter={() => setSecondaryHovered(true)}
                     onMouseLeave={() => setSecondaryHovered(false)}
-                    onClick={() => handleScrollToSection('#contact
-                                                         ')}
+                    onClick={() => handleScrollToSection('#contact')}
                   >
                     <div className="relative flex items-center space-x-2">
                       <MapPin className={`h-4 w-4 transition-all duration-300 ${secondaryHovered ? 'text-primary-600' : ''}`} />
