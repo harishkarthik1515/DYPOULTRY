@@ -60,7 +60,7 @@ const Header = () => {
   const rightNavigation = [
     { name: 'Meet the Farm', href: '#meet-the-farm' },
     { name: 'Testimonials', href: '#testimonials' },
-    { name: 'Visit Us', href: '#visit-us' },
+   
   ];
 
   const allNavigation = [...leftNavigation, ...rightNavigation];
