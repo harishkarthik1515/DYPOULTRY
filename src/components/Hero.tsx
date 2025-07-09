@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowRight, Feather, Heart, Shield, Award, Users, Phone, Mail, Leaf } from 'lucide-react';
+import { ArrowRight, Feather, Heart, Shield, Award, Users, Calendar, MapPin, Leaf } from 'lucide-react';
 
 const Hero: React.FC = () => {
   const [primaryHovered, setPrimaryHovered] = useState(false);
@@ -211,14 +211,14 @@ const Hero: React.FC = () => {
                     className="group relative overflow-hidden bg-white/80 backdrop-blur-sm text-primary-700 py-2.5 px-5 rounded-xl transition-all duration-300 font-semibold border border-primary-200 hover:bg-white hover:border-primary-300 transform hover:-translate-y-1 hover:scale-105 flex items-center justify-center text-sm"
                     onMouseEnter={() => setSecondaryHovered(true)}
                     onMouseLeave={() => setSecondaryHovered(false)}
-                    onClick={() => handleScrollToSection('#contact')}
+                    onClick={() => handleScrollToSection('#visit-us')}
                   >
                     <div className="relative flex items-center space-x-2">
-                      <Phone className={`h-4 w-4 transition-all duration-300 ${secondaryHovered ? 'text-primary-600' : ''}`} />
+                      <MapPin className={`h-4 w-4 transition-all duration-300 ${secondaryHovered ? 'text-primary-600' : ''}`} />
                       <span className="font-semibold">
-                        {secondaryHovered ? 'Call Now' : 'Contact Us'}
+                        {secondaryHovered ? 'Book Tour' : 'Visit Farm'}
                       </span>
-                      <Mail className={`h-4 w-4 transition-all duration-300 ${secondaryHovered ? 'scale-110 text-primary-600' : ''}`} />
+                      <Calendar className={`h-4 w-4 transition-all duration-300 ${secondaryHovered ? 'scale-110 text-primary-600' : ''}`} />
                     </div>
                   </button>
                 </div>
@@ -238,7 +238,18 @@ const Hero: React.FC = () => {
                   ))}
                 </div>
 
-               
+                {/* Compact Call-to-Action Subtitle */}
+                <div className="bg-white/60 backdrop-blur-sm rounded-lg p-3 border border-primary-200">
+                  <p className="text-center text-gray-700 text-xs">
+                    <span className="text-primary-600 font-semibold">Trusted by 1000+</span> families for premium poultry
+                  </p>
+                  <div className="flex justify-center mt-1 space-x-1">
+                    {[...Array(3)].map((_, i) => (
+                      <div key={i} className="w-1 h-1 bg-primary-600 rounded-full animate-pulse" style={{ animationDelay: `${i * 0.3}s` }}></div>
+                    ))}
+                  </div>
+                </div>
+              </div>
 
               {/* Compact Stats Grid */}
               <div className={`grid grid-cols-4 gap-3 transition-all duration-1000 delay-600 ${
@@ -261,6 +272,7 @@ const Hero: React.FC = () => {
           </div>
         </div>
       </section>
+    </div>
     </>
   );
 };
