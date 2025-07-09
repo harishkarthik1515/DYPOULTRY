@@ -6,7 +6,7 @@ import OurStory from './components/OurStory';
 import Sustainability from './components/Sustainability';
 import MeetTheFarm from './components/MeetTheFarm';
 import Testimonials from './components/Testimonials';
-import VisitUs from './components/VisitUs';
+import Contact from './components/Contact';
 import Footer from './components/Footer';
 
 function App() {
@@ -37,7 +37,7 @@ function App() {
       <Sustainability />
       <MeetTheFarm />
       <Testimonials />
-      <VisitUs />
+      <Contact />
       <Footer />
     </div>
   );

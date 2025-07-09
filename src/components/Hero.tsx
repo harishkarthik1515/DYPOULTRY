@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowRight, Feather, Heart, Shield, Award, Users, Calendar, MapPin, Leaf } from 'lucide-react';
+import { ArrowRight, Feather, Heart, Shield, Award, Users, Phone, Mail, Leaf } from 'lucide-react';
 
 const Hero: React.FC = () => {
   const [primaryHovered, setPrimaryHovered] = useState(false);
@@ -211,14 +211,14 @@ const Hero: React.FC = () => {
                     className="group relative overflow-hidden bg-white/80 backdrop-blur-sm text-primary-700 py-2.5 px-5 rounded-xl transition-all duration-300 font-semibold border border-primary-200 hover:bg-white hover:border-primary-300 transform hover:-translate-y-1 hover:scale-105 flex items-center justify-center text-sm"
                     onMouseEnter={() => setSecondaryHovered(true)}
                     onMouseLeave={() => setSecondaryHovered(false)}
-                    onClick={() => handleScrollToSection('#visit-us')}
+                    onClick={() => handleScrollToSection('#contact')}
                   >
                     <div className="relative flex items-center space-x-2">
-                      <MapPin className={`h-4 w-4 transition-all duration-300 ${secondaryHovered ? 'text-primary-600' : ''}`} />
+                      <Phone className={`h-4 w-4 transition-all duration-300 ${secondaryHovered ? 'text-primary-600' : ''}`} />
                       <span className="font-semibold">
-                        {secondaryHovered ? 'Book Tour' : 'Visit Farm'}
+                        {secondaryHovered ? 'Call Now' : 'Contact Us'}
                       </span>
-                      <Calendar className={`h-4 w-4 transition-all duration-300 ${secondaryHovered ? 'scale-110 text-primary-600' : ''}`} />
+                      <Mail className={`h-4 w-4 transition-all duration-300 ${secondaryHovered ? 'scale-110 text-primary-600' : ''}`} />
                     </div>
                   </button>
                 </div>
