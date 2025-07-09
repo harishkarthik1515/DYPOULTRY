@@ -184,7 +184,7 @@ const Hero: React.FC = () => {
                   <img 
                     src="/dy 4 1.png" 
                     alt="DY Poultry Farms" 
-                    className="h-6 w-6 object-contain"
+                    className="h-8 w-8 object-contain"
                   />
                   <div className="h-px bg-gradient-to-l from-primary-500 to-transparent flex-1"></div>
                 </div>

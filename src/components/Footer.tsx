@@ -28,7 +28,7 @@ const Footer: React.FC = () => {
               <img 
                 src="/dy 4 1.png" 
                 alt="DY Poultry Farms" 
-                className="h-8 brightness-0 invert"
+                className="h-12 brightness-0 invert"
               />
             </div>
             <p className="mb-6 text-white/80">

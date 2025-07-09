@@ -156,7 +156,7 @@ const Header = () => {
                 src="/dy 4 1.png" 
                 alt="DY Poultry Farms" 
                 className={`transition-all duration-300 ${
-                  isScrolled ? 'h-8 sm:h-10' : 'h-10 sm:h-12'
+                  isScrolled ? 'h-12 sm:h-14' : 'h-14 sm:h-16'
                 }`}
               />
             </Link>
@@ -211,7 +211,7 @@ const Header = () => {
                 src="/dy 4 1.png" 
                 alt="DY Poultry Farms" 
                 className={`transition-all duration-300 ${
-                  isScrolled ? 'h-8 sm:h-10' : 'h-10 sm:h-12'
+                  isScrolled ? 'h-10 sm:h-12' : 'h-12 sm:h-14'
                 }`}
               />
             </Link>
@@ -245,7 +245,7 @@ const Header = () => {
                   <img 
                     src="/dy 4 1.png" 
                     alt="DY Poultry Farms" 
-                    className="h-8"
+                    className="h-10"
                   />
                 </Link>
                 <button
