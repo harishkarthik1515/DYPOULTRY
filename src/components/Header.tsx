@@ -66,12 +66,16 @@ const Header = () => {
     setIsMenuOpen(false);
   };
 
-  const navigation = [
+  const leftNavigation = [
     { name: 'Our Values', href: '#our-values' },
     { name: 'Our Story', href: '#our-story' },
     { name: 'Sustainability', href: '#sustainability' },
+  ];
+
+  const rightNavigation = [
     { name: 'Meet the Farm', href: '#meet-the-farm' },
     { name: 'Testimonials', href: '#testimonials' },
+    { name: 'Contact', href: '#contact' },
   ];
 
   return (
@@ -83,16 +87,29 @@ const Header = () => {
       }`}>
         <div className={`w-full transition-all duration-300 ease-out ${
           isScrolled 
-            ? 'max-w-4xl mx-auto my-2 sm:my-3 rounded-full bg-white/95 backdrop-blur-xl shadow-xl border border-white/20' 
+            ? 'max-w-6xl mx-auto my-2 sm:my-3 rounded-full bg-white/95 backdrop-blur-xl shadow-xl border border-white/20' 
             : 'max-w-7xl mx-auto'
         } px-3 sm:px-4 lg:px-8`}>
           <div className={`flex items-center justify-between w-full transition-all duration-300 ${
             isScrolled ? 'h-12 sm:h-14' : 'h-14 sm:h-16'
           }`}>
             
-            {/* Logo */}
+            {/* Left Navigation */}
+            <nav className="hidden lg:flex items-center space-x-4 xl:space-x-6 flex-1">
+              {leftNavigation.map((item) => (
+                <button
+                  key={item.name}
+                  onClick={() => handleNavClick(item.href)}
+                  className="text-gray-700 hover:text-primary-600 transition-colors duration-200 font-medium text-sm xl:text-base whitespace-nowrap"
+                >
+                  {item.name}
+                </button>
+              ))}
+            </nav>
+
+            {/* Centered Logo */}
             <div 
-              className="flex items-center flex-shrink-0 cursor-pointer min-w-0"
+              className="flex items-center justify-center cursor-pointer min-w-0 flex-shrink-0"
               onClick={handleLogoClick}
             >
               <div className={`bg-gradient-to-br from-primary-600 to-primary-700 rounded-lg flex items-center justify-center transition-all duration-300 ${
@@ -107,42 +124,24 @@ const Header = () => {
               </span>
             </div>
 
-            {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center flex-shrink-0">
-              {isScrolled ? (
-                // Compact navigation for scrolled state
-                <div className="flex items-center space-x-6">
-                  {navigation.slice(0, 3).map((item) => (
-                    <button
-                      key={item.name}
-                      onClick={() => handleNavClick(item.href)}
-                      className="text-gray-700 hover:text-primary-600 transition-colors duration-200 font-medium text-sm whitespace-nowrap"
-                    >
-                      {item.name}
-                    </button>
-                  ))}
-                </div>
-              ) : (
-                // Full navigation for normal state
-                <div className="flex items-center space-x-4 xl:space-x-6">
-                  {navigation.map((item) => (
-                    <button
-                      key={item.name}
-                      onClick={() => handleNavClick(item.href)}
-                      className="text-gray-700 hover:text-primary-600 transition-colors duration-200 font-medium text-sm xl:text-base whitespace-nowrap"
-                    >
-                      {item.name}
-                    </button>
-                  ))}
-                </div>
-              )}
-            </nav>
-
-            {/* Right Side Actions */}
-            <div className="flex items-center space-x-2 sm:space-x-3 flex-shrink-0 min-w-0">
+            {/* Right Navigation & Actions */}
+            <div className="flex items-center space-x-2 sm:space-x-3 flex-1 justify-end">
               
+              {/* Right Navigation */}
+              <nav className="hidden lg:flex items-center space-x-4 xl:space-x-6">
+                {rightNavigation.map((item) => (
+                  <button
+                    key={item.name}
+                    onClick={() => handleNavClick(item.href)}
+                    className="text-gray-700 hover:text-primary-600 transition-colors duration-200 font-medium text-sm xl:text-base whitespace-nowrap"
+                  >
+                    {item.name}
+                  </button>
+                ))}
+              </nav>
+
               {/* Search Bar */}
-              <div className={`relative transition-all duration-300 hidden md:block flex-shrink-0 ${
+              <div className={`relative transition-all duration-300 hidden md:block flex-shrink-0 ml-4 ${
                 isSearchFocused 
                   ? 'w-48 lg:w-56' 
                   : isScrolled 
@@ -165,8 +164,8 @@ const Header = () => {
                 />
               </div>
 
-              {/* Contact Section */}
-              <div className="hidden sm:flex items-center space-x-2">
+              {/* Contact Dropdown */}
+              <div className="hidden sm:flex items-center">
                 <div className="relative" ref={dropdownRef}>
                   <button
                     onClick={() => setShowContactDropdown(!showContactDropdown)}
@@ -226,17 +225,6 @@ const Header = () => {
                     </div>
                   )}
                 </div>
-
-                <a
-                  href="#visit-us"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleNavClick('#visit-us');
-                  }}
-                  className="bg-gradient-to-r from-primary-600 to-primary-700 text-white rounded-lg hover:from-primary-700 hover:to-primary-800 transition-all duration-200 hover:scale-105 px-3 py-1.5 sm:px-4 sm:py-2"
-                >
-                  <span className="font-medium text-xs sm:text-sm whitespace-nowrap">Visit Farm</span>
-                </a>
               </div>
 
               {/* Mobile Menu Button */}
@@ -315,7 +303,7 @@ const Header = () => {
                       <span>Home</span>
                     </button>
 
-                    {navigation.map((item) => (
+                    {[...leftNavigation, ...rightNavigation].map((item) => (
                       <button
                         key={item.name}
                         onClick={() => handleNavClick(item.href)}
