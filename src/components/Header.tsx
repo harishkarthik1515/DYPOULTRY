@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Feather, Phone } from 'lucide-react';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -38,6 +40,11 @@ const Header = () => {
 
   const handleNavClick = (href: string) => {
     if (href.startsWith('#')) {
+      if (location.pathname !== '/') {
+        // If not on home page, navigate to home first
+        window.location.href = '/' + href;
+        return;
+      }
       const element = document.querySelector(href);
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
@@ -47,23 +54,74 @@ const Header = () => {
   };
 
   const handleLogoClick = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (location.pathname === '/') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
     setIsMenuOpen(false);
   };
 
   const leftNavigation = [
-    { name: 'Our Values', href: '#our-values' },
-    { name: 'Our Story', href: '#our-story' },
-    { name: 'Sustainability', href: '#sustainability' },
+    { name: 'Our Values', href: '#our-values', isHash: true },
+    { name: 'Our Story', href: '/our-story', isHash: false },
+    { name: 'Sustainability', href: '/sustainability', isHash: false },
   ];
 
   const rightNavigation = [
-    { name: 'Meet the Farm', href: '#meet-the-farm' },
-    { name: 'Testimonials', href: '#testimonials' },
-    
+    { name: 'Meet the Farm', href: '#meet-the-farm', isHash: true },
+    { name: 'Testimonials', href: '#testimonials', isHash: true },
   ];
 
   const allNavigation = [...leftNavigation, ...rightNavigation];
+
+  const renderNavItem = (item: any) => {
+    if (item.isHash) {
+      return (
+        <button
+          key={item.name}
+          onClick={() => handleNavClick(item.href)}
+          className="text-gray-700 hover:text-primary-600 transition-colors duration-200 font-medium text-sm xl:text-base whitespace-nowrap"
+        >
+          {item.name}
+        </button>
+      );
+    } else {
+      return (
+        <Link
+          key={item.name}
+          to={item.href}
+          className="text-gray-700 hover:text-primary-600 transition-colors duration-200 font-medium text-sm xl:text-base whitespace-nowrap"
+          onClick={() => setIsMenuOpen(false)}
+        >
+          {item.name}
+        </Link>
+      );
+    }
+  };
+
+  const renderMobileNavItem = (item: any) => {
+    if (item.isHash) {
+      return (
+        <button
+          key={item.name}
+          onClick={() => handleNavClick(item.href)}
+          className="w-full flex items-center space-x-3 px-3 py-3 text-gray-700 hover:text-primary-600 hover:bg-primary-50 rounded-xl transition-all duration-200 font-medium text-left"
+        >
+          <span>{item.name}</span>
+        </button>
+      );
+    } else {
+      return (
+        <Link
+          key={item.name}
+          to={item.href}
+          className="w-full flex items-center space-x-3 px-3 py-3 text-gray-700 hover:text-primary-600 hover:bg-primary-50 rounded-xl transition-all duration-200 font-medium text-left"
+          onClick={() => setIsMenuOpen(false)}
+        >
+          <span>{item.name}</span>
+        </Link>
+      );
+    }
+  };
 
   return (
     <>
@@ -85,19 +143,12 @@ const Header = () => {
             
             {/* Left Navigation */}
             <nav className="flex items-center justify-start space-x-4 xl:space-x-6">
-              {leftNavigation.map((item) => (
-                <button
-                  key={item.name}
-                  onClick={() => handleNavClick(item.href)}
-                  className="text-gray-700 hover:text-primary-600 transition-colors duration-200 font-medium text-sm xl:text-base whitespace-nowrap"
-                >
-                  {item.name}
-                </button>
-              ))}
+              {leftNavigation.map(renderNavItem)}
             </nav>
 
             {/* Centered Logo */}
-            <div 
+            <Link 
+              to="/"
               className="flex items-center justify-center cursor-pointer"
               onClick={handleLogoClick}
             >
@@ -111,33 +162,25 @@ const Header = () => {
               }`}>
                 DY Poultry
               </span>
-            </div>
+            </Link>
 
             {/* Right Navigation & CTA */}
             <div className="flex items-center justify-end space-x-4 xl:space-x-6">
               {/* Right Navigation */}
               <nav className="flex items-center space-x-4 xl:space-x-6">
-                {rightNavigation.map((item) => (
-                  <button
-                    key={item.name}
-                    onClick={() => handleNavClick(item.href)}
-                    className="text-gray-700 hover:text-primary-600 transition-colors duration-200 font-medium text-sm xl:text-base whitespace-nowrap"
-                  >
-                    {item.name}
-                  </button>
-                ))}
+                {rightNavigation.map(renderNavItem)}
               </nav>
 
               {/* Contact CTA Button */}
-              <a
-                href="tel:+1234567890"
+              <button
+                onClick={() => handleNavClick('#contact')}
                 className="flex items-center space-x-2 bg-gradient-to-r from-primary-600 to-primary-700 text-white rounded-lg hover:from-primary-700 hover:to-primary-800 transition-all duration-200 hover:scale-105 px-3 py-1.5 sm:px-4 sm:py-2"
               >
                 <Phone className="w-4 h-4" />
                 <span className="font-medium text-xs sm:text-sm whitespace-nowrap">
                   Contact Us
                 </span>
-              </a>
+              </button>
             </div>
           </div>
 
@@ -162,7 +205,8 @@ const Header = () => {
             </button>
 
             {/* Centered Logo */}
-            <div 
+            <Link 
+              to="/"
               className="flex items-center justify-center cursor-pointer absolute left-1/2 transform -translate-x-1/2"
               onClick={handleLogoClick}
             >
@@ -176,18 +220,18 @@ const Header = () => {
               }`}>
                 DY Poultry
               </span>
-            </div>
+            </Link>
 
             {/* Contact CTA Button - Right */}
-            <a
-              href="tel:+1234567890"
+            <button
+              onClick={() => handleNavClick('#contact')}
               className="flex items-center space-x-1 sm:space-x-2 bg-gradient-to-r from-primary-600 to-primary-700 text-white rounded-lg hover:from-primary-700 hover:to-primary-800 transition-all duration-200 hover:scale-105 px-2 py-1.5 sm:px-3 sm:py-2 flex-shrink-0"
             >
               <Phone className="w-4 h-4" />
               <span className="font-medium text-xs sm:text-sm hidden sm:inline">
                 Contact
               </span>
-            </a>
+            </button>
           </div>
         </div>
       </header>
@@ -203,14 +247,14 @@ const Header = () => {
             <div className="flex flex-col h-full">
               {/* Menu Header */}
               <div className="flex items-center justify-between p-4 border-b border-gray-200 flex-shrink-0">
-                <div className="flex items-center space-x-2" onClick={handleLogoClick}>
+                <Link to="/" className="flex items-center space-x-2" onClick={handleLogoClick}>
                   <div className="w-6 h-6 bg-gradient-to-br from-primary-600 to-primary-700 rounded-lg flex items-center justify-center">
                     <Feather className="w-4 h-4 text-white" />
                   </div>
                   <span className="text-lg font-bold bg-gradient-to-r from-primary-600 to-primary-700 bg-clip-text text-transparent cursor-pointer">
                     DY Poultry
                   </span>
-                </div>
+                </Link>
                 <button
                   onClick={() => setIsMenuOpen(false)}
                   className="p-2 rounded-lg hover:bg-gray-100 transition-colors duration-200 flex-shrink-0"
@@ -228,22 +272,18 @@ const Header = () => {
                       Navigation
                     </h3>
                     
-                    <button
-                      onClick={() => handleNavClick('#home')}
+                    <Link
+                      to="/"
+                      onClick={() => {
+                        handleLogoClick();
+                        setIsMenuOpen(false);
+                      }}
                       className="w-full flex items-center space-x-3 px-3 py-3 text-gray-700 hover:text-primary-600 hover:bg-primary-50 rounded-xl transition-all duration-200 font-medium text-left"
                     >
                       <span>Home</span>
-                    </button>
+                    </Link>
 
-                    {allNavigation.map((item) => (
-                      <button
-                        key={item.name}
-                        onClick={() => handleNavClick(item.href)}
-                        className="w-full flex items-center space-x-3 px-3 py-3 text-gray-700 hover:text-primary-600 hover:bg-primary-50 rounded-xl transition-all duration-200 font-medium text-left"
-                      >
-                        <span>{item.name}</span>
-                      </button>
-                    ))}
+                    {allNavigation.map(renderMobileNavItem)}
                   </div>
 
                   {/* Contact CTA Section */}
@@ -252,14 +292,16 @@ const Header = () => {
                       Get in Touch
                     </h3>
                     
-                    <a
-                      href="tel:+1234567890"
+                    <button
+                      onClick={() => {
+                        handleNavClick('#contact');
+                        setIsMenuOpen(false);
+                      }}
                       className="w-full bg-gradient-to-r from-primary-600 to-primary-700 text-white py-4 rounded-xl font-medium hover:from-primary-700 hover:to-primary-800 transition-all duration-200 flex items-center justify-center space-x-2 shadow-lg"
-                      onClick={() => setIsMenuOpen(false)}
                     >
                       <Phone className="w-5 h-5" />
                       <span>Call Us: (555) 123-4567</span>
-                    </a>
+                    </button>
                     
                     <div className="mt-3 text-center">
                       <p className="text-xs text-gray-500">

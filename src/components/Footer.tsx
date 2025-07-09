@@ -1,11 +1,26 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Instagram, Facebook, Twitter, Mail } from 'lucide-react';
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
+  const handleNavClick = (href: string) => {
+    if (href.startsWith('#')) {
+      // If it's a hash link, navigate to home page first if not already there
+      if (window.location.pathname !== '/') {
+        window.location.href = '/' + href;
+        return;
+      }
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
+
   return (
-    <footer id="contact" className="bg-primary-800 text-white pt-16 pb-8">
+    <footer className="bg-primary-800 text-white pt-16 pb-8">
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           <div>
@@ -32,16 +47,46 @@ const Footer: React.FC = () => {
           <div>
             <h3 className="font-bold text-lg mb-4 text-white">Quick Links</h3>
             <ul className="space-y-3">
-              {['Home', 'About Us', 'Products', 'Contact'].map((item) => (
-                <li key={item}>
-                  <a
-                    href={`#${item.toLowerCase().replace(/\s+/g, '-')}`}
-                    className="text-white/80 hover:text-white transition-colors duration-200 hover:underline"
-                  >
-                    {item}
-                  </a>
-                </li>
-              ))}
+              <li>
+                <Link
+                  to="/"
+                  className="text-white/80 hover:text-white transition-colors duration-200 hover:underline"
+                >
+                  Home
+                </Link>
+              </li>
+              <li>
+                <button
+                  onClick={() => handleNavClick('#our-values')}
+                  className="text-white/80 hover:text-white transition-colors duration-200 hover:underline text-left"
+                >
+                  Our Values
+                </button>
+              </li>
+              <li>
+                <Link
+                  to="/our-story"
+                  className="text-white/80 hover:text-white transition-colors duration-200 hover:underline"
+                >
+                  Our Story
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/sustainability"
+                  className="text-white/80 hover:text-white transition-colors duration-200 hover:underline"
+                >
+                  Sustainability
+                </Link>
+              </li>
+              <li>
+                <button
+                  onClick={() => handleNavClick('#contact')}
+                  className="text-white/80 hover:text-white transition-colors duration-200 hover:underline text-left"
+                >
+                  Contact
+                </button>
+              </li>
             </ul>
           </div>
           

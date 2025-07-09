@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { ArrowRight, Feather, Heart, Shield, Award, Users, Calendar, MapPin, Leaf } from 'lucide-react';
 
 const Hero: React.FC = () => {
@@ -16,7 +17,7 @@ const Hero: React.FC = () => {
   }, []);
 
   // Mouse tracking with throttling
-  useEffect(() => {secondaryHovered
+  useEffect(() => {
     let throttleTimer: NodeJS.Timeout;
     const handleMouseMove = (e: MouseEvent) => {
       if (throttleTimer) return;
@@ -223,9 +224,6 @@ const Hero: React.FC = () => {
                   </button>
                 </div>
               </div>
-
-              {/* Compact Stats Grid */}
-              
             </div>
           </div>
         </div>
