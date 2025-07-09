@@ -216,7 +216,7 @@ const Hero: React.FC = () => {
                     <div className="relative flex items-center space-x-2">
                       <MapPin className={`h-4 w-4 transition-all duration-300 ${secondaryHovered ? 'text-primary-600' : ''}`} />
                       <span className="font-semibold">
-                        {secondaryHovered ? 'Book Tour' : 'Visit Farm'}
+                        {secondaryHovered ? 'Contact' : 'Reach'}
                       </span>
                       <Calendar className={`h-4 w-4 transition-all duration-300 ${secondaryHovered ? 'scale-110 text-primary-600' : ''}`} />
                     </div>
