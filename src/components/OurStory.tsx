@@ -236,6 +236,7 @@ const OurStory: React.FC = () => {
                 </p>
               </div>
             </div>
+          </div>
           <div className={`bg-gradient-to-r from-primary-600 to-primary-700 rounded-2xl p-8 md:p-12 shadow-lg text-white text-center transition-all duration-700 delay-1100 ${
             sectionVisible ? 'opacity-100 transform-none' : 'opacity-0 translate-y-10'
           }`}>
