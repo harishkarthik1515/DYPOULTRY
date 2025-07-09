@@ -16,7 +16,7 @@ const Hero: React.FC = () => {
   }, []);
 
   // Mouse tracking with throttling
-  useEffect(() => {
+  useEffect(() => {secondaryHovered
     let throttleTimer: NodeJS.Timeout;
     const handleMouseMove = (e: MouseEvent) => {
       if (throttleTimer) return;
