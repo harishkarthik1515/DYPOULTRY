@@ -50,7 +50,7 @@ const Footer: React.FC = () => {
               <img 
                 src="/dy 4 1.png" 
                 alt="DY Poultry Farms" 
-                className="h-12 w-auto object-contain brightness-0 invert"
+                className="h-12 w-auto object-contain"
               />
               <div className="flex flex-col">
                 <span className="font-serif font-bold text-xl text-white">DY Poultry Farms</span>
