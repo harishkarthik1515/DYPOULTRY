@@ -8,6 +8,7 @@ import MeetTheFarm from './components/MeetTheFarm';
 import Testimonials from './components/Testimonials';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+
 function App() {
   useEffect(() => {
     // Smooth scroll for anchor links
@@ -26,9 +27,9 @@ function App() {
       });
     });
   }, []);
+
   return (
-    <div className="min-h-screen font-sans text-gray-900" style={{ backgroundColor: '
-#faf5e9' }}>
+    <div className="min-h-screen font-sans text-gray-900" style={{ backgroundColor: '#faf5e9' }}>
       <Header />
       <Hero />
       <OurValues />
@@ -41,4 +42,5 @@ function App() {
     </div>
   );
 }
+
 export default App;
