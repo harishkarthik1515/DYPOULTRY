@@ -224,19 +224,7 @@ const Hero: React.FC = () => {
                 </div>
 
                 {/* Compact Trust Indicators */}
-                <div className="flex flex-wrap items-center gap-4 text-xs text-gray-600">
-                  {[
-                    { icon: Shield, text: 'Biosecure', color: 'green' },
-                    { icon: Users, text: '1.25L+ Birds', color: 'blue' },
-                    { icon: Award, text: 'Premium Quality', color: 'primary' }
-                  ].map(({ icon: Icon, text, color }, index) => (
-                    <div key={index} className="group flex items-center space-x-2 cursor-pointer hover:text-primary-700 transition-colors duration-200">
-                      <div className={`w-1.5 h-1.5 bg-${color === 'primary' ? 'primary-600' : color + '-500'} rounded-full animate-pulse group-hover:scale-150 transition-transform duration-200`}></div>
-                      <span className="group-hover:font-semibold transition-all duration-200">{text}</span>
-                      <Icon className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
-                    </div>
-                  ))}
-                </div>
+                
 
                 {/* Compact Call-to-Action Subtitle */}
                 <div className="bg-white/60 backdrop-blur-sm rounded-lg p-3 border border-primary-200">
