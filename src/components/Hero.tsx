@@ -129,7 +129,7 @@ const Hero: React.FC = () => {
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 min-h-screen">
-          <div className="flex items-center justify-center min-h-screen pt-20 sm:pt-24 pb-8">
+          <div className="flex items-center justify-center min-h-screen pt-8 sm:pt-12 pb-8">
             {/* Centralized Content Section */}
             <div className="space-y-6 text-gray-800 text-center max-w-4xl mx-auto">
               {/* Status Badge */}
