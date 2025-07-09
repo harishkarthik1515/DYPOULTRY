@@ -25,7 +25,11 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <span className="font-serif font-bold text-xl text-white">DY Poultry Farms</span>
+              <img 
+                src="/dy 4 1.png" 
+                alt="DY Poultry Farms" 
+                className="h-8 brightness-0 invert"
+              />
             </div>
             <p className="mb-6 text-white/80">
               Fresh, quality poultry products since 2024. Committed to sustainable 

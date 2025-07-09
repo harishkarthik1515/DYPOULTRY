@@ -152,16 +152,13 @@ const Header = () => {
               className="flex items-center justify-center cursor-pointer"
               onClick={handleLogoClick}
             >
-              <div className={`bg-gradient-to-br from-primary-600 to-primary-700 rounded-lg flex items-center justify-center transition-all duration-300 ${
-                isScrolled ? 'w-5 h-5 sm:w-6 sm:h-6' : 'w-6 h-6 sm:w-8 sm:h-8'
-              }`}>
-                <Feather className={`text-white ${isScrolled ? 'w-3 h-3 sm:w-4 sm:h-4' : 'w-3 h-3 sm:w-5 sm:h-5'}`} />
-              </div>
-              <span className={`ml-2 font-bold bg-gradient-to-r from-primary-600 to-primary-700 bg-clip-text text-transparent transition-all duration-300 ${
-                isScrolled ? 'text-base sm:text-lg' : 'text-lg sm:text-xl'
-              }`}>
-                DY Poultry
-              </span>
+              <img 
+                src="/dy 4 1.png" 
+                alt="DY Poultry Farms" 
+                className={`transition-all duration-300 ${
+                  isScrolled ? 'h-8 sm:h-10' : 'h-10 sm:h-12'
+                }`}
+              />
             </Link>
 
             {/* Right Navigation & CTA */}
@@ -210,16 +207,13 @@ const Header = () => {
               className="flex items-center justify-center cursor-pointer absolute left-1/2 transform -translate-x-1/2"
               onClick={handleLogoClick}
             >
-              <div className={`bg-gradient-to-br from-primary-600 to-primary-700 rounded-lg flex items-center justify-center transition-all duration-300 ${
-                isScrolled ? 'w-5 h-5 sm:w-6 sm:h-6' : 'w-6 h-6 sm:w-8 sm:h-8'
-              }`}>
-                <Feather className={`text-white ${isScrolled ? 'w-3 h-3 sm:w-4 sm:h-4' : 'w-3 h-3 sm:w-5 sm:h-5'}`} />
-              </div>
-              <span className={`ml-2 font-bold bg-gradient-to-r from-primary-600 to-primary-700 bg-clip-text text-transparent transition-all duration-300 ${
-                isScrolled ? 'text-base sm:text-lg' : 'text-lg sm:text-xl'
-              }`}>
-                DY Poultry
-              </span>
+              <img 
+                src="/dy 4 1.png" 
+                alt="DY Poultry Farms" 
+                className={`transition-all duration-300 ${
+                  isScrolled ? 'h-8 sm:h-10' : 'h-10 sm:h-12'
+                }`}
+              />
             </Link>
 
             {/* Contact CTA Button - Right */}
@@ -248,12 +242,11 @@ const Header = () => {
               {/* Menu Header */}
               <div className="flex items-center justify-between p-4 border-b border-gray-200 flex-shrink-0">
                 <Link to="/" className="flex items-center space-x-2" onClick={handleLogoClick}>
-                  <div className="w-6 h-6 bg-gradient-to-br from-primary-600 to-primary-700 rounded-lg flex items-center justify-center">
-                    <Feather className="w-4 h-4 text-white" />
-                  </div>
-                  <span className="text-lg font-bold bg-gradient-to-r from-primary-600 to-primary-700 bg-clip-text text-transparent cursor-pointer">
-                    DY Poultry
-                  </span>
+                  <img 
+                    src="/dy 4 1.png" 
+                    alt="DY Poultry Farms" 
+                    className="h-8"
+                  />
                 </Link>
                 <button
                   onClick={() => setIsMenuOpen(false)}
