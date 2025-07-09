@@ -45,38 +45,35 @@ const Hero: React.FC = () => {
 
   return (
     <>
-      {/* CSS Styles */}
-      <style dangerouslySetInnerHTML={{
-        __html: `
-          @keyframes floatUp {
-            0% { transform: translateY(20px) rotate(0deg); opacity: 0; }
-            50% { opacity: 1; }
-            100% { transform: translateY(-20px) rotate(360deg); opacity: 0; }
-          }
-          
-          @keyframes pulse {
-            0%, 100% { opacity: 0.4; }
-            50% { opacity: 0.8; }
-          }
-          
-          @keyframes shimmer {
-            0% { transform: translateX(-100%) skewX(-12deg); }
-            100% { transform: translateX(200%) skewX(-12deg); }
-          }
-          
-          .floating-element {
-            animation: floatUp 8s infinite linear;
-          }
-          
-          .pulse-glow {
-            animation: pulse 2s ease-in-out infinite;
-          }
-          
-          .animate-shimmer {
-            animation: shimmer 1.5s ease-in-out;
-          }
-        `
-      }} />
+      <style jsx>{`
+        @keyframes floatUp {
+          0% { transform: translateY(20px) rotate(0deg); opacity: 0; }
+          50% { opacity: 1; }
+          100% { transform: translateY(-20px) rotate(360deg); opacity: 0; }
+        }
+        
+        @keyframes pulse {
+          0%, 100% { opacity: 0.4; }
+          50% { opacity: 0.8; }
+        }
+        
+        @keyframes shimmer {
+          0% { transform: translateX(-100%) skewX(-12deg); }
+          100% { transform: translateX(200%) skewX(-12deg); }
+        }
+        
+        .floating-element {
+          animation: floatUp 8s infinite linear;
+        }
+        
+        .pulse-glow {
+          animation: pulse 2s ease-in-out infinite;
+        }
+        
+        .animate-shimmer {
+          animation: shimmer 1.5s ease-in-out;
+        }
+      `}</style>
       
       <section
         id="home"
@@ -119,7 +116,7 @@ const Hero: React.FC = () => {
           {[...Array(12)].map((_, i) => (
             <div
               key={i}
-              className="absolute rounded-full bg-orange-600/20 floating-element"
+              className="absolute rounded-full bg-primary-600/20 floating-element"
               style={{
                 left: `${Math.random() * 100}%`,
                 width: `${Math.random() * 8 + 4}px`,
@@ -138,25 +135,25 @@ const Hero: React.FC = () => {
             <div className="relative flex items-center justify-center order-2 lg:order-1">
               <div className="relative w-full max-w-lg h-[400px] lg:h-[500px] flex items-center justify-center">
                 <img 
-                  src="https://images.pexels.com/photos/1300361/pexels-photo-1300361.jpeg?auto=compress&cs=tinysrgb&w=800" 
-                  alt="DY Poultry Farm - Happy Chickens" 
-                  className="w-full h-full object-cover rounded-2xl shadow-2xl"
+                  src="1084554013-preview-unscreen.gif" 
+                  alt="DY Poultry Farm - Happy Chickens Animation" 
+                  className="w-full h-full object-contain"
                 />
                 
                 {/* Floating Farm Points */}
-                <div className="absolute top-1/4 left-1/3 w-3 h-3 bg-orange-600 rounded-full animate-pulse shadow-lg shadow-orange-600/50"></div>
-                <div className="absolute top-1/2 right-1/4 w-2 h-2 bg-orange-500 rounded-full animate-pulse shadow-lg shadow-orange-500/50" style={{ animationDelay: '1s' }}></div>
-                <div className="absolute bottom-1/3 left-1/2 w-2.5 h-2.5 bg-orange-400 rounded-full animate-pulse shadow-lg shadow-orange-400/50" style={{ animationDelay: '2s' }}></div>
+                <div className="absolute top-1/4 left-1/3 w-3 h-3 bg-primary-600 rounded-full animate-pulse shadow-lg shadow-primary-600/50"></div>
+                <div className="absolute top-1/2 right-1/4 w-2 h-2 bg-primary-500 rounded-full animate-pulse shadow-lg shadow-primary-500/50" style={{ animationDelay: '1s' }}></div>
+                <div className="absolute bottom-1/3 left-1/2 w-2.5 h-2.5 bg-primary-400 rounded-full animate-pulse shadow-lg shadow-primary-400/50" style={{ animationDelay: '2s' }}></div>
               </div>
             </div>
 
             {/* Right Content Section */}
             <div className="space-y-6 text-gray-800 order-1 lg:order-2">
               {/* Status Badge */}
-              <div className={`inline-flex items-center px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full text-orange-700 text-sm font-semibold border border-orange-200 transition-all duration-1000 delay-100 ${
+              <div className={`inline-flex items-center px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full text-primary-700 text-sm font-semibold border border-primary-200 transition-all duration-1000 delay-100 ${
                 isVisible ? 'opacity-100 transform-none' : 'opacity-0 -translate-y-10'
               }`}>
-                <div className="w-2 h-2 bg-orange-600 rounded-full mr-2 pulse-glow"></div>
+                <div className="w-2 h-2 bg-primary-600 rounded-full mr-2 pulse-glow"></div>
                 Premium Poultry Farm Since 2024
               </div>
               
@@ -166,7 +163,7 @@ const Hero: React.FC = () => {
               }`}>
                 <h1 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold leading-tight">
                   Farm-Fresh Chicken
-                  <span className="block bg-gradient-to-r from-orange-600 via-orange-700 to-orange-800 bg-clip-text text-transparent">
+                  <span className="block bg-gradient-to-r from-primary-600 via-primary-700 to-primary-800 bg-clip-text text-transparent">
                     Where Every Bird
                   </span>
                   <span className="block text-gray-700">Thrives</span>
@@ -182,16 +179,16 @@ const Hero: React.FC = () => {
                 isVisible ? 'opacity-100 transform-none' : 'opacity-0 translate-y-10'
               }`}>
                 <div className="flex items-center space-x-4">
-                  <div className="h-px bg-gradient-to-r from-orange-500 to-transparent flex-1"></div>
-                  <Feather className="h-4 w-4 text-orange-600" />
-                  <div className="h-px bg-gradient-to-l from-orange-500 to-transparent flex-1"></div>
+                  <div className="h-px bg-gradient-to-r from-primary-500 to-transparent flex-1"></div>
+                  <Feather className="h-4 w-4 text-primary-600" />
+                  <div className="h-px bg-gradient-to-l from-primary-500 to-transparent flex-1"></div>
                 </div>
                 
                 {/* Compact CTA Buttons */}
                 <div className="flex flex-col sm:flex-row gap-3 max-w-md">
                   {/* Primary CTA Button - Compact */}
                   <button 
-                    className="group relative overflow-hidden bg-gradient-to-r from-orange-600 via-orange-700 to-orange-800 text-white py-2.5 px-5 rounded-xl transition-all duration-300 font-semibold shadow-lg hover:shadow-orange-500/30 transform hover:-translate-y-1 hover:scale-105 flex items-center justify-center text-sm border border-orange-400/30"
+                    className="group relative overflow-hidden bg-gradient-to-r from-primary-600 via-primary-700 to-primary-800 text-white py-2.5 px-5 rounded-xl transition-all duration-300 font-semibold shadow-lg hover:shadow-primary-500/30 transform hover:-translate-y-1 hover:scale-105 flex items-center justify-center text-sm border border-primary-400/30"
                     onMouseEnter={() => setPrimaryHovered(true)}
                     onMouseLeave={() => setPrimaryHovered(false)}
                     onClick={() => handleScrollToSection('#our-values')}
@@ -211,17 +208,17 @@ const Hero: React.FC = () => {
                   
                   {/* Secondary CTA Button - Compact */}
                   <button 
-                    className="group relative overflow-hidden bg-white/80 backdrop-blur-sm text-orange-700 py-2.5 px-5 rounded-xl transition-all duration-300 font-semibold border border-orange-200 hover:bg-white hover:border-orange-300 transform hover:-translate-y-1 hover:scale-105 flex items-center justify-center text-sm"
+                    className="group relative overflow-hidden bg-white/80 backdrop-blur-sm text-primary-700 py-2.5 px-5 rounded-xl transition-all duration-300 font-semibold border border-primary-200 hover:bg-white hover:border-primary-300 transform hover:-translate-y-1 hover:scale-105 flex items-center justify-center text-sm"
                     onMouseEnter={() => setSecondaryHovered(true)}
                     onMouseLeave={() => setSecondaryHovered(false)}
                     onClick={() => handleScrollToSection('#visit-us')}
                   >
                     <div className="relative flex items-center space-x-2">
-                      <MapPin className={`h-4 w-4 transition-all duration-300 ${secondaryHovered ? 'text-orange-600' : ''}`} />
+                      <MapPin className={`h-4 w-4 transition-all duration-300 ${secondaryHovered ? 'text-primary-600' : ''}`} />
                       <span className="font-semibold">
                         {secondaryHovered ? 'Book Tour' : 'Visit Farm'}
                       </span>
-                      <Calendar className={`h-4 w-4 transition-all duration-300 ${secondaryHovered ? 'scale-110 text-orange-600' : ''}`} />
+                      <Calendar className={`h-4 w-4 transition-all duration-300 ${secondaryHovered ? 'scale-110 text-primary-600' : ''}`} />
                     </div>
                   </button>
                 </div>
@@ -231,10 +228,10 @@ const Hero: React.FC = () => {
                   {[
                     { icon: Shield, text: 'Biosecure', color: 'green' },
                     { icon: Users, text: '1.25L+ Birds', color: 'blue' },
-                    { icon: Award, text: 'Premium Quality', color: 'orange' }
+                    { icon: Award, text: 'Premium Quality', color: 'primary' }
                   ].map(({ icon: Icon, text, color }, index) => (
-                    <div key={index} className="group flex items-center space-x-2 cursor-pointer hover:text-orange-700 transition-colors duration-200">
-                      <div className={`w-1.5 h-1.5 bg-${color === 'orange' ? 'orange-600' : color + '-500'} rounded-full animate-pulse group-hover:scale-150 transition-transform duration-200`}></div>
+                    <div key={index} className="group flex items-center space-x-2 cursor-pointer hover:text-primary-700 transition-colors duration-200">
+                      <div className={`w-1.5 h-1.5 bg-${color === 'primary' ? 'primary-600' : color + '-500'} rounded-full animate-pulse group-hover:scale-150 transition-transform duration-200`}></div>
                       <span className="group-hover:font-semibold transition-all duration-200">{text}</span>
                       <Icon className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
                     </div>
@@ -242,26 +239,26 @@ const Hero: React.FC = () => {
                 </div>
 
                 {/* Compact Call-to-Action Subtitle */}
-                <div className="bg-white/60 backdrop-blur-sm rounded-lg p-3 border border-orange-200">
+                <div className="bg-white/60 backdrop-blur-sm rounded-lg p-3 border border-primary-200">
                   <p className="text-center text-gray-700 text-xs">
-                    <span className="text-orange-600 font-semibold">Trusted by 1000+</span> families for premium poultry
+                    <span className="text-primary-600 font-semibold">Trusted by 1000+</span> families for premium poultry
                   </p>
                   <div className="flex justify-center mt-1 space-x-1">
                     {[...Array(3)].map((_, i) => (
-                      <div key={i} className="w-1 h-1 bg-orange-600 rounded-full animate-pulse" style={{ animationDelay: `${i * 0.3}s` }}></div>
+                      <div key={i} className="w-1 h-1 bg-primary-600 rounded-full animate-pulse" style={{ animationDelay: `${i * 0.3}s` }}></div>
                     ))}
                   </div>
                 </div>
               </div>
 
               {/* Compact Stats Grid */}
-              <div className={`grid grid-cols-3 gap-3 transition-all duration-1000 delay-600 ${
+              <div className={`grid grid-cols-4 gap-3 transition-all duration-1000 delay-600 ${
                 isVisible ? 'opacity-100 transform-none' : 'opacity-0 translate-y-10'
               }`}>
                 {[
-                  { number: '100%', label: 'Cage-Free', color: 'from-orange-500 to-orange-600' },
-                  { number: '24/7', label: 'Vet Care', color: 'from-orange-600 to-orange-700' },
-                  { number: '0%', label: 'Hormones', color: 'from-orange-700 to-orange-800' }
+                  { number: '100%', label: 'Cage-Free', color: 'from-primary-500 to-primary-600' },
+                  { number: '24/7', label: 'Vet Care', color: 'from-primary-600 to-primary-700' },
+                  { number: '0%', label: 'Hormones', color: 'from-primary-700 to-primary-800' }
                 ].map((stat, index) => (
                   <div key={index} className="text-center group cursor-pointer">
                     <div className={`text-lg md:text-xl font-bold bg-gradient-to-r ${stat.color} bg-clip-text text-transparent mb-1 group-hover:scale-110 transition-transform duration-300`}>
