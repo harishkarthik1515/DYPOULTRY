@@ -227,17 +227,7 @@ const Hero: React.FC = () => {
                 
 
                 {/* Compact Call-to-Action Subtitle */}
-                <div className="bg-white/60 backdrop-blur-sm rounded-lg p-3 border border-primary-200">
-                  <p className="text-center text-gray-700 text-xs">
-                    <span className="text-primary-600 font-semibold">Trusted by 1000+</span> families for premium poultry
-                  </p>
-                  <div className="flex justify-center mt-1 space-x-1">
-                    {[...Array(3)].map((_, i) => (
-                      <div key={i} className="w-1 h-1 bg-primary-600 rounded-full animate-pulse" style={{ animationDelay: `${i * 0.3}s` }}></div>
-                    ))}
-                  </div>
-                </div>
-              </div>
+                
 
               {/* Compact Stats Grid */}
               <div className={`grid grid-cols-4 gap-3 transition-all duration-1000 delay-600 ${
