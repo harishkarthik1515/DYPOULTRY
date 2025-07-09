@@ -222,12 +222,6 @@ const Hero: React.FC = () => {
                     </div>
                   </button>
                 </div>
-
-                {/* Compact Trust Indicators */}
-                
-
-                {/* Compact Call-to-Action Subtitle */}
-               
               </div>
 
               {/* Compact Stats Grid */}
