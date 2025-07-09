@@ -1,17 +1,20 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { Instagram, Facebook, Twitter, Mail } from 'lucide-react';
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const handleNavClick = (href: string) => {
     if (href.startsWith('#')) {
-      // If it's a hash link, navigate to home page first if not already there
-      if (window.location.pathname !== '/') {
-        window.location.href = '/' + href;
+      if (location.pathname !== '/') {
+        // If not on home page, navigate to home first then scroll
+        navigate('/' + href);
         return;
       }
+      // If already on home page, just scroll
       const element = document.querySelector(href);
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
@@ -54,7 +57,8 @@ const Footer: React.FC = () => {
               <li>
                 <Link
                   to="/"
-                  className="text-white/80 hover:text-white transition-colors duration-200 hover:underline"
+                 className="text-white/80 hover:text-white transition-colors duration-200 hover:underline"
+                 onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                 >
                   Home
                 </Link>

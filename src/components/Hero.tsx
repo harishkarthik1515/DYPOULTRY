@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import { ArrowRight, Feather, Heart, Shield, Award, Users, Calendar, MapPin, Leaf } from 'lucide-react';
 
 const Hero: React.FC = () => {

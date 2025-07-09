@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X, Feather, Phone } from 'lucide-react';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -41,10 +42,11 @@ const Header = () => {
   const handleNavClick = (href: string) => {
     if (href.startsWith('#')) {
       if (location.pathname !== '/') {
-        // If not on home page, navigate to home first
-        window.location.href = '/' + href;
+        // If not on home page, navigate to home first then scroll
+        navigate('/' + href);
         return;
       }
+      // If already on home page, just scroll
       const element = document.querySelector(href);
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
@@ -56,6 +58,8 @@ const Header = () => {
   const handleLogoClick = () => {
     if (location.pathname === '/') {
       window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      navigate('/');
     }
     setIsMenuOpen(false);
   };

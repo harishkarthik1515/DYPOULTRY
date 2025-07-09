@@ -1,11 +1,25 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { useInView } from '../utils/scrollAnimation';
 import { Sun, Heart, Recycle, Leaf } from 'lucide-react';
 
 const Sustainability: React.FC = () => {
   const { ref: sectionRef, isInView: sectionVisible } = useInView();
+  const navigate = useNavigate();
+  const location = useLocation();
 
+  const handleNavClick = (href: string) => {
+    if (href.startsWith('#')) {
+      if (location.pathname !== '/') {
+        navigate('/' + href);
+        return;
+      }
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
   const sustainabilityAreas = [
     {
       id: 1,
@@ -128,18 +142,18 @@ const Sustainability: React.FC = () => {
               ethical, and responsible approach to poultry farming.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                to="/#meet-the-farm"
+              <button
+                onClick={() => handleNavClick('#meet-the-farm')}
                 className="inline-flex items-center justify-center px-8 py-4 bg-white text-primary-700 font-medium rounded-full transition-all duration-300 hover:bg-primary-50 transform hover:scale-105"
               >
                 Experience Our Farm
-              </Link>
-              <Link
-                to="/#testimonials"
+              </button>
+              <button
+                onClick={() => handleNavClick('#testimonials')}
                 className="inline-flex items-center justify-center px-8 py-4 bg-white/20 backdrop-blur-sm text-white font-medium rounded-full border border-white/30 transition-all duration-300 hover:bg-white/30 transform hover:scale-105"
               >
                 Customer Stories
-              </Link>
+              </button>
             </div>
           </div>
         </div>
