@@ -235,8 +235,27 @@ const MeetTheFarm: React.FC = () => {
         </div>
 
         {/* Compact Call to Action */}
-        
-        
+        <div className={`bg-gradient-to-r from-primary-600 to-primary-700 rounded-2xl p-8 md:p-12 shadow-lg text-white text-center transition-all duration-700 delay-1000 ${
+          sectionVisible ? 'opacity-100 transform-none' : 'opacity-0 translate-y-10'
+        }`}>
+          <div className="max-w-3xl mx-auto">
+            <h3 className="font-serif text-2xl md:text-3xl font-bold mb-4">What Our Customers Say</h3>
+            <p className="text-lg text-white/90 mb-8">
+              Don't just take our word for it. Hear from families who trust DY Poultry Farms for their quality chicken needs.
+            </p>
+            <button
+              onClick={() => {
+                const element = document.querySelector('#testimonials');
+                if (element) {
+                  element.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
+              className="inline-flex items-center justify-center px-8 py-4 bg-white text-primary-700 font-medium rounded-full transition-all duration-300 hover:bg-primary-50 transform hover:scale-105"
+            >
+              Read Customer Stories
+            </button>
+          </div>
+        </div>
       </div>
     </section>
   );

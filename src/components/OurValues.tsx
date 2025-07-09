@@ -271,7 +271,40 @@ const OurValues: React.FC = () => {
         </div>
 
         {/* Call to Action Section */}
-        
+        <div className={`bg-gradient-to-r from-primary-600 to-primary-700 rounded-2xl p-8 md:p-12 shadow-lg text-white text-center transition-all duration-700 delay-1200 ${
+          sectionVisible ? 'opacity-100 transform-none' : 'opacity-0 translate-y-10'
+        }`}>
+          <div className="max-w-3xl mx-auto">
+            <h3 className="font-serif text-2xl md:text-3xl font-bold mb-4">Ready to Experience the Difference?</h3>
+            <p className="text-lg text-white/90 mb-8">
+              See our values in action at our farm and discover why families trust DY Poultry for their quality chicken needs.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <button
+                onClick={() => {
+                  const element = document.querySelector('#meet-the-farm');
+                  if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
+                className="inline-flex items-center justify-center px-8 py-4 bg-white text-primary-700 font-medium rounded-full transition-all duration-300 hover:bg-primary-50 transform hover:scale-105"
+              >
+                Tour Our Farm
+              </button>
+              <button
+                onClick={() => {
+                  const element = document.querySelector('#testimonials');
+                  if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
+                className="inline-flex items-center justify-center px-8 py-4 bg-white/20 backdrop-blur-sm text-white font-medium rounded-full border border-white/30 transition-all duration-300 hover:bg-white/30 transform hover:scale-105"
+              >
+                Customer Stories
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );

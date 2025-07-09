@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 // Custom hook for scroll animations
 const useInView = () => {
@@ -233,6 +234,29 @@ const OurStory: React.FC = () => {
                   We're committed to expanding our sustainable farming practices, implementing cutting-edge 
                   technology for animal welfare, and becoming the region's leading example of ethical poultry farming.
                 </p>
+              </div>
+            </div>
+          <div className={`bg-gradient-to-r from-primary-600 to-primary-700 rounded-2xl p-8 md:p-12 shadow-lg text-white text-center transition-all duration-700 delay-1100 ${
+            sectionVisible ? 'opacity-100 transform-none' : 'opacity-0 translate-y-10'
+          }`}>
+            <div className="max-w-3xl mx-auto">
+              <h3 className="font-serif text-2xl md:text-3xl font-bold mb-4">Explore More</h3>
+              <p className="text-lg text-white/90 mb-8">
+                Discover our farm facilities and hear what our customers have to say about our commitment to quality.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link
+                  to="/#meet-the-farm"
+                  className="inline-flex items-center justify-center px-6 py-3 bg-white text-primary-700 font-medium rounded-lg transition-all duration-300 hover:bg-primary-50 transform hover:scale-105"
+                >
+                  Meet the Farm
+                </Link>
+                <Link
+                  to="/#testimonials"
+                  className="inline-flex items-center justify-center px-6 py-3 bg-white/20 backdrop-blur-sm text-white font-medium rounded-lg border border-white/30 transition-all duration-300 hover:bg-white/30 transform hover:scale-105"
+                >
+                  Customer Stories
+                </Link>
               </div>
             </div>
           </div>
