@@ -129,28 +129,11 @@ const Hero: React.FC = () => {
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 min-h-screen">
-          <div className="grid lg:grid-cols-2 gap-12 items-center min-h-screen pt-20 sm:pt-24 pb-8 lg:py-0">
-            
-            {/* Left Farm Visual Section */}
-            <div className="relative flex items-center justify-center order-2 lg:order-1">
-              <div className="relative w-full max-w-lg h-[400px] lg:h-[500px] flex items-center justify-center">
-                <img 
-                  src="1084554013-preview-unscreen.gif" 
-                  alt="DY Poultry Farm - Happy Chickens Animation" 
-                  className="w-full h-full object-contain"
-                />
-                
-                {/* Floating Farm Points */}
-                <div className="absolute top-1/4 left-1/3 w-3 h-3 bg-primary-600 rounded-full animate-pulse shadow-lg shadow-primary-600/50"></div>
-                <div className="absolute top-1/2 right-1/4 w-2 h-2 bg-primary-500 rounded-full animate-pulse shadow-lg shadow-primary-500/50" style={{ animationDelay: '1s' }}></div>
-                <div className="absolute bottom-1/3 left-1/2 w-2.5 h-2.5 bg-primary-400 rounded-full animate-pulse shadow-lg shadow-primary-400/50" style={{ animationDelay: '2s' }}></div>
-              </div>
-            </div>
-
-            {/* Right Content Section */}
-            <div className="space-y-6 text-gray-800 order-1 lg:order-2">
+          <div className="flex items-center justify-center min-h-screen pt-20 sm:pt-24 pb-8">
+            {/* Centralized Content Section */}
+            <div className="space-y-6 text-gray-800 text-center max-w-4xl mx-auto">
               {/* Status Badge */}
-              <div className={`inline-flex items-center px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full text-primary-700 text-sm font-semibold border border-primary-200 transition-all duration-1000 delay-100 ${
+              <div className={`inline-flex items-center justify-center px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full text-primary-700 text-sm font-semibold border border-primary-200 transition-all duration-1000 delay-100 ${
                 isVisible ? 'opacity-100 transform-none' : 'opacity-0 -translate-y-10'
               }`}>
                 <div className="w-2 h-2 bg-primary-600 rounded-full mr-2 pulse-glow"></div>
@@ -160,7 +143,7 @@ const Hero: React.FC = () => {
               {/* Main Heading */}
               <div className={`space-y-3 transition-all duration-1000 delay-200 ${
                 isVisible ? 'opacity-100 transform-none' : 'opacity-0 translate-y-10'
-              }`}>
+              }`} style={{ textAlign: 'center' }}>
                 <h1 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold leading-tight">
                   Farm-Fresh Chicken
                   <span className="block bg-gradient-to-r from-primary-600 via-primary-700 to-primary-800 bg-clip-text text-transparent">
@@ -178,7 +161,7 @@ const Hero: React.FC = () => {
               <div className={`space-y-5 transition-all duration-1000 delay-400 ${
                 isVisible ? 'opacity-100 transform-none' : 'opacity-0 translate-y-10'
               }`}>
-                <div className="flex items-center space-x-4">
+                <div className="flex items-center justify-center space-x-4">
                   <div className="h-px bg-gradient-to-r from-primary-500 to-transparent flex-1"></div>
                   <img 
                     src="/dy 4 1.png" 
@@ -189,7 +172,7 @@ const Hero: React.FC = () => {
                 </div>
                 
                 {/* Compact CTA Buttons */}
-                <div className="flex flex-col sm:flex-row gap-3 max-w-md">
+                <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto justify-center">
                   {/* Primary CTA Button - Compact */}
                   <button 
                     className="group relative overflow-hidden bg-gradient-to-r from-primary-600 via-primary-700 to-primary-800 text-white py-2.5 px-5 rounded-xl transition-all duration-300 font-semibold shadow-lg hover:shadow-primary-500/30 transform hover:-translate-y-1 hover:scale-105 flex items-center justify-center text-sm border border-primary-400/30"

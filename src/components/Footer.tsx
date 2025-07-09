@@ -25,13 +25,32 @@ const Footer: React.FC = () => {
   return (
     <footer className="bg-primary-800 text-white pt-16 pb-8">
       <div className="container mx-auto px-4 md:px-6">
+        {/* Farm Animation Section */}
+        <div className="text-center mb-12">
+          <div className="max-w-md mx-auto">
+            <h3 className="font-serif text-2xl font-bold text-white mb-6">
+              Happy Chickens, Happy Families
+            </h3>
+            <div className="relative bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+              <img 
+                src="/1084554013-preview-unscreen.gif" 
+                alt="DY Poultry Farm - Happy Chickens Animation" 
+                className="w-full h-auto max-h-64 object-contain rounded-xl"
+              />
+              <p className="text-white/90 text-sm mt-4 italic">
+                "Where every bird thrives in a caring environment"
+              </p>
+            </div>
+          </div>
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           <div>
             <div className="flex items-center gap-2 mb-4">
               <img 
                 src="/dy 4 1.png" 
                 alt="DY Poultry Farms" 
-                className="h-12 brightness-0 invert"
+                className="h-16 brightness-0 invert"
               />
             </div>
             <p className="mb-6 text-white/80">
