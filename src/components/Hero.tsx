@@ -225,22 +225,7 @@ const Hero: React.FC = () => {
               </div>
 
               {/* Compact Stats Grid */}
-              <div className={`grid grid-cols-4 gap-3 transition-all duration-1000 delay-600 ${
-                isVisible ? 'opacity-100 transform-none' : 'opacity-0 translate-y-10'
-              }`}>
-                {[
-                  { number: '100%', label: 'Cage-Free', color: 'from-primary-500 to-primary-600' },
-                  { number: '24/7', label: 'Vet Care', color: 'from-primary-600 to-primary-700' },
-                  { number: '0%', label: 'Hormones', color: 'from-primary-700 to-primary-800' }
-                ].map((stat, index) => (
-                  <div key={index} className="text-center group cursor-pointer">
-                    <div className={`text-lg md:text-xl font-bold bg-gradient-to-r ${stat.color} bg-clip-text text-transparent mb-1 group-hover:scale-110 transition-transform duration-300`}>
-                      {stat.number}
-                    </div>
-                    <div className="text-gray-600 text-xs font-medium">{stat.label}</div>
-                  </div>
-                ))}
-              </div>
+              
             </div>
           </div>
         </div>
