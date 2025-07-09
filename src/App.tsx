@@ -1,12 +1,13 @@
 import React, { useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
+import Hero from './components/Hero';
+import OurValues from './components/OurValues';
+import OurStory from './components/OurStory';
+import Sustainability from './components/Sustainability';
+import MeetTheFarm from './components/MeetTheFarm';
+import Testimonials from './components/Testimonials';
+import Contact from './components/Contact';
 import Footer from './components/Footer';
-import HomePage from './pages/HomePage';
-import OurStoryPage from './pages/OurStoryPage';
-import SustainabilityPage from './pages/SustainabilityPage';
-import MeetTheFarmPage from './pages/MeetTheFarmPage';
-
 function App() {
   useEffect(() => {
     // Smooth scroll for anchor links
@@ -25,21 +26,19 @@ function App() {
       });
     });
   }, []);
-
   return (
-    <Router>
-      <div className="min-h-screen font-sans text-gray-900" style={{ backgroundColor: '#faf5e9' }}>
-        <Header />
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/our-story" element={<OurStoryPage />} />
-          <Route path="/sustainability" element={<SustainabilityPage />} />
-          <Route path="/meet-the-farm" element={<MeetTheFarmPage />} />
-        </Routes>
-        <Footer />
-      </div>
-    </Router>
+    <div className="min-h-screen font-sans text-gray-900" style={{ backgroundColor: '
+#faf5e9' }}>
+      <Header />
+      <Hero />
+      <OurValues />
+      <OurStory />
+      <Sustainability />
+      <MeetTheFarm />
+      <Testimonials />
+      <Contact />
+      <Footer />
+    </div>
   );
 }
-
 export default App;
