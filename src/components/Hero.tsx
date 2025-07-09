@@ -227,7 +227,8 @@ const Hero: React.FC = () => {
                 
 
                 {/* Compact Call-to-Action Subtitle */}
-                
+               
+              </div>
 
               {/* Compact Stats Grid */}
               <div className={`grid grid-cols-4 gap-3 transition-all duration-1000 delay-600 ${
