@@ -78,6 +78,8 @@ const Header = () => {
     { name: 'Contact', href: '#contact' },
   ];
 
+  const allNavigation = [...leftNavigation, ...rightNavigation];
+
   return (
     <>
       <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-out ${
@@ -90,12 +92,14 @@ const Header = () => {
             ? 'max-w-6xl mx-auto my-2 sm:my-3 rounded-full bg-white/95 backdrop-blur-xl shadow-xl border border-white/20' 
             : 'max-w-7xl mx-auto'
         } px-3 sm:px-4 lg:px-8`}>
-          <div className={`flex items-center justify-between w-full transition-all duration-300 ${
+          
+          {/* Desktop Layout */}
+          <div className={`hidden lg:grid lg:grid-cols-3 items-center w-full transition-all duration-300 ${
             isScrolled ? 'h-12 sm:h-14' : 'h-14 sm:h-16'
           }`}>
             
             {/* Left Navigation */}
-            <nav className="hidden lg:flex items-center space-x-4 xl:space-x-6 flex-1">
+            <nav className="flex items-center justify-start space-x-4 xl:space-x-6">
               {leftNavigation.map((item) => (
                 <button
                   key={item.name}
@@ -109,7 +113,7 @@ const Header = () => {
 
             {/* Centered Logo */}
             <div 
-              className="flex items-center justify-center cursor-pointer min-w-0 flex-shrink-0"
+              className="flex items-center justify-center cursor-pointer"
               onClick={handleLogoClick}
             >
               <div className={`bg-gradient-to-br from-primary-600 to-primary-700 rounded-lg flex items-center justify-center transition-all duration-300 ${
@@ -125,10 +129,9 @@ const Header = () => {
             </div>
 
             {/* Right Navigation & Actions */}
-            <div className="flex items-center space-x-2 sm:space-x-3 flex-1 justify-end">
-              
+            <div className="flex items-center justify-end space-x-4 xl:space-x-6">
               {/* Right Navigation */}
-              <nav className="hidden lg:flex items-center space-x-4 xl:space-x-6">
+              <nav className="flex items-center space-x-4 xl:space-x-6">
                 {rightNavigation.map((item) => (
                   <button
                     key={item.name}
@@ -141,7 +144,7 @@ const Header = () => {
               </nav>
 
               {/* Search Bar */}
-              <div className={`relative transition-all duration-300 hidden md:block flex-shrink-0 ml-4 ${
+              <div className={`relative transition-all duration-300 ${
                 isSearchFocused 
                   ? 'w-48 lg:w-56' 
                   : isScrolled 
@@ -165,84 +168,164 @@ const Header = () => {
               </div>
 
               {/* Contact Dropdown */}
-              <div className="hidden sm:flex items-center">
-                <div className="relative" ref={dropdownRef}>
-                  <button
-                    onClick={() => setShowContactDropdown(!showContactDropdown)}
-                    className="flex items-center space-x-2 bg-white border border-gray-200 rounded-lg hover:bg-gray-50 transition-all duration-200 px-3 py-1.5 sm:px-4 sm:py-2"
-                  >
-                    <Phone className="w-4 h-4 text-primary-600" />
-                    <span className="font-medium text-xs sm:text-sm text-gray-700 whitespace-nowrap">
-                      Contact
-                    </span>
-                    <ChevronDown className="w-3 h-3 text-gray-500" />
-                  </button>
+              <div className="relative" ref={dropdownRef}>
+                <button
+                  onClick={() => setShowContactDropdown(!showContactDropdown)}
+                  className="flex items-center space-x-2 bg-white border border-gray-200 rounded-lg hover:bg-gray-50 transition-all duration-200 px-3 py-1.5 sm:px-4 sm:py-2"
+                >
+                  <Phone className="w-4 h-4 text-primary-600" />
+                  <span className="font-medium text-xs sm:text-sm text-gray-700 whitespace-nowrap">
+                    Contact
+                  </span>
+                  <ChevronDown className="w-3 h-3 text-gray-500" />
+                </button>
 
-                  {/* Contact Dropdown */}
-                  {showContactDropdown && (
-                    <div className="absolute right-0 mt-2 w-64 bg-white rounded-xl shadow-lg border border-gray-200 py-2 z-50">
-                      <div className="px-4 py-3 border-b border-gray-100">
-                        <p className="text-sm font-medium text-gray-900">Get in Touch</p>
-                        <p className="text-xs text-gray-500">We'd love to hear from you</p>
-                      </div>
-                      <div className="py-1">
-                        <a
-                          href="tel:+1234567890"
-                          className="flex items-center space-x-3 px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 transition-colors"
-                          onClick={() => setShowContactDropdown(false)}
-                        >
-                          <Phone className="w-4 h-4 text-primary-600" />
-                          <div>
-                            <span className="block font-medium">(555) 123-4567</span>
-                            <span className="text-xs text-gray-500">Call us directly</span>
-                          </div>
-                        </a>
-                        <a
-                          href="mailto:info@dypoultry.farm"
-                          className="flex items-center space-x-3 px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 transition-colors"
-                          onClick={() => setShowContactDropdown(false)}
-                        >
-                          <Mail className="w-4 h-4 text-primary-600" />
-                          <div>
-                            <span className="block font-medium">info@dypoultry.farm</span>
-                            <span className="text-xs text-gray-500">Send us an email</span>
-                          </div>
-                        </a>
-                        <button
-                          onClick={() => {
-                            handleNavClick('#visit-us');
-                            setShowContactDropdown(false);
-                          }}
-                          className="flex items-center space-x-3 w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 transition-colors"
-                        >
-                          <User className="w-4 h-4 text-primary-600" />
-                          <div className="text-left">
-                            <span className="block font-medium">Visit Our Farm</span>
-                            <span className="text-xs text-gray-500">Schedule a tour</span>
-                          </div>
-                        </button>
-                      </div>
+                {/* Contact Dropdown */}
+                {showContactDropdown && (
+                  <div className="absolute right-0 mt-2 w-64 bg-white rounded-xl shadow-lg border border-gray-200 py-2 z-50">
+                    <div className="px-4 py-3 border-b border-gray-100">
+                      <p className="text-sm font-medium text-gray-900">Get in Touch</p>
+                      <p className="text-xs text-gray-500">We'd love to hear from you</p>
                     </div>
-                  )}
-                </div>
-              </div>
-
-              {/* Mobile Menu Button */}
-              <button
-                className={`lg:hidden p-1.5 sm:p-2 rounded-lg transition-colors duration-200 hover:bg-gray-100 text-gray-700 mobile-menu-container flex-shrink-0 ${
-                  isScrolled ? 'ml-1' : 'ml-2'
-                }`}
-                onClick={(e) => {
-                  e.stopPropagation();
-                  setIsMenuOpen(!isMenuOpen);
-                }}
-              >
-                {isMenuOpen ? (
-                  <X className="w-5 h-5 sm:w-6 sm:h-6" />
-                ) : (
-                  <Menu className="w-5 h-5 sm:w-6 sm:h-6" />
+                    <div className="py-1">
+                      <a
+                        href="tel:+1234567890"
+                        className="flex items-center space-x-3 px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 transition-colors"
+                        onClick={() => setShowContactDropdown(false)}
+                      >
+                        <Phone className="w-4 h-4 text-primary-600" />
+                        <div>
+                          <span className="block font-medium">(555) 123-4567</span>
+                          <span className="text-xs text-gray-500">Call us directly</span>
+                        </div>
+                      </a>
+                      <a
+                        href="mailto:info@dypoultry.farm"
+                        className="flex items-center space-x-3 px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 transition-colors"
+                        onClick={() => setShowContactDropdown(false)}
+                      >
+                        <Mail className="w-4 h-4 text-primary-600" />
+                        <div>
+                          <span className="block font-medium">info@dypoultry.farm</span>
+                          <span className="text-xs text-gray-500">Send us an email</span>
+                        </div>
+                      </a>
+                      <button
+                        onClick={() => {
+                          handleNavClick('#visit-us');
+                          setShowContactDropdown(false);
+                        }}
+                        className="flex items-center space-x-3 w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 transition-colors"
+                      >
+                        <User className="w-4 h-4 text-primary-600" />
+                        <div className="text-left">
+                          <span className="block font-medium">Visit Our Farm</span>
+                          <span className="text-xs text-gray-500">Schedule a tour</span>
+                        </div>
+                      </button>
+                    </div>
+                  </div>
                 )}
+              </div>
+            </div>
+          </div>
+
+          {/* Mobile & Tablet Layout */}
+          <div className={`flex lg:hidden items-center justify-between w-full transition-all duration-300 ${
+            isScrolled ? 'h-12 sm:h-14' : 'h-14 sm:h-16'
+          }`}>
+            
+            {/* Mobile Menu Button - Left */}
+            <button
+              className="p-1.5 sm:p-2 rounded-lg transition-colors duration-200 hover:bg-gray-100 text-gray-700 mobile-menu-container flex-shrink-0"
+              onClick={(e) => {
+                e.stopPropagation();
+                setIsMenuOpen(!isMenuOpen);
+              }}
+            >
+              {isMenuOpen ? (
+                <X className="w-5 h-5 sm:w-6 sm:h-6" />
+              ) : (
+                <Menu className="w-5 h-5 sm:w-6 sm:h-6" />
+              )}
+            </button>
+
+            {/* Centered Logo */}
+            <div 
+              className="flex items-center justify-center cursor-pointer absolute left-1/2 transform -translate-x-1/2"
+              onClick={handleLogoClick}
+            >
+              <div className={`bg-gradient-to-br from-primary-600 to-primary-700 rounded-lg flex items-center justify-center transition-all duration-300 ${
+                isScrolled ? 'w-5 h-5 sm:w-6 sm:h-6' : 'w-6 h-6 sm:w-8 sm:h-8'
+              }`}>
+                <Feather className={`text-white ${isScrolled ? 'w-3 h-3 sm:w-4 sm:h-4' : 'w-3 h-3 sm:w-5 sm:h-5'}`} />
+              </div>
+              <span className={`ml-2 font-bold bg-gradient-to-r from-primary-600 to-primary-700 bg-clip-text text-transparent transition-all duration-300 ${
+                isScrolled ? 'text-base sm:text-lg' : 'text-lg sm:text-xl'
+              }`}>
+                DY Poultry
+              </span>
+            </div>
+
+            {/* Contact Button - Right */}
+            <div className="relative" ref={dropdownRef}>
+              <button
+                onClick={() => setShowContactDropdown(!showContactDropdown)}
+                className="flex items-center space-x-1 sm:space-x-2 bg-white border border-gray-200 rounded-lg hover:bg-gray-50 transition-all duration-200 px-2 py-1.5 sm:px-3 sm:py-2 flex-shrink-0"
+              >
+                <Phone className="w-4 h-4 text-primary-600" />
+                <span className="font-medium text-xs sm:text-sm text-gray-700 hidden sm:inline">
+                  Contact
+                </span>
+                <ChevronDown className="w-3 h-3 text-gray-500" />
               </button>
+
+              {/* Mobile Contact Dropdown */}
+              {showContactDropdown && (
+                <div className="absolute right-0 mt-2 w-64 bg-white rounded-xl shadow-lg border border-gray-200 py-2 z-50">
+                  <div className="px-4 py-3 border-b border-gray-100">
+                    <p className="text-sm font-medium text-gray-900">Get in Touch</p>
+                    <p className="text-xs text-gray-500">We'd love to hear from you</p>
+                  </div>
+                  <div className="py-1">
+                    <a
+                      href="tel:+1234567890"
+                      className="flex items-center space-x-3 px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 transition-colors"
+                      onClick={() => setShowContactDropdown(false)}
+                    >
+                      <Phone className="w-4 h-4 text-primary-600" />
+                      <div>
+                        <span className="block font-medium">(555) 123-4567</span>
+                        <span className="text-xs text-gray-500">Call us directly</span>
+                      </div>
+                    </a>
+                    <a
+                      href="mailto:info@dypoultry.farm"
+                      className="flex items-center space-x-3 px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 transition-colors"
+                      onClick={() => setShowContactDropdown(false)}
+                    >
+                      <Mail className="w-4 h-4 text-primary-600" />
+                      <div>
+                        <span className="block font-medium">info@dypoultry.farm</span>
+                        <span className="text-xs text-gray-500">Send us an email</span>
+                      </div>
+                    </a>
+                    <button
+                      onClick={() => {
+                        handleNavClick('#visit-us');
+                        setShowContactDropdown(false);
+                      }}
+                      className="flex items-center space-x-3 w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 transition-colors"
+                    >
+                      <User className="w-4 h-4 text-primary-600" />
+                      <div className="text-left">
+                        <span className="block font-medium">Visit Our Farm</span>
+                        <span className="text-xs text-gray-500">Schedule a tour</span>
+                      </div>
+                    </button>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </div>
@@ -303,7 +386,7 @@ const Header = () => {
                       <span>Home</span>
                     </button>
 
-                    {[...leftNavigation, ...rightNavigation].map((item) => (
+                    {allNavigation.map((item) => (
                       <button
                         key={item.name}
                         onClick={() => handleNavClick(item.href)}
